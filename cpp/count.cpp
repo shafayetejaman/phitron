@@ -9,7 +9,6 @@ int main(void)
     int cap = 0;
     int small = 0;
 
-    
 
     return 0;
 }

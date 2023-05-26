@@ -40,7 +40,7 @@ public:
         cout << endl;
         return *this;
     }
-    void reverse(node *&head)
+    void reverse_l(node *&head)
     {
         node *curr = head->next;
         node *prev = head;
@@ -55,18 +55,18 @@ public:
         head->next = nullptr;
         head = prev;
     }
-    void reverse(node *&head, node *&curr, node *&prev)
+    node *reverse(node *&head)
     {
-        if (curr == nullptr)
+        static int count = head->count;
+        if (head == nullptr || head->next == nullptr)
         {
-            prev->count = head->count;
-            head->next = nullptr;
-            head = prev;
-            return;
+            head->count = count;
+            return head;
         }
-        node *next = curr->next;
-        curr->next = prev;
-        reverse(head, next, curr);
+        node *new_head = reverse(head->next);
+        head->next->next = head;
+        head->next = nullptr;
+        return new_head;
     }
 };
 
@@ -76,12 +76,12 @@ int main()
 
     head->append(2);
     head->append(3);
-    node *curr = head->next;
-    node *prev = head;
-    head->reverse(head, curr, prev);
+    head->append(4);
+
+    head = head->reverse(head);
 
     head->print();
-    cout << head->count;
+    print(head->count);
 
     return 0;
 }
