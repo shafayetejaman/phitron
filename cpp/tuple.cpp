@@ -13,13 +13,7 @@ tuple<int,double,string, vector<int>> get_data()
 
 int main()
 {
-    int i;
-    double d;
-    string s;
-    vector<int> v;
-
-    tie(i, d, s, v) = get_data();
-    // auto[i, d, s, v] = get_data();
+    auto [i, d, s, v] = get_data();
 
     print(i);
     print(d);

@@ -7,9 +7,11 @@
 #define ROW 9
 #define COL 9
 
-#define matrix std::vector<std::vector<int>>
+using namespace std;
 
-matrix board(ROW, std::vector<int>(COL, 0));
+#define matrix vector<vector<int>>
+
+matrix board(ROW, vector<int>(COL, 0));
 
 bool set_board(int i, int j);
 bool check(const matrix &b, int r, int c, int val);
@@ -21,13 +23,13 @@ int main(void)
 {
 
     int n = 0;
-    std::cout << "type the board to solve : \n";
+    cout << "type the board to solve : \n";
     board = get_board();
 
     print_board(board);
     if (!is_duplicate(board) || !set_board(0, 0))
     {
-        std::cout << "INVALID BOARD!\n";
+        cout << "INVALID BOARD!\n";
         exit(-1);
     }
 
@@ -74,16 +76,16 @@ bool set_board(int i, int j)
 // printing the board
 void print_board(const matrix &b)
 {
-    std::cout << std::endl;
+    cout << endl;
     for (int i = 0; i < ROW; i++)
     {
         for (int j = 0; j < COL; j++)
         {
-            std::cout << b[i][j] << " ";
+            cout << b[i][j] << " ";
         }
-        std::cout << std::endl;
+        cout << endl;
     }
-    std::cout << std::endl;
+    cout << endl;
 }
 
 // checking the board for existing elements
@@ -120,14 +122,14 @@ bool check(const matrix &b, int r, int c, int val)
 // getting input from the user
 matrix get_board()
 {
-    matrix temp(ROW, std::vector<int>(COL));
-    std::string input;
+    matrix temp(ROW, vector<int>(COL));
+    string input;
     int count_row = 0;
 
     for (auto i = 0; count_row < ROW; i++)
     {
-        std::string s;
-        std::getline(std::cin, s);
+        string s;
+        getline(cin, s);
         // checking if it a valid row
         for (const auto &i : s)
         {
@@ -173,7 +175,7 @@ bool is_duplicate(const matrix &b)
     int c = b[0].size();
     bool hash_row[9][9] = {false};
     bool hash_col[9][9] = {false};
-    std::vector<std::vector<std::vector<int>>> sub(3, std::vector<std::vector<int>>(3));
+    vector<vector<vector<int>>> sub(3, vector<vector<int>>(3));
 
     for (int i = 0; i < r; i++)
     {
@@ -190,7 +192,7 @@ bool is_duplicate(const matrix &b)
             if (!sub[sub_row][sub_col].empty())
             {
                 int tar = b[i][j];
-                if (std::find(sub[sub_row][sub_col].begin(), sub[sub_row][sub_col].end(), tar) != sub[sub_row][sub_col].end())
+                if (find(sub[sub_row][sub_col].begin(), sub[sub_row][sub_col].end(), tar) != sub[sub_row][sub_col].end())
                 {
                     return false;
                 }

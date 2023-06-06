@@ -13,8 +13,8 @@ typedef struct
 } matrix;
 
 matrix board = {'1', '2', '3',
-			'4', '5', '6',
-			'7', '8', '9'};
+				'4', '5', '6',
+				'7', '8', '9'};
 
 void print(void);
 int check(void);

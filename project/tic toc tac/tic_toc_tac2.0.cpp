@@ -10,7 +10,9 @@
 #define MIN 1
 #define MAX 9
 
-#define matrix std::vector<std::vector<char>>
+using namespace std;
+
+#define matrix vector<vector<char>>
 
 matrix board = {
     {'1', '2', '3'},
@@ -40,17 +42,17 @@ int main()
             if (w == 'X')
             {
                 print();
-                std::cout << "You won the game!" << std::endl;
+                cout << "You won the game!" << endl;
             }
             else if (w == 'O')
             {
                 print();
-                std::cout << "Computer won the game!" << std::endl;
+                cout << "Computer won the game!" << endl;
             }
             else
             {
                 print();
-                std::cout << "It is a tie!" << std::endl;
+                cout << "It is a tie!" << endl;
             }
             return 0;
         }
@@ -64,21 +66,21 @@ int main()
                 // getting input from the user
                 while (true)
                 {
-                    std::cout << "Type the court you want: ";
-                    if (std::cin >> num && num < 10 && num > 0)
+                    cout << "Type the court you want: ";
+                    if (cin >> num && num < 10 && num > 0)
                     {
                         break;
                     }
                     // flashing the input buffer
-                    std::cin.clear();
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-                    std::cout << "INVALID INPUT!" << std::endl;
+                    cout << "INVALID INPUT!" << endl;
                 }
 
                 if (assign(board, num, 1))
                 {
-                    std::cout << "INVALID INPUT!" << std::endl;
+                    cout << "INVALID INPUT!" << endl;
                 }
                 else
                 {
@@ -100,12 +102,12 @@ int main()
 
 void print()
 {
-    std::cout << "\nComputer: (O) Player: (X)\n";
+    cout << "\nComputer: (O) Player: (X)\n";
     for (int i = 0; i < 3; i++)
     {
-        std::cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << std::endl;
+        cout << " " << board[i][0] << " | " << board[i][1] << " | " << board[i][2] << endl;
         if (i != 2)
-            std::cout << "---|---|---" << std::endl;
+            cout << "---|---|---" << endl;
     }
 }
 // checking for if there is a spot available on the board
