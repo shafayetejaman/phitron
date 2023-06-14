@@ -26,13 +26,14 @@ public:
         size = 0;
     }
 
-    void get_input(int n)
+    void get_input(string s)
     {
-        size += n;
-        while (n--)
+        size += s.size() / 2 + 1;
+        for (const auto &val : s)
         {
-            int val;
-            cin >> val;
+            if (val == ' ')
+                continue;
+
             node *newNode = new node(val);
             this->tail = newNode;
             this->tail = this->tail->next;
@@ -43,12 +44,13 @@ int main()
 {
     List list1, list2;
 
-    int n1;
-    cin >> n1;
+    string n1;
+    getline(cin, n1);
     list1.get_input(n1);
 
-    int n2;
-    cin >> n2;
+    cin.ignore();
+    string n2;
+    getline(cin, n2);
     list2.get_input(n2);
 
     print(list1.size);
