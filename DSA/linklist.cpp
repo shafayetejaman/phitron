@@ -178,6 +178,7 @@ public:
         node *curr = this->head->next;
         node *prev = this->head;
         node *next = curr->next;
+        this->head->next = nullptr;
 
         while (curr != nullptr)
         {
@@ -186,7 +187,6 @@ public:
             curr = next;
             next = curr->next;
         }
-        this->head = nullptr;
         this->head = prev;
     }
 };
