@@ -61,5 +61,7 @@ int main()
     {
         print("no");
     }
+    print(list1.size);
+    print(list2.size);
     return 0;
 }
