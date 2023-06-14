@@ -186,6 +186,7 @@ public:
             curr = next;
             next = curr->next;
         }
+        this->head = nullptr;
         this->head = prev;
     }
 };
