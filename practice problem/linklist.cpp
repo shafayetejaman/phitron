@@ -28,7 +28,7 @@ public:
 
     void get_input(string s)
     {
-        size += s.size() / 2 + 1;
+        size += (s.size() / 2 + 1);
         for (const auto &val : s)
         {
             if (val == ' ')
