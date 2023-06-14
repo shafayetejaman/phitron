@@ -163,14 +163,15 @@ public:
     {
         node *i = this->head;
 
+        node *j = i;
         while (i->next->next != nullptr)
         {
-            node *j = i;
             while (j->next->next != nullptr)
             {
                 if (j->data > j->next->data)
                 swap(j->data, j->next->data);
             }
+            j = this->head;
         }
     }
 };
