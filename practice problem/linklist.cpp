@@ -33,10 +33,10 @@ public:
 
         while (ss >> val)
         {
-            size++;
+            this->size++;
 
             node *newNode = new node(stoi(val));
-           
+
             if (this->head == nullptr)
             {
                 this->head = newNode;
