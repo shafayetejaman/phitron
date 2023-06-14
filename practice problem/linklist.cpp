@@ -26,7 +26,7 @@ public:
         size = 0;
     }
 
-    void get_input(string s)
+    void make_list(string s)
     {
         stringstream ss(s);
         string val;
@@ -56,12 +56,12 @@ int main()
 
     string n1;
     getline(cin, n1);
-    list1.get_input(n1);
+    list1.make_list(n1);
 
     cin.ignore();
     string n2;
     getline(cin, n2);
-    list2.get_input(n2);
+    list2.make_list(n2);
 
     if (list1.size == list2.size)
     {
