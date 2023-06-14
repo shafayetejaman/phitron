@@ -28,7 +28,7 @@ public:
     void append(int val)
     {
         node *newNode = new node(val);
-        if (this->size()== 0)
+        if (this->size() == 0)
         {
             this->head = newNode;
             return;
@@ -161,8 +161,6 @@ public:
     }
     void sort()
     {
-        for 
-
     }
 };
 
