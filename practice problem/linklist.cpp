@@ -23,7 +23,7 @@ public:
     {
         this->head = nullptr;
         this->tail = nullptr;
-        size = 1;
+        size = 0;
     }
 
     void get_input(string s)
@@ -40,6 +40,8 @@ public:
             this->tail = newNode;
             this->tail = this->tail->next;
         }
+        size++;
+        
     }
 };
 int main()
