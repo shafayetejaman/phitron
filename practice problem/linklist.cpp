@@ -49,6 +49,16 @@ public:
             }
         }
     }
+    void print()
+    {
+        node *ptr = this->head;
+        while (ptr != nullptr)
+        {
+            cout << ptr->data << " ";
+            ptr = ptr->next;
+        }
+        cout << endl;
+    }
 };
 int main()
 {
@@ -58,7 +68,6 @@ int main()
     getline(cin, n1);
     list1.make_list(n1);
 
-    cin.ignore();
     string n2;
     getline(cin, n2);
     list2.make_list(n2);
@@ -71,7 +80,8 @@ int main()
     {
         print("no");
     }
-    print(list1.size);
-    print(list2.size);
+ 
+    list1.print();
+    list2.print();
     return 0;
 }
