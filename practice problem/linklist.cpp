@@ -32,6 +32,8 @@ public:
             int val;
             cin >> val;
             node *newNode = new node(val);
+            tail->next = newNode;
+            tail = tail->next;
         }
     }
 };
