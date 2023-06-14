@@ -159,7 +159,7 @@ public:
             }
         }
     }
-    // using bubble sort
+    // using selection sort
     void sort()
     {
         for (auto i = this->head; i->next != nullptr; i = i->next)
