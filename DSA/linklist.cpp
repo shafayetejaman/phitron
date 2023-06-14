@@ -165,6 +165,10 @@ public:
         {
             for (auto j = this->head; j->next->next != nullptr; j = j->next)
             {
+                if (j->data > j->next->data)
+                {
+                    swap(j->data, j->next->data);
+                }
             }
         }
     }
