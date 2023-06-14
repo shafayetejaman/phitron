@@ -159,6 +159,7 @@ public:
             }
         }
     }
+    // using bubble sort
     void sort()
     {
         for (auto i = this->head; i->next != nullptr; i = i->next)
@@ -174,7 +175,14 @@ public:
     }
     void reverse()
     {
+        node *curr = this->head->next;
+        node *prev = this->head;
+        node *next = curr->next;
 
+        while (curr != nullptr)
+        {
+            
+        }
     }
 
 
