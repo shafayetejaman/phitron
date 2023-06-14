@@ -17,10 +17,12 @@ class List
 {
 public:
     node *head = nullptr;
+    node *tail = nullptr;
     List(int val)
     {
         node *newNode = new node(val);
         head = newNode;
+        tail = newNode;
     }
     List() {}
 };
