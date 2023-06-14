@@ -177,15 +177,15 @@ public:
     {
         node *curr = this->head->next;
         node *prev = this->head;
-        node *next = curr->next;
+        node *next = nullptr;
         this->head->next = nullptr;
 
         while (curr != nullptr)
         {
+            next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = next;
-            next = curr->next;
         }
         this->head = prev;
     }
