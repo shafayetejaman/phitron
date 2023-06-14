@@ -34,7 +34,7 @@ public:
             if (val == ' ')
                 continue;
 
-            node *newNode = new node(val);
+            node *newNode = new node(val-'0');
             this->tail = newNode;
             this->tail = this->tail->next;
         }
