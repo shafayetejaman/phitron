@@ -161,10 +161,14 @@ public:
     }
     void sort()
     {
-        node *ptr = this->head;
+        node *i = this->head;
+        node *j = this->head;
 
-        while (ptr->next->next != nullptr)
+        while (i->next->next != nullptr)
         {
+            while (j->next != nullptr)
+            {
+            }
         }
     }
 };
