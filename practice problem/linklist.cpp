@@ -36,8 +36,17 @@ public:
             size++;
 
             node *newNode = new node(stoi(val));
-            this->tail = newNode;
-            this->tail = this->tail->next;
+           
+            if (this->head == nullptr)
+            {
+                this->head = newNode;
+                this->tail = newNode;
+            }
+            else
+            {
+                this->tail->next = newNode;
+                this->tail = newNode;
+            }
         }
     }
 };
