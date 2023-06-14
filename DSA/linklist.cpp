@@ -161,9 +161,7 @@ public:
     }
     void sort()
     {
-        int i_count = 0;
-        int n = this->size();
-        for (auto i = this->head; i->next != nullptr; i = i->next, i_count++)
+        for (auto i = this->head; i->next != nullptr; i = i->next)
         {
             for (auto j = this->head; j->next != nullptr; j = j->next)
             {
@@ -176,7 +174,6 @@ public:
     }
     void reverse()
     {
-        
 
     }
 
