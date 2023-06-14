@@ -161,6 +161,11 @@ public:
     }
     void sort()
     {
+        node *ptr = this->head;
+
+        while (ptr->next != nullptr)
+        {
+        }
     }
 };
 
