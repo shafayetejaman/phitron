@@ -193,10 +193,10 @@ public:
 
 int main()
 {
-    List list(10);
+    List list(1);
     list.append(2);
-    list.append(6);
-    list.append(8);
+    list.append(3);
+    list.append(4);
     list.append(5);
     // int num;
     // cout << "node length : ";
