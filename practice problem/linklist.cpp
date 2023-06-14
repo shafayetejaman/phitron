@@ -59,6 +59,13 @@ public:
         }
         cout << endl;
     }
+    void print_mid()
+    {
+        if (this->size% 2 == 0)
+        {
+            
+        }
+    }
 };
 int main()
 {
@@ -80,7 +87,7 @@ int main()
     {
         print("no");
     }
- 
+
     list1.print();
     list2.print();
     return 0;
