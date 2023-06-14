@@ -25,6 +25,15 @@ public:
         tail = newNode;
     }
     List() {}
+    void get_input(int n)
+    {
+        while (n--)
+        {
+            int val;
+            cin >> val;
+            node *newNode = new node(val);
+        }
+    }
 };
 int main()
 {
