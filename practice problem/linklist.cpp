@@ -16,29 +16,43 @@ public:
 class List
 {
 public:
-    node *head = nullptr;
-    node *tail = nullptr;
-    List(int val)
+    node *head;
+    node *tail;
+    int size;
+    List()
     {
-        node *newNode = new node(val);
-        head = newNode;
-        tail = newNode;
+        this->head = nullptr;
+        this->tail = nullptr;
+        size = 0;
     }
-    List() {}
+
     void get_input(int n)
     {
+        size += n;
         while (n--)
         {
             int val;
             cin >> val;
             node *newNode = new node(val);
-            tail->next = newNode;
-            tail = tail->next;
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
         }
     }
 };
 int main()
 {
+    List list1, list2;
+
+    int n1;
+    cin >> n1;
+    list1.get_input(n1);
+
+    int n2;
+    cin >> n2;
+    list2.get_input(n2);
+
+    print(list1.size);
+    print(list2.size);
 
     return 0;
 }
