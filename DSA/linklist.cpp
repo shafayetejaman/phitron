@@ -162,12 +162,14 @@ public:
     void sort()
     {
         node *i = this->head;
-        node *j = this->head;
 
         while (i->next->next != nullptr)
         {
-            while (j->next != nullptr)
+            node *j = i;
+            while (j->next->next != nullptr)
             {
+                if (j->data > j->next->data)
+                swap(j->data, j->next->data);
             }
         }
     }
@@ -175,24 +177,25 @@ public:
 
 int main()
 {
-    List list(1);
+    List list(10);
     list.append(2);
-    list.append(3);
-    list.append(4);
+    list.append(6);
+    list.append(8);
     list.append(5);
-    int num;
-    cout << "node length : ";
-    cin >> num;
+    // int num;
+    // cout << "node length : ";
+    // cin >> num;
 
-    list.get_node(num);
+    // list.get_node(num);
 
-    list.print();
-    list.insert(9, 30);
-    list.print();
-    cout << list.size() << endl;
+    // list.print();
+    // list.insert(9, 30);
+    // list.print();
+    // cout << list.size() << endl;
 
-    list.delete_node(6);
-    cout << list.size() << endl;
+    // list.delete_node(6);
+    // cout << list.size() << endl;
+    list.sort();
     list.print();
 
     return 0;
