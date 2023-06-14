@@ -53,8 +53,13 @@ int main()
     getline(cin, n2);
     list2.get_input(n2);
 
-    print(list1.size);
-    print(list2.size);
-
+    if (list1.size == list2.size)
+    {
+        print("yes");
+    }
+    else
+    {
+        print("no");
+    }
     return 0;
 }
