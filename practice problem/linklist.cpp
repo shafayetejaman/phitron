@@ -34,7 +34,7 @@ public:
             int val;
             cin >> val;
             node *newNode = new node(val);
-            this->tail->next = newNode;
+            this->tail = newNode;
             this->tail = this->tail->next;
         }
     }
