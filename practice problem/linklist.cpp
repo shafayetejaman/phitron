@@ -28,20 +28,16 @@ public:
 
     void get_input(string s)
     {
-        for (const auto &val : s)
-        {
-            if (val == ' ')
-            {
-                size++;
-                continue;
-            }
+        stringstream ss(s);
 
-            node *newNode = new node(val-'0');
+        while (ss >> s)
+        {
+            size++;
+
+            node *newNode = new node(stoi(s));
             this->tail = newNode;
             this->tail = this->tail->next;
         }
-        size++;
-        
     }
 };
 int main()
