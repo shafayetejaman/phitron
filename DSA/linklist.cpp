@@ -163,7 +163,7 @@ public:
     {
         node *ptr = this->head;
 
-        while (ptr->next != nullptr)
+        while (ptr->next->next != nullptr)
         {
         }
     }
