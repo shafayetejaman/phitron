@@ -23,16 +23,18 @@ public:
     {
         this->head = nullptr;
         this->tail = nullptr;
-        size = 0;
+        size = 1;
     }
 
     void get_input(string s)
     {
-        size += (s.size() / 2 + 1);
         for (const auto &val : s)
         {
             if (val == ' ')
+            {
+                size++;
                 continue;
+            }
 
             node *newNode = new node(val-'0');
             this->tail = newNode;
