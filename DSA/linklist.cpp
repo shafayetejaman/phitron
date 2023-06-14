@@ -161,9 +161,9 @@ public:
     }
     void sort()
     {
-        for (auto i = this->head; i->next->next!= nullptr; i = i->next)
+        for (auto i = this->head; i->next != nullptr; i = i->next)
         {
-            for (auto j = this->head; j->next->next != nullptr; j = j->next)
+            for (auto j = this->head; j->next != nullptr; j = j->next)
             {
                 if (j->data > j->next->data)
                 {
