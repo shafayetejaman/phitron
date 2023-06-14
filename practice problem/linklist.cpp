@@ -29,12 +29,13 @@ public:
     void get_input(string s)
     {
         stringstream ss(s);
+        string val;
 
-        while (ss >> s)
+        while (ss >> val)
         {
             size++;
 
-            node *newNode = new node(stoi(s));
+            node *newNode = new node(stoi(val));
             this->tail = newNode;
             this->tail = this->tail->next;
         }
