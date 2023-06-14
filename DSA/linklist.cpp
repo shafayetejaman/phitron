@@ -162,7 +162,6 @@ public:
     void sort()
     {
         node *i = this->head;
-
         node *j = i;
         while (i->next->next != nullptr)
         {
