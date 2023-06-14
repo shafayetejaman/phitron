@@ -183,7 +183,9 @@ public:
         while (curr != nullptr)
         {
             next = curr->next;
+            // linking to the left node
             curr->next = prev;
+            // updating
             prev = curr;
             curr = next;
         }
