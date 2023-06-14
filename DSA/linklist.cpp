@@ -164,11 +164,11 @@ public:
     {
         for (auto i = this->head; i->next != nullptr; i = i->next)
         {
-            for (auto j = this->head; j->next != nullptr; j = j->next)
+            for (auto j = i; j != nullptr; j = j->next)
             {
-                if (j->data > j->next->data)
+                if (i->data > j->data)
                 {
-                    swap(j->data, j->next->data);
+                    swap(i->data, j->data);
                 }
             }
         }
@@ -181,11 +181,13 @@ public:
 
         while (curr != nullptr)
         {
-            
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+            next = curr->next;
         }
+        this->head = prev;
     }
-
-
 };
 
 int main()
@@ -208,7 +210,7 @@ int main()
 
     // list.delete_node(6);
     // cout << list.size() << endl;
-    list.sort();
+    list.reverse();
     list.print();
 
     return 0;
