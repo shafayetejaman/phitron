@@ -161,18 +161,15 @@ public:
     }
     void sort()
     {
-        node *i = this->head;
-        node *j = i;
-        while (i->next->next != nullptr)
+        for (auto i = this->head; i->next->next!= nullptr; i = i->next)
         {
-            while (j->next->next != nullptr)
+            for (auto j = this->head; j->next->next != nullptr; j = j->next)
             {
-                if (j->data > j->next->data)
-                swap(j->data, j->next->data);
             }
-            j = this->head;
         }
     }
+
+
 };
 
 int main()
