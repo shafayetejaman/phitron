@@ -66,10 +66,11 @@ public:
             node *ptr = this->head;
             node *prev = nullptr;
             int count = 0;
-            while (count < (this->size /2))
+            while (count < (this->size / 2))
             {
                 prev = ptr;
                 ptr = ptr->next;
+                count++;
             }
             cout << prev->data << " " << ptr->data << endl;
         }
@@ -80,9 +81,10 @@ public:
             int count = 0;
             while (count < (this->size / 2))
             {
+                count++;
                 ptr = ptr->next;
             }
-            cout  << ptr->data << endl;
+            cout << ptr->data << endl;
         }
     }
 };
