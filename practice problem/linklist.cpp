@@ -64,11 +64,25 @@ public:
         if (this->size % 2 == 0)
         {
             node *ptr = this->head;
-            node *ptr = nullptr;
-            
+            node *prev = nullptr;
+            int count = 0;
+            while (count < (this->size /2))
+            {
+                prev = ptr;
+                ptr = ptr->next;
+            }
+            cout << prev->data << " " << ptr->data << endl;
         }
         else
         {
+            node *ptr = this->head;
+
+            int count = 0;
+            while (count < (this->size / 2))
+            {
+                ptr = ptr->next;
+            }
+            cout  << ptr->data << endl;
         }
     }
 };
@@ -95,5 +109,7 @@ int main()
 
     list1.print();
     list2.print();
+    list1.print_mid();
+    list2.print_mid();
     return 0;
 }
