@@ -61,9 +61,14 @@ public:
     }
     void print_mid()
     {
-        if (this->size% 2 == 0)
+        if (this->size % 2 == 0)
         {
+            node *ptr = this->head;
+            node *ptr = nullptr;
             
+        }
+        else
+        {
         }
     }
 };
