@@ -88,9 +88,10 @@ int main()
     list.append(3);
     list.append(4);
     list.append(5);
+    list.print();
     list.insert(10, 3);
     list.print();
-    list.print_reverse();
+    // list.print_reverse();
 
     return 0;
 }
