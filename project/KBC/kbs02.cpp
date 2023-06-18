@@ -5,7 +5,6 @@ using namespace std;
 #define QUESTION 0
 #define OPTION 1
 #define ANSWER 2
-#define ANS_C 9
 
 vector<string> get_question()
 {
@@ -98,7 +97,8 @@ int main(void)
                 string answer;
                 cout << "Type your answer : ";
                 cin >> answer;
-                if (questions[i][ANSWER][ANS_C] == toupper(answer[0]))
+                string a = "Answer = ";
+                if (questions[i][ANSWER][a.size()] == toupper(answer[0]))
                     score++;
                 else
                 {
