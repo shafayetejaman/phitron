@@ -65,7 +65,7 @@ public:
         {
             node *curr = this->head;
             node *prev = nullptr;
-            int count = 1;
+            int count = 0;
             while (curr != nullptr && count < index)
             {
                 prev = curr;
