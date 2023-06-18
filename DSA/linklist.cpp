@@ -18,6 +18,7 @@ class List
 {
 public:
     node *head = nullptr;
+    node *tail = nullptr;
     List(int val)
     {
         node *newNode = new node(val);
@@ -28,17 +29,16 @@ public:
     void append(int val)
     {
         node *newNode = new node(val);
-        if (this->size() == 0)
+        if (this->head == nullptr)
         {
             this->head = newNode;
-            return;
+            this->tail = newNode;
         }
-        node *ptr = this->head;
-        while (ptr->next != nullptr)
+        else
         {
-            ptr = ptr->next;
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
         }
-        ptr->next = newNode;
     }
     void print()
     {

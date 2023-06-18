@@ -25,11 +25,17 @@ public:
         this->head = nullptr;
         this->tail = nullptr;
     }
+    void append(int val)
+    {
+        node *newNode = new node(val);
+        newNode->prev = this->tail;
+        this->tail->next = newNode;
+        this->tail = this->tail->next;
+    }
 };
 
 int main()
 {
-
 
     return 0;
 }
