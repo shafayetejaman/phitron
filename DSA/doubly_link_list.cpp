@@ -42,6 +42,7 @@ public:
     }
     void insert(int val, int pos)
     {
+        node *newNode = new node(val);
         node *curr = this->head->next;
         node *prev = this->head;
         int count = 0;
@@ -51,6 +52,7 @@ public:
             count++;
             curr = curr->next;
         }
+
     }
 
     void print()
