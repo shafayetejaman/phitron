@@ -12,10 +12,9 @@ int main()
 
     while (index != -1)
     {
-        
-
+        int index = s.find(x, 0);
+        s.replace(index, x.size(), "$");
     }
-
 
     return 0;
 }
