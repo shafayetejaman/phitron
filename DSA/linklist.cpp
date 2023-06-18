@@ -163,7 +163,7 @@ public:
     {
         for (auto i = this->head; i->next != nullptr; i = i->next)
         {
-            for (auto j = i; j != nullptr; j = j->next)
+            for (auto j = i->next; j != nullptr; j = j->next)
             {
                 if (i->data > j->data)
                 {
