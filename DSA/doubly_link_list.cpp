@@ -28,9 +28,17 @@ public:
     void append(int val)
     {
         node *newNode = new node(val);
-        newNode->prev = this->tail;
-        this->tail->next = newNode;
-        this->tail = this->tail->next;
+        if (this->head == nullptr)
+        {
+            this->head = newNode;
+            this->tail = newNode;
+        }
+        else
+        {
+            newNode->prev = this->tail;
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
+        }
     }
     void print()
     {
