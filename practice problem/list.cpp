@@ -61,9 +61,8 @@ int main()
     while (val != -1)
     {
         cin >> val;
-        lissttttttt
+        list.append(val);
     }
-
 
     list.print();
 
