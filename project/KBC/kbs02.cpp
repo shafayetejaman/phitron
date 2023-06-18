@@ -16,13 +16,13 @@ vector<string> get_question()
     int opt = 1;
     while (opt != 5)
     {
-        cout << "option" << opt <<":\n ";
+        cout << "option" << opt <<":\n";
         string s;
         getline(cin, s);
         option += (s + '\n');
         opt++;
     }
-    cout << "answer :\n ";
+    cout << "answer :\n";
     getline(cin, answer);
     return {question, option, answer};
 }
