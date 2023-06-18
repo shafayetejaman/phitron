@@ -63,14 +63,14 @@ public:
         }
         else
         {
-            node *curr = this->head->next;
-            node *prev = this->head;
+            node *curr = this->head;
+            node *prev = nullptr;
             int count = 1;
             while (curr != nullptr && count < index)
             {
                 prev = curr;
-                count++;
                 curr = curr->next;
+                count++;
             }
             newNode->next = curr;
             curr->prev = newNode;
