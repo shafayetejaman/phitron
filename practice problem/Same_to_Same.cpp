@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+
 class node
 {
 public:
@@ -77,7 +78,7 @@ int main()
     List list1;
     List list2;
     int t = 2;
-    
+
     while (t--)
     {
         while (true)
