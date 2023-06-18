@@ -50,6 +50,16 @@ public:
         }
         cout << endl;
     }
+    void print_reverse()
+    {
+        node *ptr = this->tail;
+        while (ptr != nullptr)
+        {
+            cout << ptr->data << " ";
+            ptr = ptr->prev;
+        }
+        cout << endl;
+    }
 };
 
 int main()
@@ -61,6 +71,7 @@ int main()
     list.append(4);
     list.append(5);
     list.print();
+    list.print_reverse();
 
     return 0;
 }
