@@ -56,7 +56,7 @@ public:
         {
             return this->append(val);
         }
-        else if (index >= this->size)
+        else if (index >= this->size || index < 0)
         {
             cout << "Invalid Index!\n";
             return;
@@ -109,7 +109,7 @@ public:
             this->head->prev = nullptr;
             delete temp;
         }
-        else if (index >= this->size)
+        else if (index >= this->size || index < 0)
         {
             cout << "Invalid Index!\n";
             return;
