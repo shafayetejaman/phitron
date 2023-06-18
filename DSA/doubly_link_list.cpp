@@ -52,7 +52,7 @@ public:
             this->head->prev = newNode;
             this->head = this->head->prev;
         }
-        else if (index = this->size -1)
+        else if (index == this->size -1)
         {
             return this->append(val);
         }
