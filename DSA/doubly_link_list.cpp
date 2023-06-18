@@ -118,6 +118,7 @@ public:
         {
             node *temp = this->tail;
             this->tail = this->tail->prev;
+            this->tail->next = nullptr;
             
         }
     }
