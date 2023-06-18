@@ -32,10 +32,27 @@ public:
         this->tail->next = newNode;
         this->tail = this->tail->next;
     }
+    void print()
+    {
+        node *ptr = this->head;
+        while (ptr != nullptr)
+        {
+            cout << ptr->data << " ";
+            ptr = ptr->next;
+        }
+        cout << endl;
+    }
 };
 
 int main()
 {
+    DLL list;
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.append(4);
+    list.append(5);
+    list.print();
 
     return 0;
 }
