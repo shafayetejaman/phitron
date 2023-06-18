@@ -16,7 +16,7 @@ vector<string> get_question()
     int opt = 1;
     while (opt != 5)
     {
-        cout << "option" << opt <<":\n";
+        cout << "option" << opt << ":\n";
         string s;
         getline(cin, s);
         option += (s + '\n');
@@ -70,7 +70,6 @@ int main(void)
          {"A : Sony\nB : Nintendo\nC : Microsoft\nD : Apple\n"},
          {"Answer = B : Nintendo\n"}}};
 
-
     while (true)
     {
         int quarry;
@@ -85,7 +84,7 @@ int main(void)
             cout << "Example : ";
             cout << questions[0][QUESTION] << endl;
             cout << questions[0][OPTION] << endl;
-            cout <<questions[0][ANSWER]<<endl;
+            cout << questions[0][ANSWER] << endl;
             questions.push_back(get_question());
         }
         else
@@ -124,8 +123,6 @@ int main(void)
             cout << "You have earned " << money << '$' << endl;
         }
     }
-
-
 
     return 0;
 }
