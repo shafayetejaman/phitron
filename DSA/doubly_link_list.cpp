@@ -115,7 +115,7 @@ public:
             this->head->prev = nullptr;
             delete temp;
         }
-        else if (index >= this->size || index < 0 )
+        else if (index >= this->size || index < 0)
         {
             cout << "Invalid Index!\n";
             return;
@@ -156,23 +156,36 @@ public:
         }
         cout << "All the nodes have been freed\n";
     }
-    void add(DLL list)
+    void add(DLL &list)
     {
-
+        this->tail->next = list.head;
+        list.head = this->tail;
+        this->size += list.size;
     }
 };
 
 int main()
 {
-    DLL list;
+    DLL list, temp;
     list.append(1);
     list.append(2);
     list.append(3);
     list.append(4);
     list.append(5);
     list.print();
-    list.insert(10, 0);
+    // list.insert(10, 0);
+
+    temp.append(10);
+    temp.append(20);
+    temp.append(30);
+    temp.append(40);
+    temp.append(50);
     list.print();
+    temp.print();
+
+    list.add(temp);
+    list.print();
+    print(list.size);
 
     // list.print_reverse();
 
