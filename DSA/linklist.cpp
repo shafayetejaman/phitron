@@ -68,7 +68,6 @@ public:
         else if (index == this->size() - 1)
         {
             return this->append(val);
-            return;
         }
         node *ptr = this->head;
         node *prev = nullptr;
