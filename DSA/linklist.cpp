@@ -59,10 +59,14 @@ public:
             this->head = newNode;
             return;
         }
-        else if (index >= this->size())
+        else if (index > this->size())
         {
-            // return this->append(val);
             cout << "Invalid Index!\n";
+            return;
+        }
+        else if (index == this->size())
+        {
+            return this->append(val);
             return;
         }
         node *ptr = this->head;
