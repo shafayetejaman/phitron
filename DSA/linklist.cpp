@@ -147,8 +147,9 @@ public:
         int input;
         if (this->size() == 0)
         {
-            this->head = new node(input);
-            node *ptr = this->head;
+            node *ptr = new node(input);
+            this->head = ptr;
+            this->tail = ptr;
 
             while (num--)
             {
