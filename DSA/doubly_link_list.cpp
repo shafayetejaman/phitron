@@ -52,7 +52,7 @@ public:
             this->head->prev = newNode;
             this->head = this->head->prev;
         }
-        else if (index == this->size -1)
+        else if (index == this->size - 1)
         {
             return this->append(val);
         }
@@ -132,7 +132,7 @@ public:
                 count++;
                 curr = curr->next;
             }
-            prev->next =curr->next;
+            prev->next = curr->next;
             curr->next->prev = prev;
             delete curr;
         }
@@ -149,7 +149,9 @@ int main()
     list.append(4);
     list.append(5);
     list.print();
-    list.insert(10, 3);
+    list.insert(10, 0);
+    list.print();
+    list.delete_node(list.size);
     list.print();
     // list.print_reverse();
 
