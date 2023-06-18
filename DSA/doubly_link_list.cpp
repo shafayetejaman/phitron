@@ -15,6 +15,12 @@ public:
     }
 };
 
+class doublyLinkList
+{
+public:
+    
+};
+
 int main()
 {
 
