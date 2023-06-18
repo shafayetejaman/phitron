@@ -170,6 +170,7 @@ public:
         node *prev = this->head;
 
         this->head->next = nullptr;
+        this->tail = this->head;
 
         while (curr != nullptr)
         {
