@@ -46,7 +46,7 @@ public:
         node *curr = this->head->next;
         node *prev = this->head;
         int count = 0;
-        while (curr != nullptr && count < pos)
+        while (curr != nullptr && count <= pos)
         {
             prev = curr;
             count++;
