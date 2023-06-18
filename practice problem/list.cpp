@@ -56,11 +56,13 @@ int main()
 {
     List list;
 
-    int val = 0;
+    int val;
 
-    while (val != -1)
+    while (true)
     {
         cin >> val;
+        if (val == -1)
+            break;
         list.append(val);
     }
 
