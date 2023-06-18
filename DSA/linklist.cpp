@@ -144,10 +144,13 @@ public:
     }
     void get_node(int num)
     {
-        int input;
+        while (num--)
+        {
+            int input;
 
-        cin >> input;
-        this->append(input);
+            cin >> input;
+            this->append(input);
+        }
     }
 
     // using selection sort
@@ -204,11 +207,13 @@ int main()
 
     // list.delete_node(6);
     // cout << list.size() << endl;
-    // list.reverse();
     list.print();
-    list.delete_node(4);
+    list.reverse();
+    // list.delete_node(4);
     list.print();
     list.append(5);
+    list.print();
+    list.delete_node(list.size() - 1);
     list.print();
 
     return 0;
