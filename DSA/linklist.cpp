@@ -168,11 +168,8 @@ public:
     }
     void reverse()
     {
-        node *curr = this->head->next;
-        node *prev = this->head;
-
-        this->head->next = nullptr;
-        this->tail = this->head;
+        node *curr = this->head;
+        node *prev = nullptr;
 
         while (curr != nullptr)
         {
@@ -183,6 +180,7 @@ public:
             prev = curr;
             curr = next;
         }
+        this->tail = this->head;
         this->head = prev;
     }
 };
