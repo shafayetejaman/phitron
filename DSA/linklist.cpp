@@ -94,6 +94,11 @@ public:
     }
     void delete_node(int index)
     {
+        if (this->head == nullptr)
+        {
+            cout << "List is empty!\n";
+            return;
+        }
         node *ptr = this->head;
         node *prev = nullptr;
         if (index == 0)

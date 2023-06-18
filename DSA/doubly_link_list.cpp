@@ -102,6 +102,11 @@ public:
     }
     void delete_node(int index)
     {
+        if (this->head == nullptr)
+        {
+            cout << "List is empty!\n";
+            return;
+        }
         if (index == 0)
         {
             node *temp = this->head;
@@ -109,7 +114,7 @@ public:
             this->head->prev = nullptr;
             delete temp;
         }
-        else if (index >= this->size || index < 0)
+        else if (index >= this->size || index < 0 )
         {
             cout << "Invalid Index!\n";
             return;
