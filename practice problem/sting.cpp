@@ -10,7 +10,12 @@ int main()
     int index = s.find(x, 0);
     s.replace(index, x.size(), "$");
 
-    print(s);
+    while (index != -1)
+    {
+        
+
+    }
+
 
     return 0;
 }
