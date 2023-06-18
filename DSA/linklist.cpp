@@ -145,29 +145,11 @@ public:
     void get_node(int num)
     {
         int input;
-        if (this->size() == 0)
-        {
-            node *ptr = new node(input);
-            this->head = ptr;
-            this->tail = ptr;
 
-            while (num--)
-            {
-                cin >> input;
-                node *newNode = new node(input);
-                ptr->next = newNode;
-                ptr = newNode;
-            }
-        }
-        else
-        {
-            while (num--)
-            {
-                cin >> input;
-                this->append(input);
-            }
-        }
+        cin >> input;
+        this->append(input);
     }
+
     // using selection sort
     void sort()
     {
