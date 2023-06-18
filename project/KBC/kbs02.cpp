@@ -8,7 +8,7 @@ using namespace std;
 
 vector<string> get_question()
 {
-    string question, option, answer;
+    string question, option = "", answer;
     cout << "question :\n";
     cin.ignore();
     getline(cin, question);
@@ -29,45 +29,45 @@ vector<string> get_question()
 int main(void)
 {
     vector<vector<string>> questions = {
-        {{"What is the full form of CPU?\n"},
-         {"A : Central Processing Unit\nB : Central Processing System\nC : Central Processor System\nD : Central Processor Unit\n"},
-         {"Answer = A : Central Processing Unit\n"}},
+        {"What is the full form of CPU?",
+         "A : Central Processing Unit\nB : Central Processing System\nC : Central Processor System\nD : Central Processor Unit\n",
+         "Answer = A : Central Processing Unit"},
 
-        {{"Who is known as the father of computer science?\n"},
-         {"A : Charles Babbage\nB : Alan Turing\nC : Ada Lovelace\nD : John Von Neumann\n"},
-         {"Answer = B : Alan Turing\n"}},
+        {"Who is known as the father of computer science?",
+         "A : Charles Babbage\nB : Alan Turing\nC : Ada Lovelace\nD : John Von Neumann\n",
+         "Answer = B : Alan Turing"},
 
-        {{"What is the name of the first electronic computer?\n"},
-         {"A : UNIVAC\nB : ENIAC\nC : EDSAC\nD : Babbage Analytical Engine\n"},
-         {"Answer = B : ENIAC\n"}},
+        {"What is the name of the first electronic computer?",
+         "A : UNIVAC\nB : ENIAC\nC : EDSAC\nD : Babbage Analytical Engine\n",
+         "Answer = B : ENIAC"},
 
-        {{"Who developed the programming language C++?\n"},
-         {"A : James Gosling\nB : Guido van Rossum\nC : Bjarne Stroustrup\nD : Rasmus Lerdorf\n"},
-         {"Answer = C : Bjarne Stroustrup\n"}},
+        {"Who developed the programming language C++?",
+         "A : James Gosling\nB : Guido van Rossum\nC : Bjarne Stroustrup\nD : Rasmus Lerdorf\n",
+         "Answer = C : Bjarne Stroustrup"},
 
-        {{"In which year was the first computer virus discovered?\n"},
-         {"A : 1983\nB : 1986\nC : 1989\nD : 1992\n"},
-         {"Answer = B : 1986\n"}},
+        {"In which year was the first computer virus discovered?",
+         "A : 1983\nB : 1986\nC : 1989\nD : 1992\n",
+         "Answer = B : 1986"},
 
-        {{"What is the most widely used operating system in the world?\n"},
-         {"A : Microsoft Windows\nB : macOS\nC : Linux\nD : UNIX\n"},
-         {"Answer = A : Microsoft Windows\n"}},
+        {"What is the most widely used operating system in the world?",
+         "A : Microsoft Windows\nB : macOS\nC : Linux\nD : UNIX\n",
+         "Answer = A : Microsoft Windows"},
 
-        {{"What is the term used for the collection of instructions used to control the behavior of a computer?\n"},
-         {"A : Operating System\nB : Computer Program\nC : Software\nD : Application\n"},
-         {"Answer = B : Computer Program or Software\n"}},
+        {"What is the term used for the collection of instructions used to control the behavior of a computer?",
+         "A : Operating System\nB : Computer Program\nC : Software\nD : Application\n",
+         "Answer = B : Computer Program or Software"},
 
-        {{"Which company developed the mobile operating system Android?\n"},
-         {"A : Microsoft\nB : Apple\nC : Google\nD : Amazon\n"},
-         {"Answer = C : Google\n"}},
+        {"Which company developed the mobile operating system Android?",
+         "A : Microsoft\nB : Apple\nC : Google\nD : Amazon\n",
+         "Answer = C : Google"},
 
-        {{"What is the name of the world's first website?\n"},
-         {"A : google.com\nB : yahoo.com\nC : info.cern.ch\nD : bing.com\n"},
-         {"Answer = C : info.cern.ch\n"}},
+        {"What is the name of the world's first website?",
+         "A : google.com\nB : yahoo.com\nC : info.cern.ch\nD : bing.com\n",
+         "Answer = C : info.cern.ch"},
 
-        {{"Which company developed the popular video game \"Super Mario Bros.\"?\n"},
-         {"A : Sony\nB : Nintendo\nC : Microsoft\nD : Apple\n"},
-         {"Answer = B : Nintendo\n"}}};
+        {"Which company developed the popular video game \"Super Mario Bros.\"?",
+         "A : Sony\nB : Nintendo\nC : Microsoft\nD : Apple\n",
+         "Answer = B : Nintendo"}};
 
     while (true)
     {
