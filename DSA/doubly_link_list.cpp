@@ -52,7 +52,10 @@ public:
             count++;
             curr = curr->next;
         }
-
+        newNode->next = curr;
+        curr->prev = newNode;
+        prev->next = newNode;
+        newNode->prev = prev;
     }
 
     void print()
@@ -85,6 +88,7 @@ int main()
     list.append(3);
     list.append(4);
     list.append(5);
+    list.insert(10, 3);
     list.print();
     list.print_reverse();
 
