@@ -170,10 +170,11 @@ public:
     {
         node *curr = this->head;
         node *prev = nullptr;
+        node *next = nullptr;
 
         while (curr != nullptr)
         {
-            node *next = curr->next;
+            next = curr->next;
             // linking to the left node
             curr->next = prev;
             // updating
