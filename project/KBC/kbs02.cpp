@@ -8,6 +8,12 @@ using namespace std;
 #define ANSWER 2
 #define ANS_C 9
 
+class 
+{
+public:
+    
+};
+
 int main(void)
 {
     vector<string> question[] = {
