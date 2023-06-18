@@ -10,17 +10,16 @@ int main()
     int index = s.find(x, 0);
     s.replace(index, x.size(), "$");
 
-    while (true)
+    while (index != -1)
     {
-        index = s.find(x, index-1);
-        if (index != -1)
+        index = s.find(x, index);
+        if (index == -1)
         {
             break;
         }
-        s.replace(index , x.size(), "$");
+        s.replace(index, x.size(), "$");
     }
     cout << s << endl;
-
 
     return 0;
 }
