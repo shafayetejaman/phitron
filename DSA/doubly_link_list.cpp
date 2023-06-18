@@ -144,6 +144,18 @@ public:
         }
         this->size--;
     }
+    ~DLL()
+    {
+        node *ptr = this->head;
+        node *prev = nullptr;
+        while (ptr != nullptr)
+        {
+            prev = ptr;
+            ptr = ptr->next;
+            delete prev;
+        }
+        cout << "All the nodes have been freed\n";
+    }
 };
 
 int main()
