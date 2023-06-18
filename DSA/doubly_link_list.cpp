@@ -20,10 +20,12 @@ class DLL
 public:
     node *head;
     node *tail;
+    int size;
     DLL()
     {
         this->head = nullptr;
         this->tail = nullptr;
+        size = 0;
     }
     void append(int val)
     {
