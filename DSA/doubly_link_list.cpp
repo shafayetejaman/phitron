@@ -40,6 +40,11 @@ public:
             this->tail = this->tail->next;
         }
     }
+    void insert(int val, int pos)
+    {
+        
+    }
+
     void print()
     {
         node *ptr = this->head;
