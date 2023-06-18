@@ -8,15 +8,14 @@ using namespace std;
 #define ANSWER 2
 #define ANS_C 9
 
-class 
+vector<string> get_question()
 {
-public:
     
-};
+}
 
 int main(void)
 {
-    vector<string> question[] = {
+    vector<vector<string>> question = {
         {{"What is the full form of CPU?\n"},
          {"A : Central Processing Unit\nB : Central Processing System\nC : Central Processor System\nD : Central Processor Unit\n"},
          {"Answer = A : Central Processing Unit\n"}},
