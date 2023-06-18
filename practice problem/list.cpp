@@ -27,6 +27,8 @@ public:
     }
     void append(int val)
     {
+        node *newNode = new node(val);
+
         
     }
 };
