@@ -15,10 +15,16 @@ public:
     }
 };
 
-class doublyLinkList
+class DLL
 {
 public:
-    
+    node *head;
+    node *tail;
+    DLL()
+    {
+        this->head = nullptr;
+        this->tail = nullptr;
+    }
 };
 
 int main()
