@@ -105,16 +105,19 @@ public:
         }
         else if (index >= this->size() || index < 0)
         {
-            // deleting the last node
-            // while (ptr->next != nullptr)
-            // {
-            //     prev = ptr;
-            //     ptr = ptr->next;
-            // }
-            // prev->next = nullptr;
-            // delete ptr;
-
             cout << "Invalid Index!\n";
+            return;
+        }
+        else if (index == this->size() - 1)
+        {
+            while (ptr->next != nullptr)
+            {
+                prev = ptr;
+                ptr = ptr->next;
+            }
+            prev->next = nullptr;
+            this->tail = prev;
+            delete ptr;
             return;
         }
 
@@ -204,7 +207,6 @@ int main()
     list.append(2);
     list.append(3);
     list.append(4);
-    list.append(5);
     // int num;
     // cout << "node length : ";
     // cin >> num;
@@ -212,13 +214,17 @@ int main()
     // list.get_node(num);
 
     // list.print();
-    list.insert(5, 30);
+    list.insert(3, 30);
     // list.print();
     // cout << list.size() << endl;
 
     // list.delete_node(6);
     // cout << list.size() << endl;
     // list.reverse();
+    list.print();
+    list.delete_node(4);
+    list.print();
+    list.append(5);
     list.print();
 
     return 0;
