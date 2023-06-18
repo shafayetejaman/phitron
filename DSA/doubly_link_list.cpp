@@ -80,6 +80,12 @@ public:
         }
         cout << endl;
     }
+    void reverse()
+    {
+        node *curr = this->head;
+        node *next = nullptr;
+        
+    }
 };
 
 int main()
