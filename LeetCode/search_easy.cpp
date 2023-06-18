@@ -67,29 +67,3 @@ public:
     }
 };
 
-class Solution
-{
-public:
-    int findKthPositive(vector<int> &arr, int k)
-    {
-
-        arr m;
-        int c = 1;
-        for (int i = 1; i < arr.size(); i++)
-        {
-            if (i != arr[i - 1])
-            {
-                m.
-                c = i;
-            }
-        }
-        if (m.size() != 0)
-        {
-            return c;
-        }
-        else
-        {
-            return arr.size() + k;
-        }
-    }
-};
