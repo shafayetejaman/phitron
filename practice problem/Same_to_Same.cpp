@@ -89,7 +89,6 @@ int main()
             }
             if (t == 1)
             {
-
                 list1.get_data(input);
             }
             else
