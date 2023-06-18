@@ -156,6 +156,10 @@ public:
         }
         cout << "All the nodes have been freed\n";
     }
+    void add(DLL list)
+    {
+
+    }
 };
 
 int main()
