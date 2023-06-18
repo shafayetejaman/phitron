@@ -86,7 +86,7 @@ public:
         cout << "head -> ";
         while (ptr != nullptr)
         {
-            cout << ptr->data << " -> ";
+            cout << ptr->data << " <-> ";
             ptr = ptr->next;
         }
         cout << "null" << endl;
