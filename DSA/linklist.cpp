@@ -46,7 +46,7 @@ public:
         node *ptr = this->head;
         while (ptr != nullptr)
         {
-            cout << ptr->data << " ";
+            cout << ptr->data << " -> ";
             ptr = ptr->next;
         }
         cout << endl;
