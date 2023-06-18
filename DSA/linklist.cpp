@@ -212,7 +212,7 @@ int main()
     // list.get_node(num);
 
     // list.print();
-    list.insert(2, 30);
+    list.insert(5, 30);
     // list.print();
     // cout << list.size() << endl;
 
