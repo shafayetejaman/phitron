@@ -80,22 +80,7 @@ public:
         }
         cout << endl;
     }
-    void reverse()
-    {
-        node *curr = this->head;
-        node *prev = nullptr;
-        node *next = nullptr;
-
-        while (curr != nullptr)
-        {
-            next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-        }
-        this->head->next = nullptr;
-        
-    }
+    
 };
 
 int main()
