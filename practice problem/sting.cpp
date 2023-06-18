@@ -12,7 +12,11 @@ int main()
 
     while (index != -1)
     {
-        index = s.find(x, 0);
+        index = s.find(x, index);
+        if (index != -1)
+        {
+            break;
+        }
         s.replace(index, x.size(), "$");
     }
     cout << s << endl;
