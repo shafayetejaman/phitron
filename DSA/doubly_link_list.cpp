@@ -43,20 +43,20 @@ public:
         }
         this->size++;
     }
-    void insert(int val, int pos)
+    void insert(int val, int index)
     {
         node *newNode = new node(val);
-        if (pos == 0)
+        if (index == 0)
         {
             newNode->next = this->head;
             this->head->prev = newNode;
             this->head = this->head->prev;
         }
-        else if (pos = this->size -1)
+        else if (index = this->size -1)
         {
             return this->append(val);
         }
-        else if (pos >= this->size)
+        else if (index >= this->size)
         {
             cout << "Invalid Index!\n";
             return;
@@ -66,7 +66,7 @@ public:
             node *curr = this->head->next;
             node *prev = this->head;
             int count = 1;
-            while (curr != nullptr && count < pos)
+            while (curr != nullptr && count < index)
             {
                 prev = curr;
                 count++;
@@ -109,10 +109,16 @@ public:
             this->head->prev = nullptr;
             delete temp;
         }
-
-        if (index == this->size -1)
+        else if (index >= this->size)
         {
-
+            cout << "Invalid Index!\n";
+            return;
+        }
+        else if (index == this->size - 1)
+        {
+            node *temp = this->tail;
+            this->tail = this->tail->prev;
+            
         }
     }
 };
