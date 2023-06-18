@@ -20,7 +20,7 @@ public:
     node *head;
     node *tail;
 
-    List(node *head)
+    List()
     {
         this->head = nullptr;
         this->tail = nullptr;
@@ -29,13 +29,43 @@ public:
     {
         node *newNode = new node(val);
 
-        
+        if (this->head == nullptr)
+        {
+            this->head = newNode;
+            this->tail = newNode;
+        }
+        else
+        {
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
+        }
+    }
+    void print()
+    {
+        node *temp = this->head;
+        while (temp != nullptr)
+        {
+            cout << temp->data << " -> ";
+            temp = temp->next;
+        }
+        cout << "null";
     }
 };
 
 int main()
 {
+    List list;
 
+    int val = 0;
+
+    while (val != -1)
+    {
+        cin >> val;
+        lissttttttt
+    }
+
+
+    list.print();
 
     return 0;
 }
