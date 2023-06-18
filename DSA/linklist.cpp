@@ -44,12 +44,13 @@ public:
     void print()
     {
         node *ptr = this->head;
+        cout << "head -> ";
         while (ptr != nullptr)
         {
             cout << ptr->data << " -> ";
             ptr = ptr->next;
         }
-        cout << endl;
+        cout <<"null"<< endl;
     }
     void insert(int index, int val)
     {

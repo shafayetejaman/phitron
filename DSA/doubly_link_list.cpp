@@ -83,12 +83,13 @@ public:
     void print()
     {
         node *ptr = this->head;
+        cout << "head -> ";
         while (ptr != nullptr)
         {
-            cout << ptr->data << " ";
+            cout << ptr->data << " -> ";
             ptr = ptr->next;
         }
-        cout << endl;
+        cout << "null" << endl;
     }
     void print_reverse()
     {
@@ -156,8 +157,7 @@ int main()
     list.print();
     list.insert(10, 0);
     list.print();
-    list.delete_node(list.size);
-    list.print();
+
     // list.print_reverse();
 
     return 0;
