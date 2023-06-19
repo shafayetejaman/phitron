@@ -53,7 +53,7 @@ public:
         cout << "null" << endl;
         cout << "tail -> " << tail->data << endl;
     }
-    node* insert(int index, int val, node *curr)
+    node* insert_recursive(int index, int val, node *curr)
     {
         if (index == 0)
         {
@@ -61,7 +61,8 @@ public:
             newNode->next = curr;
             return newNode;
         }
-
+        curr->next = insert_recursive(index--, val, curr->next);
+        return curr;
     }
     int size()
     {
