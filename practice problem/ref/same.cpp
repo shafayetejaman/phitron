@@ -63,6 +63,8 @@ int main()
     node *list1 = make_list();
     node *list2 = make_list();
     print(list1);
+    print(list2);
+
 
     return 0;
 }
