@@ -57,6 +57,21 @@ void print(node *&head)
     cout << endl;
 }
 
+void same(node *list1, node *list2)
+{
+    while (list1 != nullptr && list2 != nullptr)
+    {
+        if (list1->data != list2->data)
+        {
+            cout << "NO";
+            return;
+        }
+        list1 = list1->next;
+        list2 = list2->next;
+    }
+    cout << "YES";
+}
+
 
 int main()
 {
@@ -65,6 +80,7 @@ int main()
     print(list1);
     print(list2);
 
+    same(list1, list2);
 
     return 0;
 }
