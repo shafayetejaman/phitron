@@ -7,10 +7,14 @@ int main()
     list<int> l;
 
     l.push_back(1);
-    l.push_front(2);
+    l.push_front(0);
     l.push_back(2);
 
-    cout << *next(l.begin(), 0) << endl;
+    // cout << *next(l.begin(), 0) << endl;
+    for (const auto &i : l)
+    {
+        cout << i << " ";
+    }
 
     return 0;
 }
