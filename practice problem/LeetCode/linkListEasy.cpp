@@ -31,6 +31,11 @@ public:
             {
                 ptr->next = ptr->next->next;
             }
+            else
+            {
+                ptr = ptr->next;
+            }
         }
+        return head;
     }
 };
