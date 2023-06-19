@@ -104,35 +104,37 @@ public:
 
 int main()
 {
-    // list<int> l;
+    list<int> l;
 
-    // l.push_back(6);
-    // l.push_front(9);
-    // l.push_back(2);
+    l.push_back(6);
+    l.push_front(9);
+    l.push_back(2);
 
-    // // cout << *next(l.begin(), 0) << endl;
-    // for (const auto &i : l)
-    // {
-    //     cout << i << " ";
-    // }
-    // cout << endl;
-    // // l.erase(next(l.begin(), 0));
-    // l.sort(greater<int>());
+    // cout << *next(l.begin(), 0) << endl;
+    for (const auto &i : l)
+    {
+        cout << i << " ";
+    }
+    cout << endl;
+    // l.erase(next(l.begin(), 0));
+    l.sort(greater<int>());
 
-    // for (const auto &i : l)
-    // {
-    //     cout << i << " ";
-    // }
+    for (const auto &i : l)
+    {
+        cout << i << " ";
+    }
 
-    List l;
-    l.append(1);
-    l.append(2);
-    l.append(3);
-    l.append(4);
-    l.append(5);
-    l.insert(10, 5);
-    l.print();
+    // List l;
+    // l.append(1);
+    // l.append(2);
+    // l.append(3);
+    // l.append(4);
+    // l.append(5);
+    // l.insert(10, 5);
+    // l.print();
+
     
+
 
     return 0;
 }
