@@ -46,6 +46,11 @@ public:
     }
     void insert(int val, int index)
     {
+        if (index > this->size || index < 0)
+        {
+            cout << "Invalid Index!\n";
+            return;
+        }
         node *newNode = new node(val);
         if (this->head == nullptr)
         {
@@ -58,14 +63,9 @@ public:
             this->head->prev = newNode;
             this->head = this->head->prev;
         }
-        else if (index == this->size - 1)
+        else if (index == this->size )
         {
             return this->append(val);
-        }
-        else if (index >= this->size || index < 0)
-        {
-            cout << "Invalid Index!\n";
-            return;
         }
         else
         {
