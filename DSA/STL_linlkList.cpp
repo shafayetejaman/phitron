@@ -64,7 +64,7 @@ public:
         curr->next = insert_recursive(index--, val, curr->next);
         return curr;
     }
-    void insert(int index , int val)
+    void insert(int val, int index)
     {
         this->head = this->insert_recursive(index, val, this->head);
     }
@@ -121,7 +121,7 @@ int main()
     l.append(3);
     l.append(4);
     l.append(5);
-    l.reverse(l.head, l.head->next);
+    l.insert(10,3);
     l.print();
 
     return 0;
