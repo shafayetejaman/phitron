@@ -115,6 +115,7 @@ public:
             delete temp;
             if (this->head == nullptr)
             {
+                this->tail = nullptr;
                 return;
             }
             this->head->prev = nullptr;
