@@ -47,6 +47,11 @@ public:
     void insert(int val, int index)
     {
         node *newNode = new node(val);
+        if (this->head == nullptr)
+        {
+            this->head = newNode;
+            this->tail = newNode;
+        }
         if (index == 0)
         {
             newNode->next = this->head;
