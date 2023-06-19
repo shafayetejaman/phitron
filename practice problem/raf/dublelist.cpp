@@ -57,15 +57,11 @@ public:
             this->head = newNode;
             this->tail = newNode;
         }
-        if (index == 0)
+        else if (index == 0)
         {
             newNode->next = this->head;
             this->head->prev = newNode;
-            this->head = this->head->prev;
-        }
-        else if (index == this->size )
-        {
-            return this->append(val);
+            this->head = newNode;
         }
         else
         {
@@ -79,9 +75,10 @@ public:
                 count++;
             }
             newNode->next = curr;
-            curr->prev = newNode;
-            prev->next = newNode;
             newNode->prev = prev;
+            if (curr != nullptr)
+                curr->prev = newNode;
+            prev->next = newNode;
         }
         this->size++;
     }
