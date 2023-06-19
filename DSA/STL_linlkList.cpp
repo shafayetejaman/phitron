@@ -55,6 +55,12 @@ public:
     }
     void insert(int index, int val, node *curr)
     {
+        if (index == 0)
+        {
+            node *newNode = new node(val);
+            
+
+        }
 
     }
     int size()
