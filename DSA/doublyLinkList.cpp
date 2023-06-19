@@ -112,8 +112,12 @@ public:
         {
             node *temp = this->head;
             this->head = this->head->next;
-            this->head->prev = nullptr;
             delete temp;
+            if (this->head == nullptr)
+            {
+                return;
+            }
+            this->head->prev = nullptr;
         }
         else if (index >= this->size || index < 0)
         {
