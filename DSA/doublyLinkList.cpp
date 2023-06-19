@@ -167,25 +167,28 @@ public:
 int main()
 {
     DLL list, temp;
+    // list.append(1);
+    // list.append(2);
+    // list.append(3);
+    // list.append(4);
+    // list.append(5);
+    // list.print();
+    // // list.insert(10, 0);
+
+    // temp.append(10);
+    // temp.append(20);
+    // temp.append(30);
+    // temp.append(40);
+    // temp.append(50);
+    // list.print();
+    // temp.print();
+
+    // list.add(temp);
+    // list.print();
+    // print(list.size);
     list.append(1);
-    list.append(2);
-    list.append(3);
-    list.append(4);
-    list.append(5);
+    list.delete_node(0);
     list.print();
-    // list.insert(10, 0);
-
-    temp.append(10);
-    temp.append(20);
-    temp.append(30);
-    temp.append(40);
-    temp.append(50);
-    list.print();
-    temp.print();
-
-    list.add(temp);
-    list.print();
-    print(list.size);
 
     // list.print_reverse();
 
