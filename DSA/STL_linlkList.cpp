@@ -59,7 +59,7 @@ public:
         {
             node *newNode = new node(val);
             newNode->next = curr;
-            if (index == this->size())
+            if (curr == nullptr)
             {
                 this->tail = newNode;
             }
