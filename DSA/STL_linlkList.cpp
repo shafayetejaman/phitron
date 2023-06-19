@@ -97,13 +97,12 @@ public:
     {
         if (curr == nullptr)
         {
-            this->head->next = nullptr;
-            this->tail = this->head;
-            this->head = pre;
+            this->head = this->tail;
             return;
         }
         reverse(curr, curr->next);
         curr->next = pre;
+        pre->next = nullptr;
     }
 };
 
