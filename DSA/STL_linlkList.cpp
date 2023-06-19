@@ -100,46 +100,44 @@ public:
         {
             this->tail = this->head;
             this->head = pre;
+            tail->next = nullptr;
             return;
         }
         reverse(curr, curr->next);
         curr->next = pre;
-        pre->next = nullptr;
     }
 };
 
 int main()
 {
-    list<int> l;
+    // list<int> l;
 
-    l.push_back(6);
-    l.push_front(9);
-    l.push_back(2);
+    // l.push_back(6);
+    // l.push_front(9);
+    // l.push_back(2);
 
-    // cout << *next(l.begin(), 0) << endl;
-    for (const auto &i : l)
-    {
-        cout << i << " ";
-    }
-    cout << endl;
-    // l.erase(next(l.begin(), 0));
-    l.sort(greater<int>());
-    
+    // // cout << *next(l.begin(), 0) << endl;
+    // for (const auto &i : l)
+    // {
+    //     cout << i << " ";
+    // }
+    // cout << endl;
+    // // l.erase(next(l.begin(), 0));
+    // l.sort(greater<int>());
 
-    for (const auto &i : l)
-    {
-        cout << i << " ";
-    }
+    // for (const auto &i : l)
+    // {
+    //     cout << i << " ";
+    // }
 
-    // List l;
-    // l.append(1);
-    // l.append(2);
-    // l.append(3);
-    // l.append(4);
-    // l.append(5);
-    // l.reverse(l.head, l.head->next);
-    // l.print();
-    // l.
+    List l;
+    l.append(1);
+    l.append(2);
+    l.append(3);
+    l.append(4);
+    l.append(5);
+    l.reverse(l.head, l.head->next);
+    l.print();
 
     return 0;
 }
