@@ -15,7 +15,7 @@ int main()
         s.replace(search, x.size(), "$");
         while (search != -1)
         {
-            search = s.find(x, 0);
+            search = s.find(x, search);
             if (search == -1)
             {
                 break;
