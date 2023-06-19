@@ -104,6 +104,7 @@ public:
         }
         reverse(curr, curr->next);
         curr->next = pre;
+        pre = curr;
     }
 };
 
