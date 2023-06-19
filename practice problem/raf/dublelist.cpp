@@ -44,17 +44,17 @@ public:
         }
         this->size++;
     }
-    void insert(int val, int index)
+    bool insert(int val, int index)
     {
         if (index == this->size)
         {
             this->append(val);
-            return;
+            return true;
         }
         if (index > this->size || index < 0)
         {
             cout << "Invalid\n";
-            return;
+            return false;
         }
         node *newNode = new node(val);
         if (this->head == nullptr)
@@ -86,6 +86,7 @@ public:
             prev->next = newNode;
         }
         this->size++;
+        return true;
     }
 
     void print()
@@ -97,7 +98,7 @@ public:
             cout << ptr->data << " ";
             ptr = ptr->next;
         }
-         cout << endl;
+        cout << endl;
     }
     void print_reverse()
     {
@@ -121,9 +122,11 @@ int main()
     {
         int index, val;
         cin >> index >> val;
-        list.insert(val, index);
-        list.print();
-        list.print_reverse();
+        if (list.insert(val, index))
+        {
+            list.print();
+            list.print_reverse();
+        }
     }
 
     return 0;
