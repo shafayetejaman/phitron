@@ -53,35 +53,9 @@ public:
         cout << "null" << endl;
         cout << "tail -> " << tail->data << endl;
     }
-    void insert(int index, int val)
+    void insert(int index, int val, node *curr)
     {
-        node *newNode = new node(val);
-        if (index == 0)
-        {
-            newNode->next = this->head;
-            this->head = newNode;
-            return;
-        }
-        else if (index >= this->size())
-        {
-            cout << "Invalid Index!\n";
-            return;
-        }
-        else if (index == this->size() - 1)
-        {
-            return this->append(val);
-        }
-        node *ptr = this->head;
-        node *prev = nullptr;
 
-        while (ptr->next != nullptr && index > 0)
-        {
-            prev = ptr;
-            ptr = ptr->next;
-            index--;
-        }
-        prev->next = newNode;
-        newNode->next = ptr;
     }
     int size()
     {
