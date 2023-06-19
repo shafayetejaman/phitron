@@ -93,16 +93,16 @@ public:
         }
         return count;
     }
-    void reverse(node *&pre, node *&curr)
+    void reverse(node *&curr)
     {
-        if (curr == nullptr)
+        if (curr->next == nullptr)
         {
-            this->head = pre;
+            this->head = curr;
             return;
         }
-        pre->next = nullptr; 
-        reverse(curr, curr->next);
-        curr->next = pre;
+        reverse(curr->next);
+        curr->next->next = curr;
+        curr->next = nullptr;
     }
 };
 
@@ -134,7 +134,7 @@ int main()
     l.append(3);
     l.append(4);
     l.append(5);
-    l.reverse(l.head, l.head->next);
+    l.reverse(l.head);
     l.print();
 
     return 0;
