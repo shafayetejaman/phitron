@@ -100,9 +100,9 @@ public:
             this->head = pre;
             return;
         }
+        pre->next = nullptr; 
         reverse(curr, curr->next);
         curr->next = pre;
-        pre->next = nullptr;
     }
 };
 
