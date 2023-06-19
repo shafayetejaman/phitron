@@ -4,7 +4,7 @@ int main()
 {
     int t;
     cin >> t;
-    cin.ignore();
+
     for (int i = 0; i < t; i++)
     {
         string s;
