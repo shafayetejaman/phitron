@@ -53,13 +53,13 @@ public:
         cout << "null" << endl;
         cout << "tail -> " << tail->data << endl;
     }
-    void insert(int index, int val, node *curr)
+    node* insert(int index, int val, node *curr)
     {
         if (index == 0)
         {
             node *newNode = new node(val);
-            
-
+            newNode->next = curr;
+            return newNode;
         }
 
     }
