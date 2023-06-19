@@ -4,18 +4,18 @@ int main()
 {
     int t;
     cin >> t;
-
+    cin.ignore();
     for (int i = 0; i < t; i++)
     {
         string s;
         string x;
         cin >> s;
         cin >> x;
-        int search = 0;
+        int search = s.find(x, 0);
         s.replace(search, x.size(), "$");
         while (search != -1)
         {
-            search = s.find(x, search);
+            search = s.find(x, 0);
             if (search == -1)
             {
                 break;
