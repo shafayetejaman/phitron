@@ -53,25 +53,29 @@ public:
         cout << "null" << endl;
         cout << "tail -> " << tail->data << endl;
     }
-    node *insert_recursive(int index, int val, node *curr)
+    node *insert(int index, int val, node *curr)
     {
         if (index == 0)
         {
             node *newNode = new node(val);
             newNode->next = curr;
+            if (index == this->size())
+            {
+                this->tail = newNode;
+            }
             return newNode;
         }
-        curr->next = insert_recursive(index - 1, val, curr->next);
+        curr->next = insert(index - 1, val, curr->next);
         return curr;
     }
     void insert(int val, int index)
     {
-        if (index >= this->size() || index < 0)
+        if (index > this->size() || index < 0)
         {
             cout << "Invalid Index!\n";
             return;
         }
-        this->head = this->insert_recursive(index, val, this->head);
+        this->head = this->insert(index, val, this->head);
     }
     int size()
     {
@@ -126,7 +130,7 @@ int main()
     l.append(3);
     l.append(4);
     l.append(5);
-    l.insert(10, 0);
+    l.insert(10, 5);
     l.print();
 
     return 0;
