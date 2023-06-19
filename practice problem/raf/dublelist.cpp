@@ -48,7 +48,7 @@ public:
     {
         if (index > this->size || index < 0)
         {
-            cout << "Invalid Index!\n";
+            cout << "Invalid\n";
             return;
         }
         node *newNode = new node(val);
