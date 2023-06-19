@@ -14,6 +14,17 @@ public:
     }
 };
 
+void append(node *head, int val)
+{
+    node *newNode = new node(val);
+    node *temp = head;
+    while (temp->next != nullptr)
+    {
+        temp = temp->next;
+    }
+    temp->next = newNode;
+}
+
 node *make_list()
 {
     node *head = nullptr;
@@ -26,10 +37,9 @@ node *make_list()
             break;
         }
         cin >> val;
-        node *newNode = new node(val);
+
 
     }
-
 
 
 
