@@ -16,7 +16,7 @@ public:
 
 node *make_list()
 {
-    node *list = nullptr;
+    node *head = nullptr;
 
     int val;
     while (true)
@@ -27,7 +27,7 @@ node *make_list()
         }
         cin >> val;
         node *newNode = new node(val);
-        
+
     }
 
 
