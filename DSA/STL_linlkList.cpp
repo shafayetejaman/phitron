@@ -15,6 +15,12 @@ int main()
     {
         cout << i << " ";
     }
+    cout << endl;
+    l.erase(next(l.begin(), 0));
+    for (const auto &i : l)
+    {
+        cout << i << " ";
+    }
 
     return 0;
 }
