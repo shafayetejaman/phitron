@@ -25,6 +25,10 @@ public:
     ListNode *deleteDuplicates(ListNode *head)
     {
         ListNode *ptr = head;
+        if (ptr == nullptr)
+        {
+            return head;
+        }
         while (ptr->next != nullptr)
         {
             if (ptr->val == ptr->next->val)
