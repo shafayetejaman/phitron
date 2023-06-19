@@ -42,11 +42,12 @@ node *make_list()
     return head;
 }
 
-void print(node *head)
+void print(node *&head)
 {
-    while (head != nullptr)
+    node *temp = head;
+    while (temp != nullptr)
     {
-        cout << head->data << " -> ";
+        cout << temp->data << " -> ";
     }
     cout << endl;
 }
