@@ -14,7 +14,7 @@ public:
     }
 };
 
-void append(node *head, int val)
+void append(node *&head, int val)
 {
     node *newNode = new node(val);
     if (head == nullptr)
