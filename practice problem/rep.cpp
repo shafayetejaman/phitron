@@ -11,8 +11,7 @@ int main()
         string x;
         cin >> s;
         cin >> x;
-        int search = s.find(x, 0);
-        s.replace(search, x.size(), "$");
+        int search = 0;
         while (search != -1)
         {
             search = s.find(x, 0);
