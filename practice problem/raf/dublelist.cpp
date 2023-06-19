@@ -46,6 +46,11 @@ public:
     }
     void insert(int val, int index)
     {
+        if (index == this->size)
+        {
+            this->append(val);
+            return;
+        }
         if (index > this->size || index < 0)
         {
             cout << "Invalid\n";
