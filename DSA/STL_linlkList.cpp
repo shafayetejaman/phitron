@@ -93,7 +93,7 @@ public:
         }
         return count;
     }
-    void reverse(node *&pre, node *curr)
+    void reverse(node *pre, node *curr)
     {
         if (curr == nullptr)
         {
