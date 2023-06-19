@@ -42,7 +42,6 @@ node *make_list()
             break;
         }
         append(head, val);
-
     }
     return head;
 }
