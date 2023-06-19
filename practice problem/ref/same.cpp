@@ -14,10 +14,15 @@ public:
     }
 };
 
-void append(node *head, int val)
+void append(node *&head, int val)
 {
     node *newNode = new node(val);
     node *temp = head;
+    if (temp == nullptr)
+    {
+        temp = newNode;
+        return;
+    }
     while (temp->next != nullptr)
     {
         temp = temp->next;
@@ -42,7 +47,7 @@ node *make_list()
     return head;
 }
 
-void print(node *head)
+void print(node *&head)
 {
     node *temp = head;
     while (temp != nullptr)
