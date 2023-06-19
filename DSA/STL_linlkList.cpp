@@ -99,8 +99,8 @@ public:
         if (curr == nullptr)
         {
             this->tail = this->head;
+            this->tail->next = nullptr;
             this->head = pre;
-            tail->next = nullptr;
             return;
         }
         reverse(curr, curr->next);
