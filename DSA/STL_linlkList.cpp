@@ -132,6 +132,7 @@ int main()
     l.append(5);
     l.insert(10, 5);
     l.print();
+    
 
     return 0;
 }
