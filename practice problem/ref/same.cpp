@@ -69,9 +69,11 @@ void same(node *list1, node *list2)
         list1 = list1->next;
         list2 = list2->next;
     }
-    cout << "YES";
+    if (list1 == nullptr && list2 == nullptr)
+        cout << "YES";
+    else
+        cout << "NO";
 }
-
 
 int main()
 {
