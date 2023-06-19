@@ -14,7 +14,7 @@ public:
     }
 };
 
-void append(node *head, int val)
+void append(node *&head, int val)
 {
     node *newNode = new node(val);
     node *temp = head;
@@ -37,17 +37,24 @@ node *make_list()
             break;
         }
         cin >> val;
-
-
+        append(head, val);
     }
+    return head;
+}
 
-
-
+void print(node *head)
+{
+    while (head != nullptr)
+    {
+        cout << head->data << " -> ";
+    }
+    cout << endl;
 }
 
 
 int main()
 {
+
 
 
 
