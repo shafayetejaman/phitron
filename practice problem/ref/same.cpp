@@ -53,6 +53,7 @@ void print(node *&head)
     while (temp != nullptr)
     {
         cout << temp->data << " -> ";
+        temp = temp->next;
     }
     cout << endl;
 }
