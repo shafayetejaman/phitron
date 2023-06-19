@@ -92,7 +92,7 @@ public:
             cout << ptr->data << " ";
             ptr = ptr->next;
         }
-        // cout << "null" << endl;
+         cout << endl;
     }
     void print_reverse()
     {
