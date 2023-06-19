@@ -17,12 +17,12 @@ public:
 void append(node *&head, int val)
 {
     node *newNode = new node(val);
-    node *temp = head;
-    if (temp == nullptr)
+    if (head == nullptr)
     {
-        temp = newNode;
+        head = newNode;
         return;
     }
+    node *temp = head;
     while (temp->next != nullptr)
     {
         temp = temp->next;
