@@ -42,14 +42,7 @@ public:
             this->tail->next = newNode;
             this->tail = this->tail->next;
         }
-        if (val < min)
-        {
-            min = std::min(min, val);
-        }
-        if (val > max)
-        {
-            max = std::max(max, val);
-        }
+       
         size++;
     }
 };
