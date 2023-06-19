@@ -64,6 +64,10 @@ public:
         curr->next = insert_recursive(index--, val, curr->next);
         return curr;
     }
+    void insert(int index , int val)
+    {
+        this->head = this->insert_recursive(index, val, this->head);
+    }
     int size()
     {
         int count = 0;
