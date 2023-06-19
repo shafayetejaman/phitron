@@ -167,16 +167,29 @@ public:
         list.head = this->tail;
         this->size += list.size;
     }
+    void reverse()
+    {
+        node *i = this->head;
+        node *j = this->tail;
+
+        while (i->next != j && i != j)
+        {
+            swap(i->data, j->data);
+            i = i->next;
+            j = j->prev;
+        }
+        swap(i->data, j->data);
+    }
 };
 
 int main()
 {
     DLL list, temp;
-    // list.append(1);
-    // list.append(2);
-    // list.append(3);
-    // list.append(4);
-    // list.append(5);
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.append(4);
+    list.append(5);
     // list.print();
     // // list.insert(10, 0);
 
@@ -185,14 +198,15 @@ int main()
     // temp.append(30);
     // temp.append(40);
     // temp.append(50);
-    // list.print();
+    list.print();
     // temp.print();
 
     // list.add(temp);
     // list.print();
     // print(list.size);
-    list.append(1);
-    list.delete_node(0);
+    // list.append(1);
+    // list.delete_node(0);
+    list.reverse();
     list.print();
 
     // list.print_reverse();
