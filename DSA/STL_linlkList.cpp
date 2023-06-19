@@ -97,8 +97,8 @@ public:
     {
         if (curr == nullptr)
         {
-            this->tail = this->head;
             this->head->next = nullptr;
+            this->tail = this->head;
             this->head = pre;
             return;
         }
