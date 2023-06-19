@@ -51,6 +51,7 @@ public:
             ptr = ptr->next;
         }
         cout << "null" << endl;
+        cout << "tail -> " << tail->data << endl;
     }
     void insert(int index, int val)
     {
@@ -97,6 +98,7 @@ public:
     {
         if (curr == nullptr)
         {
+            this->tail = this->head;
             this->head = pre;
             return;
         }
