@@ -32,11 +32,11 @@ node *make_list()
     int val;
     while (true)
     {
+        cin >> val;
         if (val == -1)
         {
             break;
         }
-        cin >> val;
         append(head, val);
     }
     return head;
@@ -54,10 +54,8 @@ void print(node *head)
 
 int main()
 {
-
-
-
-
+    node *list1 = make_list();
+    print(list1);
 
     return 0;
 }
