@@ -48,7 +48,6 @@ public:
         {
             max = std::max(max, val);
         }
-
     }
 
 };
