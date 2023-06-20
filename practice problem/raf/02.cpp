@@ -30,7 +30,10 @@ int strlen(char s[])
 int main()
 {
     char s[10] = "Hello";
-    print(strlen(s));
+    // print(strlen(s));
+    int *i = NULL;
+    int *j = NULL;
+    
 
     return 0;
 }
