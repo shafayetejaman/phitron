@@ -42,7 +42,7 @@ public:
             this->tail->next = newNode;
             this->tail = this->tail->next;
         }
-       
+
         size++;
     }
 };
@@ -101,6 +101,7 @@ int main()
     {
         cout << "NO";
     }
+  
 
     return 0;
 }
