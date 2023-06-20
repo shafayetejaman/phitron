@@ -32,8 +32,7 @@ int main()
     char s[10] = "Hello";
     // print(strlen(s));
     int *i = NULL;
-    int *j = NULL;
-    
+    cout << *i;
 
     return 0;
 }
