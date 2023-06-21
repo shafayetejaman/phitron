@@ -1,4 +1,7 @@
-#include "my_hederfile.h"
+#include <bits/stdc++.h>
+#include <time.h>
+#include <limits.h>
+#include <windows.h>
 
 using namespace std;
 
