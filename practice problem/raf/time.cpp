@@ -23,6 +23,11 @@ int main()
         }
     }
 
+    for (auto i = 1; i * i <= n; i++)
+    {
+        cout << "the loop is running" << endl;
+        Sleep(1);
+    }
     time = std::time(nullptr) - time;
     cout << "Time : " << time << endl;
 
