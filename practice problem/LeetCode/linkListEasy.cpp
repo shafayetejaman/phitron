@@ -119,6 +119,7 @@ public:
         while (curr != nullptr && count != len/2 )
         {
             curr = curr->next;
+            count++;
         }
         while (curr != nullptr && head != nullptr)
         {
