@@ -112,35 +112,39 @@ class Solution
 public:
     bool isPalindrome(ListNode *head)
     {
-        int len = size(head);
+        ListNode *newList = nullptr;
         ListNode *curr = head;
-        int count = 0;
+        ListNode *tail = nullptr;
 
-        while (curr != nullptr && count != len/2 )
+        while (curr != nullptr)
         {
+            append(newList, curr->val, tail);
             curr = curr->next;
-            count++;
         }
-        while (curr != nullptr && head != nullptr)
+        curr = head;
+        while (curr != nullptr)
         {
-            if (curr->val != head->val)
+            if (curr->val != newList->val)
             {
                 return false;
             }
+            newList = newList->next;
             curr = curr->next;
-            head = head->next;
         }
         return true;
     }
-    int size(ListNode *head)
+    void append(ListNode *&head, int val, ListNode *&tail)
     {
-        int count = 0;
-        while (head != nullptr)
+        ListNode *newNode = new ListNode(val);
+        if (head == nullptr)
         {
-            count++;
-            head = head->next;
+            head = newNode;
+            tail = newNode;
         }
-        return count;
-
+        else
+        {
+            tail->next = newNode;
+            tail = tail->next;
+        }
     }
 };
