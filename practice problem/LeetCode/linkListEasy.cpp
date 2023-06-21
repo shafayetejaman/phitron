@@ -5,19 +5,17 @@ using namespace std;
 int main()
 {
 
-
     return 0;
 }
 
-
-
- struct ListNode {
-     int val;
-     ListNode *next;
-     ListNode() : val(0), next(nullptr) {}
-     ListNode(int x) : val(x), next(nullptr) {}
-     ListNode(int x, ListNode *next) : val(x), next(next) {}
- };
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
 
 class Solution
 {
@@ -62,7 +60,18 @@ public:
 
         while (fast->next != NULL && fast->next->next != NULL)
         {
-            
+            fast = fast->next->next;
+            slow = slow->next;
+            if (fast == slow)
+            {
+                ListNode *h = head;
+                while (h != slow)
+                {
+                    h = h->next;
+                    slow = slow->next;
+                }
+                return h;
+            }
         }
     }
 };
