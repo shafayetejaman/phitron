@@ -95,7 +95,7 @@ public:
             reverse(head, nullptr, head);
         return head;
     }
-    void reverse(ListNode *&head, ListNode *prev, ListNode *&curr)
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
     {
         if (curr->next == nullptr)
         {
