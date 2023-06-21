@@ -121,6 +121,8 @@ public:
             append(newList, curr->val, tail);
             curr = curr->next;
         }
+        if (head != nullptr)
+            reverse(head, nullptr, head);
         curr = head;
         while (curr != nullptr)
         {
@@ -146,5 +148,16 @@ public:
             tail->next = newNode;
             tail = tail->next;
         }
+    }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
+    {
+        if (curr->next == nullptr)
+        {
+            head = curr;
+            head->next = prev;
+            return;
+        }
+        reverse(head, curr, curr->next);
+        curr->next = prev;
     }
 };
