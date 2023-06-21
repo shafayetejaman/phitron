@@ -14,7 +14,7 @@ int main()
     {
         cout << "the loop is running" << endl;
         Sleep(1);
-        for (auto i = 1; i * i <= n; i++)
+        for (auto i = 1; i <= n; i++)
         {
             cout << "the loop is running" << endl;
             Sleep(1);
