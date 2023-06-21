@@ -113,7 +113,23 @@ public:
     bool isPalindrome(ListNode *head)
     {
         int len = size(head);
-        
+        ListNode *curr = head;
+        int count = 0;
+
+        while (curr != nullptr && count != len/2 )
+        {
+            curr = curr->next;
+        }
+        while (curr != nullptr && head != nullptr)
+        {
+            if (curr->val != head->val)
+            {
+                return false;
+            }
+            curr = curr->next;
+            head = head->next;
+        }
+        return true;
     }
     int size(ListNode *head)
     {
