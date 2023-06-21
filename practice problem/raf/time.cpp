@@ -7,7 +7,8 @@ int main()
     int time = std::time(nullptr);
 
 
-    int n = 100;
+    int n;
+    cin >> n;
 
     for (auto i = 0; i < n; i++)
     {
