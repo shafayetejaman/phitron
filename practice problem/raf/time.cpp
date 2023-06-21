@@ -7,15 +7,15 @@ int main()
     int time = std::time(nullptr);
 
 
-    int n = 10;
-    
+    int n = 100;
+
     for (auto i = 0; i < n; i++)
     {
         cout << "the loop is running" << endl;
     }
 
     time = std::time(nullptr) - time;
-    print(time);
+    cout << "Time : " << time << endl;
 
     return 0;
 }
