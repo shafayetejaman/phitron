@@ -107,3 +107,23 @@ public:
         curr->next = prev;
     }
 };
+class Solution
+{
+public:
+    bool isPalindrome(ListNode *head)
+    {
+        int len = size(head);
+        
+    }
+    int size(ListNode *head)
+    {
+        int count = 0;
+        while (head != nullptr)
+        {
+            count++;
+            head = head->next;
+        }
+        return count;
+
+    }
+};
