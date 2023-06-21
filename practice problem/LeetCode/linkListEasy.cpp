@@ -91,14 +91,18 @@ class Solution
 public:
     ListNode *reverseList(ListNode *head)
     {
-        ListNode *curr = head;
-        ListNode *prev = nullptr;
-
-
+        reverse(head, nullptr, head);
+        return head;
     }
-    ListNode *reverse(ListNode *&head)
+    void reverse(ListNode *&head, ListNode *prev, ListNode *&curr)
     {
-        
+        if (curr->next = nullptr)
+        {
+            head = curr;
+            return;
+        }
+        reverse(head ,curr, curr->next);
+        curr->next = prev;
     }
 
 };
