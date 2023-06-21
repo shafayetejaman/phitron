@@ -1,5 +1,4 @@
 #include "my_hederfile.h"
-#include <windows.h>
 
 using namespace std;
 
