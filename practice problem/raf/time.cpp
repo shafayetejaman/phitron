@@ -1,18 +1,21 @@
 #include "my_hederfile.h"
+#include <windows.h>
 
 using namespace std;
 
 int main()
 {
-    int time = std::time(nullptr);
 
 
     int n;
     cin >> n;
 
+    int time = std::time(nullptr);
+
     for (auto i = 0; i < n; i++)
     {
         cout << "the loop is running" << endl;
+        Sleep(1);
     }
 
     time = std::time(nullptr) - time;
