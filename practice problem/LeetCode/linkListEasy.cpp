@@ -178,7 +178,7 @@ public:
         ListNode *temp = nullptr;
         ListNode *temp2 = nullptr;
 
-        while (ptr != nullptr)
+        while (ptr->next != nullptr)
         {
             ptr->val = ptr->next->val;
             ptr = ptr->next;
