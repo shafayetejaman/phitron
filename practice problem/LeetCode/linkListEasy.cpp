@@ -175,10 +175,15 @@ public:
     void deleteNode(ListNode *node)
     {
         ListNode *ptr = node;
+        ListNode *temp = nullptr;
         while (ptr != nullptr)
         {
             ptr->val = ptr->next->val;
             ptr = ptr->next;
+            if (ptr->next->next == nullptr)
+            {
+                temp = ptr->next;
+            }
         }
     }
 };
