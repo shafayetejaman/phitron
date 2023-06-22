@@ -29,9 +29,11 @@ public:
         }
         while (ptr->next != nullptr)
         {
+            ListNode *temp = ptr->next;
             if (ptr->val == ptr->next->val)
             {
                 ptr->next = ptr->next->next;
+                delete temp;
             }
             else
             {
