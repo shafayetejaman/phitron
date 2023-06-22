@@ -176,6 +176,8 @@ public:
     {
         ListNode *ptr = node;
         ListNode *temp = nullptr;
+        ListNode *temp2 = nullptr;
+
         while (ptr != nullptr)
         {
             ptr->val = ptr->next->val;
@@ -183,7 +185,10 @@ public:
             if (ptr->next->next == nullptr)
             {
                 temp = ptr->next;
+                temp2 = ptr;
             }
         }
+        temp2->next = nullptr;
+        delete temp;
     }
 };
