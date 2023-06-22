@@ -67,5 +67,6 @@ int main()
     }
     cout << list.max << " " << list.min;
 
+
     return 0;
 }
