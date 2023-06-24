@@ -200,7 +200,7 @@ public:
     ListNode *removeElements(ListNode *head, int val)
     {
         ListNode *newHead = nullptr;
-        ListNode *temp = newHead;
+        ListNode *temp;
         while (head != nullptr)
         {
             if (head->val != val)
@@ -209,6 +209,7 @@ public:
                 if (newHead == nullptr)
                 {
                     newHead = newNode;
+                    temp = newHead;
                 }
                 else
                 {
