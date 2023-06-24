@@ -127,7 +127,7 @@ public:
     {
         ListNode *first = head;
         ListNode *temp = head;
-        ListNode *last = nullptr;
+        ListNode *last = head;
 
         int count = 1;
         while (count != k)
@@ -141,7 +141,7 @@ public:
             size++;
             temp = temp->next;
         }
-        size = size - k+1;
+        size = size - k;
 
         while (last != nullptr && size != 0)
         {
