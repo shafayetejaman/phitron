@@ -115,12 +115,13 @@ class Solution
 public:
     ListNode *mergeNodes(ListNode *head)
     {
+        ListNode *head2 = head;
         ListNode *newHead = nullptr;
         ListNode *temp;
         int sum = 0;
         while (head != nullptr)
         {
-            if (head->val == 0)
+            if (head2->val == 0 && head2 != head)
             {
                 ListNode *newNode = new ListNode(sum);
                 if (newHead == nullptr)
@@ -135,10 +136,10 @@ public:
                 }
                 sum = 0;
             }
-            sum += head->val;
-            head = head->next;
+            sum += head2->val;
+            head2 = head2->next;
         }
         return newHead;
     }
-    
+
  };
