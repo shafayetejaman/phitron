@@ -206,6 +206,7 @@ public:
             if (head->val != val)
             {
                 temp->val = head->val;
+                temp->next = new ListNode(-1);
                 temp = temp->next;
             }
             head = head->next;
