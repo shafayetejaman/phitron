@@ -129,7 +129,7 @@ public:
         ListNode *temp = head;
         ListNode *last = nullptr;
 
-        int count = 0;
+        int count = 1;
         while (count != k)
         {
             count++;
