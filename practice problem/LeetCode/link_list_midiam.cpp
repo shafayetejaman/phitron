@@ -43,60 +43,7 @@ public:
         return NULL;
     }
 };
-class Solution
-{
-public:
-    bool isPalindrome(ListNode *head)
-    {
-        ListNode *newList = nullptr;
-        ListNode *curr = head;
-        ListNode *tail = nullptr;
 
-        while (curr != nullptr)
-        {
-            append(newList, curr->val, tail);
-            curr = curr->next;
-        }
-        if (head != nullptr)
-            reverse(head, nullptr, head);
-        curr = head;
-        while (curr != nullptr)
-        {
-            if (curr->val != newList->val)
-            {
-                return false;
-            }
-            newList = newList->next;
-            curr = curr->next;
-        }
-        return true;
-    }
-    void append(ListNode *&head, int val, ListNode *&tail)
-    {
-        ListNode *newNode = new ListNode(val);
-        if (head == nullptr)
-        {
-            head = newNode;
-            tail = newNode;
-        }
-        else
-        {
-            tail->next = newNode;
-            tail = tail->next;
-        }
-    }
-    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
-    {
-        if (curr->next == nullptr)
-        {
-            head = curr;
-            head->next = prev;
-            return;
-        }
-        reverse(head, curr, curr->next);
-        curr->next = prev;
-    }
-};
 
 class Solution
 {
@@ -169,5 +116,6 @@ public:
     ListNode *mergeNodes(ListNode *head)
     {
         
+
     }
  };
