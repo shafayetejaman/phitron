@@ -125,6 +125,29 @@ class Solution
 public:
     ListNode *swapNodes(ListNode *head, int k)
     {
-        
+        ListNode *first = head;
+        ListNode *temp = head;
+        ListNode *last = nullptr;
+
+        int count = 0;
+        while (count != k)
+        {
+            count++;
+            first = first->next;
+        }
+        int size = 0;
+        while (temp != nullptr)
+        {
+            size++;
+            temp = temp->next;
+        }
+        size = size - k+1;
+
+        while (size--)
+        {
+            last = last->next;
+        }
+        swap(last->val, first->val);
+        return head;
     }
 };
