@@ -119,7 +119,7 @@ public:
         ListNode *newHead = nullptr;
         ListNode *temp;
         int sum = 0;
-        while (head != nullptr)
+        while (head2 != nullptr)
         {
             if (head2->val == 0 && head2 != head)
             {
