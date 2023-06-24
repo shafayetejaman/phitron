@@ -199,14 +199,13 @@ class Solution
 public:
     ListNode *removeElements(ListNode *head, int val)
     {
-        ListNode *newHead = new ListNode;
+        ListNode *newHead = nullptr;
         ListNode *temp = newHead;
         while (head != nullptr)
         {
             if (head->val != val)
             {
-                temp->next = new ListNode;
-                temp->val = head->val;
+                temp = new ListNode(head->val);
                 temp = temp->next;
             }
             head = head->next;
