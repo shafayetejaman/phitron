@@ -199,7 +199,7 @@ class Solution
 public:
     ListNode *removeElements(ListNode *head, int val)
     {
-        ListNode *newHead = nullptr;
+        ListNode *newHead = head;
         ListNode *temp = newHead;
         while (head != nullptr)
         {
