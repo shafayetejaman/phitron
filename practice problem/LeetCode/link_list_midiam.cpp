@@ -143,9 +143,10 @@ public:
         }
         size = size - k+1;
 
-        while (size--)
+        while (last != nullptr && size != 0)
         {
             last = last->next;
+            size--;
         }
         swap(last->val, first->val);
         return head;
