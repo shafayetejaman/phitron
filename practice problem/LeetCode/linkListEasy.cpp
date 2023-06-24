@@ -208,7 +208,7 @@ public:
                 temp->val = head->val;
                 temp = temp->next;
             }
-
+            head = head->next;
         }
         return newHead;
     }
