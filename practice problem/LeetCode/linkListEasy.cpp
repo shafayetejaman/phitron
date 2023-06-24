@@ -205,8 +205,16 @@ public:
         {
             if (head->val != val)
             {
-                temp = new ListNode(head->val);
-                temp = temp->next;
+                ListNode *newNode = new ListNode(head->val);
+                if (newHead == nullptr)
+                {
+                    newHead = newNode;
+                }
+                else
+                {
+                    temp->next = newNode;
+                    temp = temp->next;
+                }
             }
             head = head->next;
         }
