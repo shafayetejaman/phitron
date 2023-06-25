@@ -39,17 +39,25 @@ public:
     }
     void print()
     {
-        node *curr = this->head;
+        node *curr = this->tail;
         while (curr != nullptr)
         {
-            cout << curr->data << endl << "";
+            cout << curr->data << endl
+                 << "↓" << endl;
+            curr = curr->prev;
         }
     }
 };
 
 int main()
 {
-
+    Stack stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    stack.push(5);
+    stack.print();
 
     return 0;
 }
