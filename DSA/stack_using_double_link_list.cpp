@@ -71,9 +71,26 @@ public:
         else
         {
             node *temp = this->tail;
+            int data = temp->data;
+
             tail = tail->prev;
             tail->next = nullptr;
+            delete temp;
+            return data;
         }
+        return -1;
+    }
+    int top()
+    {
+        if (this->head == nullptr)
+        {
+            cout << "The stack is empty!" << endl;
+        }
+        else
+        {
+            return tail->data;
+        }
+        return -1;
     }
 };
 
@@ -85,7 +102,10 @@ int main()
     stack.push(3);
     stack.push(4);
     stack.push(5);
+    stack.pop();
+    stack.pop();
     stack.print();
+    // cout << stack.top();
 
     return 0;
 }
