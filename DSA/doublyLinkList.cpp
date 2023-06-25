@@ -190,7 +190,7 @@ int main()
     list.append(3);
     list.append(4);
     list.append(5);
-    // list.print();
+    list.print();
     // // list.insert(10, 0);
 
     // temp.append(10);
