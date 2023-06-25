@@ -19,8 +19,15 @@ public:
 class Stack
 {
 public:
-    node *head = nullptr;
-    node *tail = nullptr;
+    node *head;
+    node *tail;
+    int size;
+    Stack()
+    {
+        this->head = nullptr;
+        this->tail = nullptr;
+        this->size = 0;
+    }
 
     void push(int val)
     {
@@ -64,7 +71,8 @@ public:
         else
         {
             node *temp = this->tail;
-            
+            tail = tail->prev;
+            tail->next = nullptr;
         }
     }
 };
