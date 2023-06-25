@@ -71,6 +71,15 @@ public:
         {
             cout << "The stack is empty!" << endl;
         }
+        else if (this->head == this->tail)
+        {
+            node *temp = this->tail;
+            this->head = nullptr;
+            this->tail = nullptr;
+            int data = temp->data;
+            delete temp;
+            return data;
+        }
         else
         {
             node *temp = this->tail;
