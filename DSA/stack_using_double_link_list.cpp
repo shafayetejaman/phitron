@@ -111,21 +111,23 @@ public:
 
 int main()
 {
-    Stack stack;
-    stack.push(1);
-    stack.push(2);
-    stack.push(3);
-    stack.push(4);
-    stack.push(5);
+    // Stack stack;
+    // stack.push(1);
+    // stack.push(2);
+    // stack.push(3);
+    // stack.push(4);
+    // stack.push(5);
 
-    // stack.print();
-    // cout << stack.top();
-    // cout << stack.size;
-    int i = stack.size;
-    while (i--)
-    {
-        cout << stack.pop() << " ";
-    }
+    // // stack.print();
+    // // cout << stack.top();
+    // // cout << stack.size;
+    // int i = stack.size;
+    // while (i--)
+    // {
+    //     cout << stack.pop() << " ";
+    // }
+    stack<int> s;
+
 
     return 0;
 }
