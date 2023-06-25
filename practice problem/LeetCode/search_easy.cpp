@@ -85,7 +85,7 @@ public:
             {
                 return true;
             }
-            else if(m.find(sum) != m.end())
+            else if(m.find(sum) == m.end())
             {
                 m[sum];
             }
