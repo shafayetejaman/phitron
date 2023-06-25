@@ -42,9 +42,29 @@ public:
         node *curr = this->tail;
         while (curr != nullptr)
         {
-            cout << curr->data << endl
-                 << "^" << endl;
+            if (curr->prev != nullptr)
+            {
+                cout << curr->data << endl
+                     << "^" << endl;
+            }
+            else
+            {
+                cout << curr->data << endl;
+            }
+
             curr = curr->prev;
+        }
+    }
+    int pop()
+    {
+        if (this->head == nullptr)
+        {
+            cout << "The stack is empty!" << endl;
+        }
+        else
+        {
+            node *temp = this->tail;
+            
         }
     }
 };
