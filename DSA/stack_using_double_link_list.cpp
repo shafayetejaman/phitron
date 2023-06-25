@@ -43,7 +43,9 @@ public:
             newNode->prev = tail;
             tail = tail->next;
         }
+        this->size++;
     }
+
     void print()
     {
         node *curr = this->tail;
@@ -62,6 +64,7 @@ public:
             curr = curr->prev;
         }
     }
+
     int pop()
     {
         if (this->head == nullptr)
@@ -76,10 +79,12 @@ public:
             tail = tail->prev;
             tail->next = nullptr;
             delete temp;
+            this->size--;
             return data;
         }
         return -1;
     }
+    
     int top()
     {
         if (this->head == nullptr)
@@ -106,6 +111,7 @@ int main()
     stack.pop();
     stack.print();
     // cout << stack.top();
+    // cout << stack.size;
 
     return 0;
 }
