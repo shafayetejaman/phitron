@@ -84,7 +84,7 @@ public:
         }
         return -1;
     }
-    
+
     int top()
     {
         if (this->head == nullptr)
@@ -107,11 +107,15 @@ int main()
     stack.push(3);
     stack.push(4);
     stack.push(5);
-    stack.pop();
-    stack.pop();
-    stack.print();
+
+    // stack.print();
     // cout << stack.top();
     // cout << stack.size;
+    int i = stack.size;
+    while (i--)
+    {
+        cout << stack.pop() << " ";
+    }
 
     return 0;
 }
