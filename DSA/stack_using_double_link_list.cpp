@@ -78,6 +78,7 @@ public:
             this->tail = nullptr;
             int data = temp->data;
             delete temp;
+            this->size--;
             return data;
         }
         else
