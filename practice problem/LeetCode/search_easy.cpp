@@ -67,34 +67,20 @@ public:
     }
 };
 
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution
 {
 public:
-    bool isHappy(int n)
+    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2)
     {
-        long long sum;
-        unordered_map<int, bool> m;
-        string arr = to_string(n);
-        while (true)
-        {
-            for (const auto &i : arr)
-            {
-                sum += pow((i - '0'), 2);
-            }
-            if (sum == 1)
-            {
-                return true;
-            }
-            else if(m.find(sum) == m.end())
-            {
-                m[sum];
-            }
-            else
-            {
-                return false;
-            }
-            arr = to_string(sum);
-        }
-        return false;
     }
 };
