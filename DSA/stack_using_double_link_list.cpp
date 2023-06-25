@@ -43,7 +43,7 @@ public:
         while (curr != nullptr)
         {
             cout << curr->data << endl
-                 << "↓" << endl;
+                 << "^" << endl;
             curr = curr->prev;
         }
     }
