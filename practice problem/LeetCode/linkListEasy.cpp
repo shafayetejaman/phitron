@@ -197,7 +197,7 @@ public:
     }
     long long sum(long long n)
     {
-        long long sum;
+        long long sum = 0;
 
         string arr = to_string(n);
 
