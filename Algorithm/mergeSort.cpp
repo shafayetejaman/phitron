@@ -50,10 +50,9 @@ vector<int> merge_sort(vector<int> &arr)
 
 int main()
 {
-    vector<int> arr = {1, 4, 2, 3, 6, 0, 5};
+    vector<int> arr = {7, 7, 8, 1, 4, 2, 3, 6, 0, 5};
 
-    vector<int> ans = merge_sort(arr);
-    print(ans);
+    print(merge_sort(arr));
 
     return 0;
 }
