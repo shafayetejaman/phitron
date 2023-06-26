@@ -64,7 +64,6 @@ public:
  * };
  */
 
-
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -176,5 +175,36 @@ public:
         }
         reverse(head, curr, curr->next);
         curr->next = prev;
+    }
+};
+class Solution
+{
+public:
+    bool isHappy(int n)
+    {
+        long long slow = n, fast = n;
+        do
+        {
+            slow = sum(slow);
+            fast = sum(sum(fast));
+
+        } while (slow != fast);
+        if (slow == 1)
+        {
+            return true;
+        }
+        return false;
+    }
+    long long sum(long long n)
+    {
+        long long sum;
+
+        string arr = to_string(n);
+
+        for (const auto &i : arr)
+        {
+            sum += pow((i - '0'), 2);
+        }
+        return sum;
     }
 };
