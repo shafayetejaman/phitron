@@ -229,8 +229,8 @@ public:
             return head;
         }
         ListNode *midElement = mid(head);
+
         ListNode *right = merge_sort(midElement);
-        midElement->next = nullptr;
 
         ListNode *left = merge_sort(head);
 
@@ -302,6 +302,9 @@ public:
             slow = slow->next;
             fast = fast->next->next;
         }
-        return slow;
+        ListNode *mid = slow->next;
+        slow->next = nullptr;
+
+        return mid;
     }
 };
