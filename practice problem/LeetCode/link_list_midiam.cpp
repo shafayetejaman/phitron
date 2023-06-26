@@ -296,11 +296,17 @@ public:
     }
     ListNode* mid(ListNode *slow)
     {
+        bool flag = true;
         ListNode *fast = slow;
         while (fast != nullptr && fast->next != nullptr)
         {
-            slow = slow->next;
             fast = fast->next->next;
+            if (flag)
+            {
+                flag = false;
+                continue;
+            }
+            slow = slow->next;
         }
         ListNode *mid = slow->next;
         slow->next = nullptr;
