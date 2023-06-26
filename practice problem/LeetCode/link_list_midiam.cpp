@@ -300,6 +300,7 @@ public:
             slow = slow->next;
             fast = fast->next->next;
         }
+        slow->next = nullptr;
         return slow;
     }
 };
