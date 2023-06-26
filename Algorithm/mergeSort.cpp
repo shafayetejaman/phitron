@@ -31,17 +31,19 @@ vector<int> merge(vector<int> &left, vector<int> &right)
     }
     return ans;
 }
-vector<int> merge_sort(vector<int> arr)
+vector<int> merge_sort(vector<int> &arr)
 {
-    if (arr.size() == 1)
+    if (arr.size() <= 1)
     {
         return arr;
     }
     int mid = arr.size() / 2;
 
-    vector<int> left = merge_sort({arr.begin(), arr.begin() + mid});
+    vector<int> left(arr.begin(), arr.begin() + mid);
+    vector<int> right(arr.begin() + mid, arr.end());
 
-    vector<int> right = merge_sort({arr.begin() + mid, arr.end()});
+    left = merge_sort(left);
+    right = merge_sort(right);
 
     return merge(left, right);
 }
