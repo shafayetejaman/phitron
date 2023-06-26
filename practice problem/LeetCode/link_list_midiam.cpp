@@ -220,10 +220,19 @@ class Solution
 public:
     ListNode *sortList(ListNode *head)
     {
+        return merge_sort(head);
     }
     ListNode* merge_sort(ListNode *head)
     {
-        
+        if (head == nullptr || head->next == nullptr)
+        {
+            return head;
+        }
+        ListNode *midElement = mid(head);
+        ListNode *left = merge_sort(head);
+        ListNode *right = merge_sort(midElement);
+
+        return merge(left, right);
     }
     ListNode *merge(ListNode *list1, ListNode *list2)
     {
@@ -283,7 +292,7 @@ public:
         }
         return ans;
     }
-    ListNode*mid(ListNode *slow)
+    ListNode* mid(ListNode *slow)
     {
         ListNode *fast = slow;
         while (fast != nullptr && fast->next != nullptr)
