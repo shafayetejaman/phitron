@@ -38,7 +38,7 @@ vector<int> merge_sort(vector<int> arr)
         return arr;
     }
     int mid = arr.size() / 2;
-    
+
     vector<int> left = merge_sort({arr.begin(), arr.begin() + mid});
 
     vector<int> right = merge_sort({arr.begin() + mid, arr.end()});
@@ -50,8 +50,8 @@ int main()
 {
     vector<int> arr = {1, 4, 2, 3, 6, 0, 5};
 
-   vector<int> ans =  merge_sort(arr);
-   print(ans);
+    vector<int> ans = merge_sort(arr);
+    print(ans);
 
-   return 0;
+    return 0;
 }
