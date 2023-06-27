@@ -375,13 +375,16 @@ public:
     {
         ListNode *mid = this->mid(head);
         reverse(mid, nullptr, mid);
+        ListNode *newList = nullptr;
+        ListNode *tail = nullptr;
         while (mid != nullptr && head != nullptr)
         {
-
+            append(newList, mid->val, tail);
+            append(newList, head->val, tail);
             mid = mid->next;
             head = head->next;
         }
-
+        head = newList;
     }
     ListNode *mid(ListNode *slow)
     {
