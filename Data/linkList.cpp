@@ -190,6 +190,17 @@ public:
         this->tail = this->head;
         this->head = prev;
     }
+    void reverse(node *&head, node *prev, node *curr, node *&tail)
+    {
+        if (curr == tail->next)
+        {
+            tail = head;
+            head = prev;
+            return;
+        }
+        reverse(head, curr, curr->next, tail);
+        curr->next = prev;
+    }
 };
 
 int main()
@@ -219,6 +230,7 @@ int main()
     list.print();
     list.delete_node(list.size() - 1);
     list.print();
+
 
     return 0;
 }
