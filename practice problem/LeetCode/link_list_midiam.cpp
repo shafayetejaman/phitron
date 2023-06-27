@@ -344,7 +344,14 @@ public:
 
         ListNode *left = prev;
         int count = 1;
-        while (count != right -left)
+        while (count != right -left-1)
+        {
+            ListNode *next = curr;
+            curr->next = prev;
+            prev = curr;
+            curr = curr->next;
+            count++;
+        }
 
         return head;
     }
