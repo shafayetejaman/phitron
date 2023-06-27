@@ -224,6 +224,9 @@ class Solution
 public:
     bool isPalindrome(ListNode *head)
     {
+        ListNode *mid = this->mid(head);
+        reverse(mid, nullptr, mid);
+
     }
     ListNode *mid(ListNode *slow)
     {
@@ -243,5 +246,16 @@ public:
         slow->next = nullptr;
 
         return mid;
+    }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
+    {
+        if (curr->next == nullptr)
+        {
+            head = curr;
+            head->next = prev;
+            return;
+        }
+        reverse(head, curr, curr->next);
+        curr->next = prev;
     }
 };
