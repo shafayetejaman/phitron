@@ -356,7 +356,7 @@ public:
         }
         if (before != nullptr)
         {
-            prev->next = before;
+            before->next = prev;
         }
         else
         {
