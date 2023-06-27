@@ -330,9 +330,11 @@ public:
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
         ListNode *prev = head;
+        ListNode *prevPrev = nullptr;
         ListNode *next = head;
         while (--left)
         {
+            prevPrev = prev;
             prev = prev->next;
         }
         while(--right)
@@ -344,7 +346,7 @@ public:
         reverse(r_head, nullptr, r_head, r_tail);
         if(next != nullptr)
         {
-            r_tail->next = next;
+            r_tail->next = next->next;
         }
         if (head == prev)
         {
@@ -352,7 +354,7 @@ public:
         }
         else
         {
-            prev->next = r_head;
+            prevPrev->next = r_head;
             return head;
         }
         return head;
