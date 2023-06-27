@@ -1,23 +1,20 @@
-#include <bits/stdc++.h>
+#include "my_hederfile.h"
 
 using namespace std;
 
 int main()
 {
-    int T;
-    cin >> T;
-
-    for (int i = 0; i < T; i++)
+    int n = 10;
+        //             9 == 0
+    for (auto i = n-1; i > -1; i--)
     {
-        cout << "input: ";
-        string S, X;
-        cin >> S >> X;
+        cout << i << " ";
+    }
+    print();
 
-        while (S.find(X) != -1)
-        {
-            S.replace(S.find(X), X.length(), "{}");
-        }
-        cout << S << endl;
+    while (--n)
+    {
+        print(n);
     }
 
     return 0;
