@@ -337,14 +337,14 @@ public:
         ListNode *prev = nullptr;
         ListNode *curr = nullptr;
 
-        for (curr = head; --left; curr = curr->next)
+        int count = 1;
+        for (curr = head; count < left; curr = curr->next, count++)
         {
             prev = curr;
         }
 
         ListNode *left = prev;
-        int count = 1;
-        while (count != right -left-1)
+        while (count != right -left)
         {
             ListNode *next = curr;
             curr->next = prev;
