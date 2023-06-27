@@ -329,6 +329,10 @@ class Solution
 public:
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
+        if (left == right)
+        {
+            return head;
+        }
         ListNode *prev = head;
         ListNode *prevPrev = nullptr;
         ListNode *next = head;
