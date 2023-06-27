@@ -335,7 +335,7 @@ public:
         }
 
         ListNode *prev = nullptr;
-        ListNode *curr = nullptr;
+        ListNode *curr = head;
 
         int count = 1;
         for (curr = head; count < left; curr = curr->next, count++)
