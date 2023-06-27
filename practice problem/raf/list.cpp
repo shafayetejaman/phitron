@@ -74,7 +74,6 @@ int main()
     {
         for (Node *i = head, *j = head2; i != NULL, j != NULL; i = i->next, j = j->next)
         {
-
             if (i->val != j->val)
             {
                 flag++;
