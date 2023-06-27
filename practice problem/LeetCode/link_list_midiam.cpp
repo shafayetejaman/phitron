@@ -373,34 +373,25 @@ class Solution
 public:
     void reorderList(ListNode *head)
     {
-        ListNode *mid = this->mid(head);
-        reverse(mid, nullptr, mid);
-        ListNode *newList = head;
-        ListNode *temp = newList;
-        head = head->next;
+        if (head == nullptr || head->next == nullptr)
+            return;
 
-        while (mid != nullptr && head != nullptr)
+        ListNode *mid = this->mid(head);
+        this->reverse(mid, nullptr, mid);
+
+        ListNode *head1 = head;
+        ListNode *head2 = mid;
+
+        while (head2->next)
         {
-            temp->next = mid;
-            temp = temp->next;
-            temp->next = head;
-            temp = temp->next;
-            mid = mid->next;
-            head = head->next;
+            ListNode *tmp = head1->next;
+            head1->next = head2;
+            head1 = tmp;
+
+            tmp = head2->next;
+            head2->next = head1;
+            head2 = tmp;
         }
-        if (mid != nullptr)
-        {
-            temp->next = mid;
-            temp = temp->next;
-            mid = mid->next;
-        }
-        if (head != nullptr)
-        {
-            temp->next = head;
-            temp = temp->next;
-            head = head->next;
-        }
-        head = newList;
     }
     ListNode *mid(ListNode *slow)
     {
@@ -431,5 +422,4 @@ public:
         reverse(head, curr, curr->next);
         curr->next = prev;
     }
-
 };
