@@ -345,6 +345,7 @@ public:
         {
             next = next->next;
         }
+        if (prevPrev != nullptr)
         prevPrev->next = nullptr;
         ListNode *r_head = prev;
         ListNode *r_tail = next;
