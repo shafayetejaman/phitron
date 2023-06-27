@@ -333,7 +333,18 @@ public:
         {
             return head;
         }
-        
+
+        ListNode *prev = nullptr;
+        ListNode *curr = nullptr;
+
+        for (curr = head; --left; curr = curr->next)
+        {
+            prev = curr;
+        }
+
+        ListNode *left = prev;
+        int count = 1;
+        while (count != right -left)
 
         return head;
     }
