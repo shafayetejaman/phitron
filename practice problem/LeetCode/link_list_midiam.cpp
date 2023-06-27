@@ -383,9 +383,9 @@ public:
             curr = curr->next;
         }
         if (head != nullptr)
-            reverse(head, nullptr, head);
+            reverse(newList, nullptr, newList);
         curr = head;
-        ListNode *mid = this->mid(head);
+        ListNode *mid = this->mid(curr);
         tail = nullptr;
         while (curr !=  mid)
         {
@@ -394,7 +394,7 @@ public:
             curr = curr->next;
             newList = newList->next;
         }
-        head = newList;
+        head = ans;
     }
     ListNode *mid(ListNode *slow)
     {
