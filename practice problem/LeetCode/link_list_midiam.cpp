@@ -392,6 +392,13 @@ public:
             head2->next = head1;
             head2 = tmp;
         }
+        while (head1->next)
+        {
+            ListNode *tmp = head1->next;
+            head1->next = head2;
+            head1 = tmp;
+
+        }
     }
     ListNode *mid(ListNode *slow)
     {
