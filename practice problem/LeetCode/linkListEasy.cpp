@@ -226,6 +226,10 @@ public:
     {
         ListNode *mid = this->mid(head);
         reverse(mid, nullptr, mid);
+        while (mid != nullptr && head != nullptr)
+        {
+            
+        }
 
     }
     ListNode *mid(ListNode *slow)
