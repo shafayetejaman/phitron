@@ -344,15 +344,15 @@ public:
         reverse(r_head, nullptr, r_head, r_tail);
         if(next != nullptr)
         {
-            r_tail->next = next;
+            r_head->next = next;
         }
         if (head == prev)
         {
-            return r_head;
+            return r_tail;
         }
         else
         {
-            prev->next = r_head;
+            prev->next = r_tail;
             return head;
         }
         return head;
