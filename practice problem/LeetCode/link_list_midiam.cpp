@@ -351,7 +351,7 @@ public:
             ListNode *next = curr->next;
             curr->next = prev;
             prev = curr;
-            curr = curr->next;
+            curr = next;
             count++;
         }
         if (before != nullptr)
