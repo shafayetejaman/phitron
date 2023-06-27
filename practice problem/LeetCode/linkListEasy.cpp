@@ -249,10 +249,9 @@ public:
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
     {
-        if (curr->next == nullptr)
+        if (curr == nullptr)
         {
-            head = curr;
-            head->next = prev;
+            head = prev;
             return;
         }
         reverse(head, curr, curr->next);
