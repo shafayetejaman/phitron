@@ -355,7 +355,7 @@ public:
         r_tail->next = next->next;
 
 
-        if (head == prev)
+        if (prevPrev == nullptr)
         {
             return head;
         }
