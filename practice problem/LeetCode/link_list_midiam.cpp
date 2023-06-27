@@ -333,48 +333,43 @@ public:
         {
             return head;
         }
-        ListNode *prev = head;
-        ListNode *prevPrev = nullptr; // 1 2 3 3 4   left 2 right 4
-        ListNode *last = head;
-        while (--left)
+
+        ListNode *prev = nullptr;
+        ListNode *curr = head;
+        int count = 1;
+
+        // Traverse to the node at position 'left'
+        while (curr != nullptr && count < left)
         {
-            prevPrev = prev;
-            prev = prev->next;
+            prev = curr;
+            curr = curr->next;
+            count++;
         }
-        while(--right)
+
+        ListNode *start = prev;
+        ListNode *end = curr;
+
+        // Reverse the sublist from 'left' to 'right'
+        while (curr != nullptr && count <= right)
         {
-            last = last->next;
+            ListNode *nextNode = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = nextNode;
+            count++;
         }
-        if (prevPrev != nullptr)
-        prevPrev->next = nullptr;
-        ListNode *r_head = prev;
-        ListNode *r_tail = last;
-        r_tail->next = nullptr;
-        reverse(r_head, nullptr, r_head, r_tail);
 
-        r_tail->next = last->next;
-
-
-        if (prevPrev == nullptr)
+        // Connect the reversed sublist with the rest of the list
+        if (start != nullptr)
         {
-            return head;
+            start->next = prev;
         }
         else
         {
-            prevPrev->next = r_head;
-            return head;
-        }
-        return head;
-    }
-    void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
-    {
-        if (curr == nullptr)
-        {
-            tail = head;
             head = prev;
-            return;
         }
-        reverse(head, curr, curr->next, tail);
-        curr->next = prev;
+        end->next = curr;
+
+        return head;
     }
 };
