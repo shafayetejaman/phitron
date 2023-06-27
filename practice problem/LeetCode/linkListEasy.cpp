@@ -228,9 +228,14 @@ public:
         reverse(mid, nullptr, mid);
         while (mid != nullptr && head != nullptr)
         {
-            
+            if (mid->val != head->val)
+            {
+                return false;
+            }
+            mid = mid->next;
+            head = head->next;
         }
-
+        return false;
     }
     ListNode *mid(ListNode *slow)
     {
