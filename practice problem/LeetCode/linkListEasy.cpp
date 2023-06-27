@@ -165,6 +165,25 @@ public:
             tail = tail->next;
         }
     }
+    ListNode *mid(ListNode *slow)
+    {
+        bool flag = true;
+        ListNode *fast = slow;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            fast = fast->next->next;
+            if (flag)
+            {
+                flag = false;
+                continue;
+            }
+            slow = slow->next;
+        }
+        ListNode *mid = slow->next;
+        slow->next = nullptr;
+
+        return mid;
+    }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
     {
         if (curr->next == nullptr)
