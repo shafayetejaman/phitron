@@ -384,6 +384,13 @@ public:
             mid = mid->next;
             head = head->next;
         }
+        if (mid != nullptr)
+        {
+            append(newList, mid->val, tail);
+
+        }
+        if (head != nullptr)
+            append(newList, head->val, tail);
         head = newList;
     }
     ListNode *mid(ListNode *slow)
