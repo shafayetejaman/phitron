@@ -5,7 +5,7 @@ using namespace std;
 
 struct ListNode {
     int val;
-    ListNode *next;
+    ListNode *next = nullptr;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
@@ -14,6 +14,9 @@ struct ListNode {
 class Solution
 {
 public:
+    ListNode *head = nullptr;
+    ListNode *tail = nullptr;
+
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
         if (left == right)
@@ -63,21 +66,45 @@ public:
         reverse(head, curr, curr->next, tail);
         curr->next = prev;
     }
+    void append(int val)
+    {
+        ListNode *newNode = new ListNode(val);
+        if (this->head == nullptr)
+        {
+            this->head = newNode;
+            this->tail = newNode;
+        }
+        else
+        {
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
+        }
+    }
+    void print()
+    {
+        ListNode *ptr = this->head;
+        cout << "head -> ";
+        while (ptr != nullptr)
+        {
+            cout << ptr->val << " -> ";
+            ptr = ptr->next;
+        }
+        cout << "null" << endl;
+        cout << "tail -> " << tail->val << endl;
+    }
 };
 int main()
 {
-    int n = 10;
-        //             9 == 0
-    for (auto i = n-1; i > -1; i--)
+    Solution list;
+    int t = 3;
+    while (t--)
     {
-        cout << i << " ";
+        int val;
+        cin >> val;
+        list.append(val);
     }
-    print();
-
-    while (--n)
-    {
-        print(n);
-    }
+    list.reverseBetween(list.head, 1, 3);
+    list.print();
 
     return 0;
 }
