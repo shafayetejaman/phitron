@@ -374,6 +374,7 @@ public:
     void reorderList(ListNode *head)
     {
         ListNode *newList = nullptr;
+        ListNode *ans = nullptr;
         ListNode *curr = head;
         ListNode *tail = nullptr;
         while (curr != nullptr)
@@ -384,7 +385,16 @@ public:
         if (head != nullptr)
             reverse(head, nullptr, head);
         curr = head;
-        
+        ListNode *mid = this->mid(head);
+        tail = nullptr;
+        while (curr !=  mid)
+        {
+            append(ans, curr->val, tail);
+            append(ans, newList->val, tail);
+            curr = curr->next;
+            newList = newList->next;
+        }
+        head = newList;
     }
     ListNode *mid(ListNode *slow)
     {
