@@ -335,7 +335,7 @@ public:
         }
         ListNode *prev = head;
         ListNode *prevPrev = nullptr; // 1 2 3 3 4   left 2 right 4
-        ListNode *next = head;
+        ListNode *last = head;
         while (--left)
         {
             prevPrev = prev;
@@ -343,16 +343,16 @@ public:
         }
         while(--right)
         {
-            next = next->next;
+            last = last->next;
         }
         if (prevPrev != nullptr)
         prevPrev->next = nullptr;
         ListNode *r_head = prev;
-        ListNode *r_tail = next;
+        ListNode *r_tail = last;
         r_tail->next = nullptr;
         reverse(r_head, nullptr, r_head, r_tail);
 
-        r_tail->next = next->next;
+        r_tail->next = last->next;
 
 
         if (prevPrev == nullptr)
