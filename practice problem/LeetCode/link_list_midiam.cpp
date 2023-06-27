@@ -348,7 +348,7 @@ public:
 
         while (count <= right)
         {
-            ListNode *next = curr;
+            ListNode *next = curr->next;
             curr->next = prev;
             prev = curr;
             curr = curr->next;
