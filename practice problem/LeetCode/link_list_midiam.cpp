@@ -334,42 +334,7 @@ public:
             return head;
         }
 
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-        int count = 1;
-
-        // Traverse to the node at position 'left'
-        while (curr != nullptr && count < left)
-        {
-            prev = curr;
-            curr = curr->next;
-            count++;
-        }
-
-        ListNode *start = prev;
-        ListNode *end = curr;
-
-        // Reverse the sublist from 'left' to 'right'
-        while (curr != nullptr && count <= right)
-        {
-            ListNode *nextNode = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = nextNode;
-            count++;
-        }
-
-        // Connect the reversed sublist with the rest of the list
-        if (start != nullptr)
-        {
-            start->next = prev;
-        }
-        else
-        {
-            head = prev;
-        }
-        end->next = curr;
-
+       
         return head;
     }
 };
