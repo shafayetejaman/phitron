@@ -373,7 +373,18 @@ class Solution
 public:
     void reorderList(ListNode *head)
     {
-
+        ListNode *newList = nullptr;
+        ListNode *curr = head;
+        ListNode *tail = nullptr;
+        while (curr != nullptr)
+        {
+            append(newList, curr->val, tail);
+            curr = curr->next;
+        }
+        if (head != nullptr)
+            reverse(head, nullptr, head);
+        curr = head;
+        
     }
     ListNode *mid(ListNode *slow)
     {
@@ -393,5 +404,29 @@ public:
         slow->next = nullptr;
 
         return mid;
+    }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
+    {
+        if (curr == nullptr)
+        {
+            head = prev;
+            return;
+        }
+        reverse(head, curr, curr->next);
+        curr->next = prev;
+    }
+    void append(ListNode *&head, int val, ListNode *&tail)
+    {
+        ListNode *newNode = new ListNode(val);
+        if (head == nullptr)
+        {
+            head = newNode;
+            tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = tail->next;
+        }
     }
 };
