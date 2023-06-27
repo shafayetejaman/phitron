@@ -9,6 +9,7 @@ int main()
 
     for (int i = 0; i < T; i++)
     {
+        cout << "input: ";
         string S, X;
         cin >> S >> X;
 
