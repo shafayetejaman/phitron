@@ -15,7 +15,7 @@ int main()
 
         while (S.find(X) != -1)
         {
-            S.replace(S.find(X), X.length(), "s");
+            S.replace(S.find(X), X.length(), "{}");
         }
         cout << S << endl;
     }
