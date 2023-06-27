@@ -366,7 +366,7 @@ public:
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
-        if (curr == tail)
+        if (curr == tail->next)
         {
             tail = head;
             head = prev;
