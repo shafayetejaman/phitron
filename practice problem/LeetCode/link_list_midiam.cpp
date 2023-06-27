@@ -222,7 +222,7 @@ public:
     {
         return merge_sort(head);
     }
-    ListNode* merge_sort(ListNode *head)
+    ListNode *merge_sort(ListNode *head)
     {
         if (head == nullptr || head->next == nullptr)
         {
@@ -294,7 +294,7 @@ public:
         }
         return ans;
     }
-    ListNode* mid(ListNode *slow)
+    ListNode *mid(ListNode *slow)
     {
         bool flag = true;
         ListNode *fast = slow;
@@ -333,8 +333,8 @@ public:
         {
             return head;
         }
+        
 
-       
         return head;
     }
 };
