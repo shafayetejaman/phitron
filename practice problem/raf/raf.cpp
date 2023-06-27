@@ -37,7 +37,7 @@ public:
         }
         if (prevPrev != nullptr)
             prevPrev->next = nullptr;
-            
+
         ListNode *r_head = prev;
         ListNode *r_tail = last;
         r_tail->next = nullptr;
@@ -47,7 +47,7 @@ public:
 
         if (prevPrev == nullptr)
         {
-            return head;
+            return r_head;
         }
         else
         {
