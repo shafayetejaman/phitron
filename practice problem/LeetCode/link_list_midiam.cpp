@@ -333,7 +333,7 @@ public:
         {
             return head;
         }
-        ListNode *prev = head;                      
+        ListNode *prev = head;
         ListNode *prevPrev = nullptr; // 1 2 3 3 4   left 2 right 4
         ListNode *next = head;
         while (--left)
@@ -348,7 +348,7 @@ public:
         ListNode *r_head = prev;
         ListNode *r_tail = next;
         reverse(r_head, nullptr, r_head, r_tail);
-        if(next != nullptr)
+        if(next->next != nullptr)
         {
             r_tail->next = next->next;
         }
