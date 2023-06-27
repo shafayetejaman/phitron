@@ -355,6 +355,7 @@ public:
             prev->next = r_head;
             return head;
         }
+        return head;
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
