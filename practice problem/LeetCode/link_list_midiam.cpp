@@ -340,7 +340,7 @@ public:
             next = next->next;
         }
         ListNode *r_head = prev;
-        ListNode *r_tail = nullptr;
+        ListNode *r_tail = next;
         reverse(r_head, nullptr, r_head, r_tail);
         if(next != nullptr)
         {
@@ -359,7 +359,7 @@ public:
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
-        if (curr == nullptr)
+        if (curr == tail)
         {
             tail = head;
             head = prev;
