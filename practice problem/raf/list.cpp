@@ -72,30 +72,16 @@ int main()
     int flag = 0;
     if (size1 == size2)
     {
-        for (Node *i = head; i != NULL; i = i->next)
+        for (Node *i = head, *j = head2; i != NULL, j != NULL; i = i->next, j = j->next)
         {
-            for (Node *j = head2; j >= i->next; j = j->next)
+
+            if (i->val != j->val)
             {
-
-                if (j == i)
-                {
-
-                    if (i->val != j->val)
-                    {
-                        flag++;
-                        break;
-                    }
-                    else
-                    {
-                        flag++;
-                    }
-                }
-
+                flag++;
                 break;
             }
         }
     }
-
     else
     {
         flag++;
