@@ -367,3 +367,31 @@ public:
         return head;
     }
 };
+
+class Solution
+{
+public:
+    void reorderList(ListNode *head)
+    {
+
+    }
+    ListNode *mid(ListNode *slow)
+    {
+        bool flag = true;
+        ListNode *fast = slow;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            fast = fast->next->next;
+            if (flag)
+            {
+                flag = false;
+                continue;
+            }
+            slow = slow->next;
+        }
+        ListNode *mid = slow->next;
+        slow->next = nullptr;
+
+        return mid;
+    }
+};
