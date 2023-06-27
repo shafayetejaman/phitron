@@ -352,6 +352,7 @@ public:
         {
             r_tail->next = next->next;
         }
+
         if (head == prev)
         {
             return r_head;
