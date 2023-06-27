@@ -369,6 +369,7 @@ public:
         if (curr == tail->next)
         {
             tail = head;
+            tail->next = nullptr;
             head = prev;
             return;
         }
