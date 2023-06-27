@@ -333,7 +333,7 @@ public:
         {
             return head;
         }
-        ListNode *prev = head;
+        ListNode *prev = head;                      
         ListNode *prevPrev = nullptr; // 1 2 3 3 4   left 2 right 4
         ListNode *next = head;
         while (--left)
