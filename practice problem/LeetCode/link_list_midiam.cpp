@@ -339,7 +339,7 @@ public:
         {
             next = next->next;
         }
-        ListNode *r_head = prev->next;
+        ListNode *r_head = prev;
         ListNode *r_tail = nullptr;
         reverse(r_head, nullptr, r_head, r_tail);
         if(next != nullptr)
