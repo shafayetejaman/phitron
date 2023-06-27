@@ -235,7 +235,7 @@ public:
             mid = mid->next;
             head = head->next;
         }
-        return false;
+        return true;
     }
     ListNode *mid(ListNode *slow)
     {
