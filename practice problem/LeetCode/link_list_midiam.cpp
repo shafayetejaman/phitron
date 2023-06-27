@@ -378,32 +378,7 @@ public:
 
         ListNode *mid = this->mid(head);
         this->reverse(mid, nullptr, mid);
-
-        ListNode *head1 = head;
-        ListNode *head2 = mid;
-
-        while (head2->next != nullptr && head1->next != nullptr)
-        {
-            ListNode *tmp = head1->next;
-            head1->next = head2;
-            head1 = tmp;
-
-            tmp = head2->next;
-            head2->next = head1;
-            head2 = tmp;
-        }
-        while (head1->next != nullptr)
-        {
-            ListNode *tmp = head1->next;
-            head1->next = head2;
-            head1 = tmp;
-        }
-        while (head2->next != nullptr)
-        {
-            ListNode *tmp = head2->next;
-            head2->next = head1;
-            head2 = tmp;
-        }
+        
     }
     ListNode *mid(ListNode *slow)
     {
