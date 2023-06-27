@@ -165,25 +165,7 @@ public:
             tail = tail->next;
         }
     }
-    ListNode *mid(ListNode *slow)
-    {
-        bool flag = true;
-        ListNode *fast = slow;
-        while (fast != nullptr && fast->next != nullptr)
-        {
-            fast = fast->next->next;
-            if (flag)
-            {
-                flag = false;
-                continue;
-            }
-            slow = slow->next;
-        }
-        ListNode *mid = slow->next;
-        slow->next = nullptr;
 
-        return mid;
-    }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
     {
         if (curr->next == nullptr)
@@ -225,5 +207,41 @@ public:
             sum += pow((i - '0'), 2);
         }
         return sum;
+    }
+};
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution
+{
+public:
+    bool isPalindrome(ListNode *head)
+    {
+    }
+    ListNode *mid(ListNode *slow)
+    {
+        bool flag = true;
+        ListNode *fast = slow;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            fast = fast->next->next;
+            if (flag)
+            {
+                flag = false;
+                continue;
+            }
+            slow = slow->next;
+        }
+        ListNode *mid = slow->next;
+        slow->next = nullptr;
+
+        return mid;
     }
 };
