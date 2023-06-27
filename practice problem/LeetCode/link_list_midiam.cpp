@@ -375,22 +375,31 @@ public:
     {
         ListNode *mid = this->mid(head);
         reverse(mid, nullptr, mid);
-        ListNode *newList = nullptr;
-        ListNode *tail = nullptr;
+        ListNode *newList = head;
+        ListNode *temp = newList;
+        head = head->next;
+
         while (mid != nullptr && head != nullptr)
         {
-            append(newList, head->val, tail);
-            append(newList, mid->val, tail);
+            temp->next = mid;
+            temp = temp->next;
+            temp->next = head;
+            temp = temp->next;
             mid = mid->next;
             head = head->next;
         }
         if (mid != nullptr)
         {
-            append(newList, mid->val, tail);
-
+            temp->next = mid;
+            temp = temp->next;
+            mid = mid->next;
         }
         if (head != nullptr)
-            append(newList, head->val, tail);
+        {
+            temp->next = head;
+            temp = temp->next;
+            head = head->next;
+        }
         head = newList;
     }
     ListNode *mid(ListNode *slow)
@@ -422,18 +431,5 @@ public:
         reverse(head, curr, curr->next);
         curr->next = prev;
     }
-    void append(ListNode *&head, int val, ListNode *&tail)
-    {
-        ListNode *newNode = new ListNode(val);
-        if (head == nullptr)
-        {
-            head = newNode;
-            tail = newNode;
-        }
-        else
-        {
-            tail->next = newNode;
-            tail = tail->next;
-        }
-    }
+
 };
