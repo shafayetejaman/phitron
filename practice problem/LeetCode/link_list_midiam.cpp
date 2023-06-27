@@ -379,8 +379,8 @@ public:
         ListNode *tail = nullptr;
         while (mid != nullptr && head != nullptr)
         {
-            append(newList, mid->val, tail);
             append(newList, head->val, tail);
+            append(newList, mid->val, tail);
             mid = mid->next;
             head = head->next;
         }
