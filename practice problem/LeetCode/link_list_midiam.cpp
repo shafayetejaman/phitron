@@ -330,10 +330,16 @@ public:
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
         ListNode *prev = head;
+        ListNode *next = head;
         while (--left)
         {
-
+            prev = prev->next;
         }
+        while(--right)
+        {
+            next = next->next;
+        }
+
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
