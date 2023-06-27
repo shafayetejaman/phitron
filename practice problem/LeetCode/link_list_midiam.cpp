@@ -346,6 +346,15 @@ public:
         {
             r_tail->next = next;
         }
+        if (head == prev)
+        {
+            return r_head;
+        }
+        else
+        {
+            prev->next = r_head;
+            return head;
+        }
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
