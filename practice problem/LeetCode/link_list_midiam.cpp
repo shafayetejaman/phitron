@@ -343,8 +343,10 @@ public:
             prev = curr;
         }
 
-        ListNode *left = prev;
-        while (count != right -left)
+        ListNode *before = prev;
+        ListNode *last = curr;
+
+        while (count <= right)
         {
             ListNode *next = curr;
             curr->next = prev;
@@ -352,6 +354,15 @@ public:
             curr = curr->next;
             count++;
         }
+        if (before != nullptr)
+        {
+            prev->next = before;
+        }
+        else
+        {
+            head = prev;
+        }
+        last->next = curr;
 
         return head;
     }
