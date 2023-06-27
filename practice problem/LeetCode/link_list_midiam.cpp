@@ -350,14 +350,13 @@ public:
         ListNode *r_tail = next;
         r_tail->next = nullptr;
         reverse(r_head, nullptr, r_head, r_tail);
-        if(next->next != nullptr)
-        {
-            r_tail->next = next->next;
-        }
+
+        r_tail->next = next->next;
+
 
         if (head == prev)
         {
-            return r_head;
+            return head;
         }
         else
         {
