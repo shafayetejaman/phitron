@@ -314,7 +314,6 @@ public:
         return mid;
     }
 };
-
 class Solution
 {
 public:
@@ -336,27 +335,28 @@ public:
         {
             next = next->next;
         }
-        if (head != prev)
+        if (prevPrev != nullptr)
+        {
             prevPrev->next = nullptr;
+        }
         ListNode *r_head = prev;
         ListNode *r_tail = next;
         ListNode *lastNext = next->next;
         r_tail->next = nullptr;
         reverse(r_head, nullptr, r_head, r_tail);
-
         r_tail->next = lastNext;
 
         if (prevPrev == nullptr)
         {
-            return head;
+            return r_head;
         }
         else
         {
             prevPrev->next = r_head;
             return head;
         }
-        return head;
     }
+
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
         if (curr == nullptr)
