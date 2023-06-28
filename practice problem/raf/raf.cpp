@@ -40,10 +40,11 @@ public:
 
         ListNode *r_head = prev;
         ListNode *r_tail = last;
+        ListNode *lastNext = last->next;
         r_tail->next = nullptr;
         reverse(r_head, nullptr, r_head, r_tail);
 
-        r_tail->next = last->next;
+        r_tail->next = lastNext;
 
         if (prevPrev == nullptr)
         {
