@@ -388,6 +388,8 @@ public:
             h1->next = h2;
             h1 = temp;
 
+            ListNode *temp2 = h2->next;
+            h2->next = h1;
             
         }
 
