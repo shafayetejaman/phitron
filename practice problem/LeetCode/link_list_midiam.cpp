@@ -378,6 +378,9 @@ public:
 
         ListNode *mid = this->mid(head);
         this->reverse(mid, nullptr, mid);
+
+        ListNode *h1 = head;
+        ListNode *h2 = mid;
         
     }
     ListNode *mid(ListNode *slow)
