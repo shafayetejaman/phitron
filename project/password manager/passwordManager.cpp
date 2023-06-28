@@ -12,6 +12,7 @@ public:
         this->first = first;
         this->second = second;
     }
+    Array() {}
 };
 
 int MAX;
@@ -19,15 +20,13 @@ int MAX;
 class PassWord
 {
 private:
-    vector<Array> Map;
+    vector<Array> Map();
 
 public:
-    
 };
 
 int main()
 {
-
 
     return 0;
 }
