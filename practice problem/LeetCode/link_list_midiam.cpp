@@ -390,9 +390,22 @@ public:
 
             ListNode *temp2 = h2->next;
             h2->next = h1;
-            
+            h2 = temp2;
         }
+        while ( h2 != nullptr)
+        {
+            ListNode *temp2 = h2->next;
+            h2->next = h1;
+            h2 = temp2;
+        }
+        while (h1 != nullptr )
+        {
+            ListNode *temp = h1->next;
+            h1->next = h2;
+            h1 = temp;
 
+        }
+        head = h1;
     }
     ListNode *mid(ListNode *slow)
     {
