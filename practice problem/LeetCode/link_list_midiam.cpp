@@ -381,7 +381,16 @@ public:
 
         ListNode *h1 = head;
         ListNode *h2 = mid;
-        
+
+        while (h1 != nullptr && h2 != nullptr)
+        {
+            ListNode *temp = h1->next;
+            h1->next = h2;
+            h1 = temp;
+
+            
+        }
+
     }
     ListNode *mid(ListNode *slow)
     {
