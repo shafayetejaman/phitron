@@ -422,8 +422,6 @@ public:
             slow = slow->next;
         }
         ListNode *mid = slow->next;
-        slow->next = nullptr;
-
         return mid;
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
