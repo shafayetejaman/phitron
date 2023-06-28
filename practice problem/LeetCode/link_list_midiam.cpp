@@ -314,16 +314,7 @@ public:
         return mid;
     }
 };
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode() : val(0), next(nullptr) {}
- *     ListNode(int x) : val(x), next(nullptr) {}
- *     ListNode(int x, ListNode *next) : val(x), next(next) {}
- * };
- */
+
 class Solution
 {
 public:
@@ -333,38 +324,49 @@ public:
         {
             return head;
         }
-
-        ListNode *prev = nullptr;
-        ListNode *curr = head;
-
-        int count = 1;
-        for (curr = head; count < left; curr = curr->next, count++)
+        ListNode *prev = head;
+        ListNode *prevPrev = nullptr; // 1 2 3 3 4   left 2 right 4
+        ListNode *next = head;
+        while (--left)
         {
-            prev = curr;
+            prevPrev = prev;
+            prev = prev->next;
         }
-
-        ListNode *before = prev;
-        ListNode *last = curr;
-
-        while (count <= right)
+        while (--right)
         {
-            ListNode *next = curr->next;
-            curr->next = prev;
-            prev = curr;
-            curr = next;
-            count++;
+            next = next->next;
         }
-        if (before != nullptr)
+        if (head != prev)
+            prevPrev->next = nullptr;
+        ListNode *r_head = prev;
+        ListNode *r_tail = next;
+        ListNode *lastNext = next->next;
+        r_tail->next = nullptr;
+        reverse(r_head, nullptr, r_head, r_tail);
+
+        r_tail->next = lastNext;
+
+        if (head == prev)
         {
-            before->next = prev;
+            return head;
         }
         else
         {
-            head = prev;
+            prevPrev->next = r_head;
+            return head;
         }
-        last->next = curr;
-
         return head;
+    }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
+    {
+        if (curr == nullptr)
+        {
+            tail = head;
+            head = prev;
+            return;
+        }
+        reverse(head, curr, curr->next, tail);
+        curr->next = prev;
     }
 };
 
