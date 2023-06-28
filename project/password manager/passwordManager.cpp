@@ -20,9 +20,16 @@ int MAX;
 class PassWord
 {
 private:
-    vector<Array> Map();
+    vector<Array> Map;
+    string loginPass;
+    PassWord(string loginPass)
+    {
+        this->loginPass = loginPass;
+    }
+    public : void add(string key, string val)
+    {
 
-public:
+    }
 };
 
 int main()
