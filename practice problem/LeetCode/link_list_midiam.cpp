@@ -392,20 +392,20 @@ public:
             h2->next = h1;
             h2 = temp2;
         }
-        while ( h2 != nullptr)
+        while (h2 != nullptr)
         {
             ListNode *temp2 = h2->next;
             h2->next = h1;
             h2 = temp2;
         }
-        while (h1 != nullptr )
+        while (h1 != nullptr)
         {
             ListNode *temp = h1->next;
             h1->next = h2;
             h1 = temp;
-
         }
-        head = h1;
+        if (h1 != nullptr)
+            h1->next = nullptr;
     }
     ListNode *mid(ListNode *slow)
     {
