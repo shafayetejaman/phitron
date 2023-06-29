@@ -3,6 +3,7 @@
 using namespace std;
 
 int MAX = 100000; // for deducing the index size
+
 class Node        // elements for the hashmap
 {
 public:
@@ -14,6 +15,7 @@ public:
         this->second = second;
     }
     Node() {}
+
     bool empty()
     {
         return first.empty();
@@ -114,6 +116,18 @@ public:
     }
     int find(const string &key)
     {
+        ListNode *ptr = this->head;
+        int index = 0;
+        while (ptr != nullptr)
+        {
+            if (ptr->map.first == key)
+            {
+                return index;
+            }
+            index++;
+            ptr = ptr->next;
+        }
+        return -1;
     }
 };
 
