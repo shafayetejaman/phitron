@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int MAX = 100000; // for deducing the index size
+int MAX; // for deducing the index size
 
 class Node        // elements for the hashmap
 {
@@ -137,7 +137,7 @@ public:
     int size;
 
     Node *arr;
-    Map(const int &size) // making the map
+    Map(const int &size = 100000) // making the map
     {
         this->size = size;
         arr = new Node[size];
