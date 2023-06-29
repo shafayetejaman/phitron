@@ -8,7 +8,7 @@ class Node        // elements for the hashmap
 public:
     string first;
     string second;
-    Node(string &first, string &second)
+    Node(const string &first, const string &second)
     {
         this->first = first;
         this->second = second;
@@ -24,7 +24,7 @@ class ListNode
 public:
     Node map;
     ListNode *next;
-    ListNode(string &first, string &second)
+    ListNode(const string &first, const string &second)
     {
         this->map.first = first;
         this->map.second = second;
@@ -36,7 +36,7 @@ class List
 public:
     ListNode *head = nullptr;
     ListNode *tail = nullptr;
-    List(string &first, string &second)
+    List(const string &first, const string &second)
     {
         ListNode *newNode = new ListNode(first, second);
         this->head = newNode;
