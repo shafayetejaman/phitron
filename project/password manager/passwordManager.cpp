@@ -3,7 +3,7 @@
 using namespace std;
 
 int MAX = 100000; // for deducing the index size
-class Node // elements for the hashmap
+class Node        // elements for the hashmap
 {
 public:
     string first;
@@ -111,6 +111,9 @@ public:
         }
         prev->next = ptr->next;
         delete ptr;
+    }
+    int find(const string &key)
+    {
     }
 };
 
