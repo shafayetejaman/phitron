@@ -2,9 +2,9 @@
 
 using namespace std;
 
-int MAX = 100000; // max index size
+int MAX = 100000; // for deducing the index size
 
-class Node
+class Node // elements for the hashmap
 {
 public:
     string first;
@@ -16,18 +16,19 @@ public:
     }
     Node() {}
 };
+
 class Map
 {
 public:
     int size;
 
     Node *arr;
-    Map(int size)
+    Map(int size) // making the map
     {
         this->size = size;
         arr = new Node[size];
     }
-    void resize(const int &newSize)
+    void resize(const int &newSize) // increasing or decreasing the map size
     {
         this->size = newSize;
         Node *newNode = new Node[newSize];
@@ -35,23 +36,21 @@ public:
         {
             newNode[i] = arr[i];
         }
-        delete[] arr;
+        delete[] arr; // freeing old map
         this->arr = newNode;
     }
 
-
-    int hash(const string &key)
+    int hash(const string &key) // generating hash index
     {
         int index = 0;
-        int hashVal = 31; // A prime number for better distribution
-        int power = 1;    // Start power at 1
+        int hashVal = 31; // prime number for better distribution
+        int power = 1;
 
         for (auto &i : key)
         {
-            index = (index + ((i - 'a' + 1) * power) % MAX) % MAX; // Use cumulative power and modulus operator
-            power = (power * hashVal) % MAX;                       // Update power for the next iteration
+            index = (index + ((i - 'a' + 1) * power) % MAX) % MAX; // decreasing the index by using mod
+            power = (power * hashVal) % MAX;
         }
-
         return index;
     }
 
