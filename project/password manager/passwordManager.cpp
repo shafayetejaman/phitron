@@ -36,7 +36,6 @@ public:
 
     void resize(const int &newSize) // increasing or decreasing the map size
     {
-        this->size = newSize;
         Node *newNode = new Node[newSize];
         for (auto i = 0; i < this->size; i++)
         {
@@ -44,6 +43,7 @@ public:
         }
         delete[] arr; // freeing old map
         this->arr = newNode;
+        this->size = newSize;
         MAX = this->size;
     }
 
@@ -71,7 +71,7 @@ public:
         }
         else // if duplicate exits
         {
-            
+
         }
     }
 };
