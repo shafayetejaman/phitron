@@ -2,6 +2,7 @@
 
 using namespace std;
 
+int MAX = 100;
 class Node
 {
 public:
@@ -25,7 +26,7 @@ public:
         this->size = size;
         arr = new Node[size];
     }
-    void resize(int newSize)
+    void resize(const int &newSize)
     {
         this->size = newSize;
         Node *newNode = new Node[newSize];
@@ -36,15 +37,30 @@ public:
         delete[] arr;
         this->arr = newNode;
     }
-};
+    int hash(const string &key)
+    {
+        int index = 0;
+        int hashVal = 2;
+        int power = 0;
 
-int MAX;
+        for (auto &i : key)
+        {
+            index += (int((i - 'a' + 1) * pow(hashVal, power++)) % MAX);
+        }
+
+        return index;
+    }
+
+    Node *operator[](const string &key)
+    {
+    }
+};
 
 class PassWord
 {
 private:
     string loginPass;
-    PassWord(string loginPass)
+    PassWord(const string &loginPass)
     {
         this->loginPass = loginPass;
     }
