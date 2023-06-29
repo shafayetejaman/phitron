@@ -15,6 +15,10 @@ public:
         this->second = second;
     }
     Node() {}
+    bool empty()
+    {
+        return first.empty();
+    }
 };
 
 class Map
@@ -29,6 +33,7 @@ public:
         arr = new Node[size];
         MAX = size;
     }
+
     void resize(const int &newSize) // increasing or decreasing the map size
     {
         this->size = newSize;
@@ -56,11 +61,13 @@ public:
         return index;
     }
 
-    Node *operator[](const string &key)
+    string &operator[](const string &key)
     {
-        for (auto i = 0; i < this->size; i++)
+        int index = hash(key);
+        if (this->arr[index].empty())
         {
-            /*code*/
+            arr[index].first = key;
+            return arr[index].second;
         }
     }
 };
