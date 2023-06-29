@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int MAX = 100;
+int MAX = 100000; // max index size
+
 class Node
 {
 public:
@@ -37,15 +38,18 @@ public:
         delete[] arr;
         this->arr = newNode;
     }
+
+
     int hash(const string &key)
     {
         int index = 0;
-        int hashVal = 2;
-        int power = 0;
+        int hashVal = 31; // A prime number for better distribution
+        int power = 1;    // Start power at 1
 
         for (auto &i : key)
         {
-            index += (int((i - 'a' + 1) * pow(hashVal, power++)) % MAX);
+            index = (index + ((i - 'a' + 1) * power) % MAX) % MAX; // Use cumulative power and modulus operator
+            power = (power * hashVal) % MAX;                       // Update power for the next iteration
         }
 
         return index;
