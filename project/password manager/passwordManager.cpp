@@ -23,7 +23,7 @@ public:
     int size;
 
     Node *arr;
-    Map(int size) // making the map
+    Map(int &size) // making the map
     {
         this->size = size;
         arr = new Node[size];
@@ -69,7 +69,7 @@ private:
     }
 
 public:
-    void add(string key, string val)
+    void add(string &key, string &val)
     {
     }
 };
