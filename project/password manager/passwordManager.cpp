@@ -18,7 +18,17 @@ class Array
 {
 public:
     int size;
-    Node *arr = new Node[size];
+
+    Node *arr;
+    Array(int size)
+    {
+        this->size = size;
+        arr = new Node[size];
+    }
+    void resize(int newSize)
+    {
+        
+    }
 };
 
 int MAX;
