@@ -2,17 +2,23 @@
 
 using namespace std;
 
-class Array
+class Node
 {
 public:
     string first;
     string second;
-    Array(string first, string second)
+    Node(string first, string second)
     {
         this->first = first;
         this->second = second;
     }
-    Array() {}
+    Node() {}
+};
+class Array
+{
+public:
+    int size;
+    Node *arr = new Node[size];
 };
 
 int MAX;
@@ -20,16 +26,15 @@ int MAX;
 class PassWord
 {
 private:
-    vector<Array> Map;
     string loginPass;
     PassWord(string loginPass)
     {
         this->loginPass = loginPass;
     }
-    public : void add(string key, string val)
+
+public:
+    void add(string key, string val)
     {
-
-
     }
 };
 
