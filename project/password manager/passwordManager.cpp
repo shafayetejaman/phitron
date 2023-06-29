@@ -3,7 +3,111 @@
 using namespace std;
 
 int MAX = 100000; // for deducing the index size
+class node
+{
+public:
+    int data;
+    node *next;
+    node(int data)
+    {
+        this->data = data;
+        this->next = nullptr;
+    }
+};
+class List
+{
+public:
+    node *head = nullptr;
+    node *tail = nullptr;
+    List(int val)
+    {
+        node *newNode = new node(val);
+        this->head = newNode;
+        this->tail = newNode;
+    }
+    List() {}
 
+    void append(int val)
+    {
+        node *newNode = new node(val);
+        if (this->head == nullptr)
+        {
+            this->head = newNode;
+            this->tail = newNode;
+        }
+        else
+        {
+            this->tail->next = newNode;
+            this->tail = this->tail->next;
+        }
+    }
+
+    int size()
+    {
+        int count = 0;
+        node *ptr = this->head;
+        while (ptr != nullptr)
+        {
+            count++;
+            ptr = ptr->next;
+        }
+        return count;
+    }
+    void delete_node(int index)
+    {
+        if (this->head == nullptr)
+        {
+            cout << "List is empty!\n";
+            return;
+        }
+        node *ptr = this->head;
+        node *prev = nullptr;
+        if (index == 0)
+        {
+            this->head = ptr->next;
+            delete ptr;
+            return;
+        }
+        else if (index >= this->size() || index < 0)
+        {
+            cout << "Invalid Index!\n";
+            return;
+        }
+        else if (index == this->size() - 1)
+        {
+            while (ptr->next != nullptr)
+            {
+                prev = ptr;
+                ptr = ptr->next;
+            }
+            prev->next = nullptr;
+            this->tail = prev;
+            delete ptr;
+            return;
+        }
+
+        while (ptr->next != nullptr && index > 0)
+        {
+            prev = ptr;
+            ptr = ptr->next;
+            index--;
+        }
+        prev->next = ptr->next;
+        delete ptr;
+    }
+    ~List()
+    {
+        node *ptr = this->head;
+        node *prev = nullptr;
+        while (ptr != nullptr)
+        {
+            prev = ptr;
+            ptr = ptr->next;
+            delete prev;
+        }
+        cout << "All the nodes have been freed\n";
+    }
+};
 class Node // elements for the hashmap
 {
 public:
@@ -77,7 +181,6 @@ public:
             }
             else
             {
-                
             }
         }
     }
