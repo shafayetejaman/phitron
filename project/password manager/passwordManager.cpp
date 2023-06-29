@@ -27,6 +27,7 @@ public:
     {
         this->size = size;
         arr = new Node[size];
+        MAX = size;
     }
     void resize(const int &newSize) // increasing or decreasing the map size
     {
@@ -38,6 +39,7 @@ public:
         }
         delete[] arr; // freeing old map
         this->arr = newNode;
+        MAX = this->size;
     }
 
     int hash(const string &key) // generating hash index
