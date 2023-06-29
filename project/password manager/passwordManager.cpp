@@ -64,10 +64,14 @@ public:
     string &operator[](const string &key)
     {
         int index = hash(key);
-        if (this->arr[index].empty())
+        if (this->arr[index].empty()) // if there are no pass-word was saved by the key
         {
             arr[index].first = key;
             return arr[index].second;
+        }
+        else // if duplicate exits
+        {
+            
         }
     }
 };
