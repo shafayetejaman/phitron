@@ -14,20 +14,27 @@ public:
     }
     Node() {}
 };
-class Array
+class Map
 {
 public:
     int size;
 
     Node *arr;
-    Array(int size)
+    Map(int size)
     {
         this->size = size;
         arr = new Node[size];
     }
     void resize(int newSize)
     {
-        
+        this->size = newSize;
+        Node *newNode = new Node[newSize];
+        for (auto i = 0; i < this->size; i++)
+        {
+            newNode[i] = arr[i];
+        }
+        delete[] arr;
+        this->arr = newNode;
     }
 };
 
