@@ -9,7 +9,7 @@ class Node // elements for the hashmap
 public:
     string first;
     string second;
-    Node(string first, string second)
+    Node(string &first, string &second)
     {
         this->first = first;
         this->second = second;
@@ -23,7 +23,7 @@ public:
     int size;
 
     Node *arr;
-    Map(int &size) // making the map
+    Map(const int &size) // making the map
     {
         this->size = size;
         arr = new Node[size];
@@ -56,6 +56,10 @@ public:
 
     Node *operator[](const string &key)
     {
+        for (auto i = 0; i < this->size; i++)
+        {
+            /*code*/
+        }
     }
 };
 
