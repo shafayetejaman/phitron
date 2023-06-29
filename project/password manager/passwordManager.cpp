@@ -71,8 +71,14 @@ public:
         }
         else // if duplicate exits
         {
-
-
+            if (this->arr[index].first == key)
+            {
+                cout << "The Password already exits!" << endl;
+            }
+            else
+            {
+                
+            }
         }
     }
 };
