@@ -3,33 +3,50 @@
 using namespace std;
 
 int MAX = 100000; // for deducing the index size
-class node
+class Node // elements for the hashmap
 {
 public:
-    int data;
-    node *next;
-    node(int data)
+    string first;
+    string second;
+    Node(string &first, string &second)
     {
-        this->data = data;
+        this->first = first;
+        this->second = second;
+    }
+    Node() {}
+    bool empty()
+    {
+        return first.empty();
+    }
+};
+class ListNode
+{
+public:
+    Node map;
+    ListNode *next;
+    ListNode(string &first, string &second)
+    {
+        this->map.first = first;
+        this->map.second = second;
         this->next = nullptr;
     }
 };
 class List
 {
 public:
-    node *head = nullptr;
-    node *tail = nullptr;
-    List(int val)
+    ListNode *head = nullptr;
+    ListNode *tail = nullptr;
+    List(string &first, string &second)
     {
-        node *newNode = new node(val);
+        ListNode *newNode = new ListNode(first, second);
         this->head = newNode;
         this->tail = newNode;
     }
     List() {}
 
-    void append(int val)
+    void append(string &first, string &second)
     {
-        node *newNode = new node(val);
+        ListNode *newNode = new ListNode(first, second);
         if (this->head == nullptr)
         {
             this->head = newNode;
@@ -45,7 +62,7 @@ public:
     int size()
     {
         int count = 0;
-        node *ptr = this->head;
+        ListNode *ptr = this->head;
         while (ptr != nullptr)
         {
             count++;
@@ -60,8 +77,8 @@ public:
             cout << "List is empty!\n";
             return;
         }
-        node *ptr = this->head;
-        node *prev = nullptr;
+        ListNode *ptr = this->head;
+        ListNode *prev = nullptr;
         if (index == 0)
         {
             this->head = ptr->next;
@@ -94,34 +111,6 @@ public:
         }
         prev->next = ptr->next;
         delete ptr;
-    }
-    ~List()
-    {
-        node *ptr = this->head;
-        node *prev = nullptr;
-        while (ptr != nullptr)
-        {
-            prev = ptr;
-            ptr = ptr->next;
-            delete prev;
-        }
-        cout << "All the nodes have been freed\n";
-    }
-};
-class Node // elements for the hashmap
-{
-public:
-    string first;
-    string second;
-    Node(string &first, string &second)
-    {
-        this->first = first;
-        this->second = second;
-    }
-    Node() {}
-    bool empty()
-    {
-        return first.empty();
     }
 };
 
