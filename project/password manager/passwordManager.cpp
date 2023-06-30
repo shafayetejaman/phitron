@@ -257,16 +257,39 @@ public:
         }
         return false;
     }
-    bool find_index(const string &key)
+
+    int find_index_arr(const string &key)
     {
         int index = hash(key);
-        
+
         if (this->arr[index].first == key)
         {
             return index;
         }
+        return -1;
+    }
 
-        return this->list.find(key);
+    void delete_node(const string &key)
+    {
+        int pos = this->list.find(key);
+
+        if (pos == -1)
+        {
+            pos = this->find_index_arr(key);
+            if (pos == -1)
+            {
+                cout << "The element was not found in the array!" << endl;
+            }
+            else
+            {
+                this->arr[pos].first.clear();
+                this->arr[pos].second.clear();
+            }
+        }
+        else
+        {
+            this->list.delete_node(pos);
+        }
     }
 
     bool empty()
