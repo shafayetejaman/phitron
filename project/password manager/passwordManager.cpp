@@ -54,6 +54,15 @@ public:
     }
     List() {}
 
+    bool empty()
+    {
+        if (this->size == 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     string &append(const string &first)
     {
         ListNode *newNode = new ListNode(first);
@@ -146,6 +155,7 @@ public:
     int size;
     Node *arr;
     List backup;
+    bool isempty = true;
 
     Map() // making the map
     {
@@ -199,6 +209,7 @@ public:
         if (this->arr[index].empty()) // if there are no password was saved by the key
         {
             arr[index].first = key;
+            this->isempty = false;
             return arr[index].second;
         }
         else // if duplicate exits
@@ -221,6 +232,10 @@ public:
             }
         }
     }
+    bool empty()
+    {
+        return this->isempty;
+    }
 };
 
 class PassWord
@@ -240,6 +255,15 @@ public:
     }
     void print()
     {
+        if (!arr.empty() && !arr.backup.empty())
+        {
+            arr.print();
+            arr.backup.print();
+        }
+        else
+        {
+            cout << "No password has been saved!";
+        }
     }
 };
 
