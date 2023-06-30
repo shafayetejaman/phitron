@@ -260,9 +260,12 @@ public:
     }
     void print()
     {
-        if (!arr.empty() && !arr.list.empty())
+        if (!arr.empty())
         {
             arr.print();
+        }
+        if (!arr.list.empty())
+        {
             arr.list.print();
         }
         else
