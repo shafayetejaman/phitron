@@ -279,7 +279,7 @@ int main()
     cout << "\nType the password to login to the Password Manager.\n-> ";
     cin >> loginPass;
     PassWord passWord(loginPass);
-    int t = 5;
+    int t = 2;
     while (t--)
     {
         string key, pass;
