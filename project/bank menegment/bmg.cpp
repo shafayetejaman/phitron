@@ -64,7 +64,7 @@ int main(void)
 {
 
     // getting file name
-    string filename = "bank_account.txt";
+    string filename = "bank_account.txt"; // The name of the file to store account information
     // while (true)
     // {
     //     cout << "Enter the file name : ";
