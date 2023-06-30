@@ -2,8 +2,6 @@
 
 using namespace std;
 
-int MAX; // for deducing the index size
-
 class Node        // elements for the hashmap
 {
 public:
@@ -137,11 +135,10 @@ public:
     int size;
 
     Node *arr;
-    Map(const int &size = 100000) // making the map
+    Map() // making the map
     {
-        this->size = size;
-        arr = new Node[size];
-        MAX = size;
+        this->size = 100000;
+        arr = new Node[this->size];
     }
 
     void resize(const int &newSize) // increasing or decreasing the map size
@@ -154,7 +151,6 @@ public:
         delete[] arr; // freeing old map
         this->arr = newNode;
         this->size = newSize;
-        MAX = this->size;
     }
 
     int hash(const string &key) // generating hash index
@@ -165,8 +161,8 @@ public:
 
         for (auto &i : key)
         {
-            index = (index + ((i - 'a' + 1) * power) % MAX) % MAX; // decreasing the index by using mod
-            power = (power * hashVal) % MAX;
+            index = (index + ((i - 'a' + 1) * power) % this->size) % this->size; // decreasing the index by using mod
+            power = (power * hashVal) % this->size;
         }
         return index;
     }
