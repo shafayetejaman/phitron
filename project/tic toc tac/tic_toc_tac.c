@@ -22,7 +22,6 @@ int assign(int num, int p);
 char itoc(int num);
 int random(void);
 char win(matrix b);
-// int wining_chance(matrix temp, int r, int c);
 int computer(int st, matrix b);
 
 int main(void)
@@ -100,7 +99,7 @@ void print(void)
 	printf("---|---|---\n");
 	printf(" %c | %c | %c\n", board.b[2][0], board.b[2][1], board.b[2][2]);
 }
-// assigning 
+// function for assigning to the board
 int assign(int num, int p)
 {
 	if (p == 1)
@@ -116,7 +115,7 @@ int assign(int num, int p)
 				}
 			}
 		}
-		return 1;
+		return 1; // Invalid input
 	}
 	else
 	{
@@ -134,7 +133,7 @@ int assign(int num, int p)
 		return 1;
 	}
 }
-
+// checking for remaining cells
 int check(void)
 {
 	int t = 0;
@@ -144,17 +143,17 @@ int check(void)
 		{
 			if (board.b[r][c] != 'X' && board.b[r][c] != 'O')
 			{
-				t = 1;
+				t = 1; // There are still empty cells
 				return t;
 			}
 		}
 	}
-	return t;
+	return t; // No empty cells left
 }
 
 char itoc(int num)
 {
-	return num + 48;
+	return num + 48; // Convert integer to corresponding character
 }
 
 // random number generator
@@ -163,7 +162,7 @@ int random()
 	static unsigned long long int n = 0;
 	srand(time(NULL) * n * getpid());
 	n++;
-	return (rand() % max) + min;
+	return (rand() % max) + min; // Generate random number between min and max
 }
 
 char win(matrix b)
@@ -181,7 +180,7 @@ char win(matrix b)
 	{
 		if (b.b[0][i] == b.b[1][i] && b.b[0][i] == b.b[2][i])
 		{
-			return b.b[0][i];
+			return b.b[0][i]; // Return the winning symbol
 		}
 	}
 	// check diagonals
@@ -195,7 +194,7 @@ char win(matrix b)
 		return b.b[0][2];
 	}
 
-	return 'T';
+	return 'T'; // Return 'T' for tie
 }
 
 int computer(int st, matrix b)
@@ -213,29 +212,7 @@ int computer(int st, matrix b)
 	}
 	else
 	{
-
-		// int chance = wining_chance(temp, 0,0);
-		// if (chance != -1)
-		// {
-		// 	return chance;
-		// }
 		return random();
 	}
 }
 
-// int wining_chance(matrix temp, int r, int c)
-// {
-// 	int ans = win(temp);
-// 	if (ans != 'T')
-// 	{
-// 		return ans;
-// 	}
-// 	if (r==3)
-// 	{
-// 		return -1;
-// 	}
-// 	if (c==3)
-// 	{
-// 		return wining_chance(temp , r)
-// 	}
-// }
