@@ -156,6 +156,7 @@ public:
     Node *arr;
     List backup;
     bool isempty = true;
+    bool duplicate = false;
 
     Map() // making the map
     {
@@ -216,6 +217,7 @@ public:
             if (this->arr[index].first == key)
             {
                 cout << "The Password already exits!" << endl;
+                this->duplicate = true;
             }
             else
             {
@@ -223,6 +225,7 @@ public:
                 if (pos != -1)
                 {
                     cout << "The Password already exits!" << endl;
+                    this->duplicate = true;
                 }
                 else // inserting new password in the backup list
                 {
@@ -231,6 +234,15 @@ public:
             }
         }
         return arr[index].second;
+    }
+    bool duplicate()
+    {
+        if (this->duplicate)
+        {
+            this->duplicate = false;
+            return true;
+        }
+        return false;
     }
 
     bool empty()
