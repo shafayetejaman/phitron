@@ -219,14 +219,16 @@ public:
 
         for (auto &i : key)
         {
+            char c;
             if (isdigit(i))
             {
-                index = (index + ((i - '0' + 1) * power) % this->size) % this->size; // decreasing the index by using mod
+                c = '0';
             }
             else
             {
-                index = (index + ((i - 'a' + 1) * power) % this->size) % this->size;
+                c = 'a';
             }
+            index = (index + ((i - c + 1) * power) % this->size) % this->size; // decreasing the index by using mod
 
             power = (power * hashVal) % this->size;
         }
@@ -288,7 +290,7 @@ public:
     void print()
     {
         bool flag = true;
-        
+
         if (!arr.empty())
         {
             arr.print();
