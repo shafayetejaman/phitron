@@ -34,6 +34,7 @@ int main(void)
 	while (1)
 	{
 		char w = win(board);
+		// Check for game over conditions
 		if (check() == 0 || w == 'O' || w == 'X')
 		{
 			if (w == 'X')
@@ -89,7 +90,7 @@ int main(void)
 		}
 	}
 }
-
+// function for printing the board
 void print(void)
 {
 	printf("\ncomputer : (O) player : (X)\n");
@@ -99,7 +100,7 @@ void print(void)
 	printf("---|---|---\n");
 	printf(" %c | %c | %c\n", board.b[2][0], board.b[2][1], board.b[2][2]);
 }
-
+// assigning 
 int assign(int num, int p)
 {
 	if (p == 1)
