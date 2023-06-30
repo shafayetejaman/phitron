@@ -275,7 +275,7 @@ public:
 int main()
 {
     string loginPass;
-    cout << "Type the password to login to the Password Manager.\n-> ";
+    cout << "\nType the password to login to the Password Manager.\n-> ";
     cin >> loginPass;
     PassWord passWord(loginPass);
     int t = 5;
