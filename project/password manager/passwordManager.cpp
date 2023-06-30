@@ -262,6 +262,10 @@ public:
         }
         return false;
     }
+    bool find_index(const string &key)
+    {
+
+    }
 
     bool empty()
     {
