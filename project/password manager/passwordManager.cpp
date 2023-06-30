@@ -203,7 +203,15 @@ public:
 
         for (auto &i : key)
         {
-            index = (index + ((i - 'a' + 1) * power) % this->size) % this->size; // decreasing the index by using mod
+            if (isdigit(i))
+            {
+                index = (index + ((i - '0' + 1) * power) % this->size) % this->size; // decreasing the index by using mod
+            }
+            else
+            {
+                index = (index + ((i - 'a' + 1) * power) % this->size) % this->size;
+            }
+
             power = (power * hashVal) % this->size;
         }
         return index;
