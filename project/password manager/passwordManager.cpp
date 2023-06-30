@@ -30,6 +30,11 @@ public:
         this->map.second = second;
         this->next = nullptr;
     }
+    ListNode(const string &first)
+    {
+        this->map.first = first;
+        this->next = nullptr;
+    }
 };
 
 class List // for duplicate password key
@@ -47,9 +52,9 @@ public:
     }
     List() {}
 
-    void append(string &first, string &second)
+    string& append(const string &first)
     {
-        ListNode *newNode = new ListNode(first, second);
+        ListNode *newNode = new ListNode(first);
         if (this->head == nullptr)
         {
             this->head = newNode;
@@ -61,6 +66,7 @@ public:
             this->tail = this->tail->next;
         }
         this->size++;
+        return newNode->map.second;
     }
 
     void delete_node(int index)
@@ -185,9 +191,9 @@ public:
                 {
                     cout << "The Password already exits!" << endl;
                 }
-                else
+                else // inserting new password in the backup list
                 {
-                    
+                    return this->backup.append(key);
                 }
             }
         }
@@ -207,10 +213,14 @@ public:
     void add(string &key, string &val)
     {
     }
+    void print()
+    {
+    }
 };
 
 int main()
 {
+
 
     return 0;
 }
