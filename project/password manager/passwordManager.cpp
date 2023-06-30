@@ -204,12 +204,12 @@ class PassWord
 {
 private:
     string loginPass;
+
+public:
     PassWord(const string &loginPass)
     {
         this->loginPass = loginPass;
     }
-
-public:
     void add(string &key, string &val)
     {
     }
@@ -220,7 +220,15 @@ public:
 
 int main()
 {
+    string loginPass;
+    cout << "Type the password to login to the Password Manager.\n-> ";
+    cin >> loginPass;
+    PassWord pass(loginPass);
 
+    while (true)
+    {
+        
+    }
 
     return 0;
 }
