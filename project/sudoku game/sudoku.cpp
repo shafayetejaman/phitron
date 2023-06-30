@@ -21,6 +21,7 @@ bool is_duplicate(const matrix &b);
 
 int main(void)
 {
+
     int n = 0;
     cout << "type the board to solve : \n";
     board = get_board();
@@ -37,16 +38,16 @@ int main(void)
     return 0;
 }
 
-// setting the board using recursion and backtracking
+// setting the board using recursion and backtracing
 bool set_board(int i, int j)
 {
     if (i == ROW)
     {
-        return true; // Reached the end of the board
+        return true;
     }
     if (j == COL)
     {
-        return set_board(i + 1, 0); // Move to the next row
+        return set_board(i + 1, 0);
     }
 
     if (board[i][j] == 0)
@@ -55,21 +56,21 @@ bool set_board(int i, int j)
         {
             if (check(board, i, j, k))
             {
-                board[i][j] = k; // Try placing number k at position (i, j)
+                board[i][j] = k;
                 if (set_board(i, j + 1))
                 {
-                    return true; // Move to the next column
+                    return true;
                 }
-                board[i][j] = 0; // If placing k is not valid, backtrack and try the next number
+                board[i][j] = 0;
             }
         }
     }
     else
     {
-        return set_board(i, j + 1); // Skip filled cells, move to the next column
+        return set_board(i, j + 1);
     }
 
-    return false; // No solution found
+    return false;
 }
 
 // printing the board
@@ -90,20 +91,20 @@ void print_board(const matrix &b)
 // checking the board for existing elements
 bool check(const matrix &b, int r, int c, int val)
 {
-    // Check for duplicates in the same column
+    // for columns
     for (int i = 0; i < ROW; i++)
     {
         if (b[r][i] == val)
             return false;
     }
-    // Check for duplicates in the same row
+    // for rows
     for (int i = 0; i < ROW; i++)
     {
         if (b[i][c] == val)
             return false;
     }
 
-    // Check for duplicates in the same sub-grid
+    // for sub grid
     int sub_row = r - (r % int(sqrt(b.size())));
     int sub_col = c - (c % int(sqrt(b[0].size())));
 
@@ -115,7 +116,7 @@ bool check(const matrix &b, int r, int c, int val)
                 return false;
         }
     }
-    return true; // No duplicates found
+    return true;
 }
 
 // getting input from the user
@@ -129,7 +130,7 @@ matrix get_board()
     {
         string s;
         getline(cin, s);
-        // checking if it is a valid row
+        // checking if it a valid row
         for (const auto &i : s)
         {
             if (isdigit(i))
@@ -193,12 +194,12 @@ bool is_duplicate(const matrix &b)
                 int tar = b[i][j];
                 if (find(sub[sub_row][sub_col].begin(), sub[sub_row][sub_col].end(), tar) != sub[sub_row][sub_col].end())
                 {
-                    return false; // Found a duplicate number in the same sub-grid
+                    return false;
                 }
             }
             if (hash_col[j][in] || hash_row[i][in])
             {
-                return false; // Found a duplicate number in the same row or column
+                return false;
             }
             else
             {
@@ -208,5 +209,5 @@ bool is_duplicate(const matrix &b)
             }
         }
     }
-    return true; // No duplicates found
+    return true;
 }
