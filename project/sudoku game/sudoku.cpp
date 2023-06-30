@@ -70,7 +70,7 @@ bool set_board(int i, int j)
     {
         return set_board(i, j + 1); // move to the next column
     }
-    
+
     return false;
 }
 
@@ -195,12 +195,13 @@ bool is_duplicate(const matrix &b)
                 int tar = b[i][j];
                 if (find(sub[sub_row][sub_col].begin(), sub[sub_row][sub_col].end(), tar) != sub[sub_row][sub_col].end())
                 {
-                    return false;
+                    return false; // Found a duplicate number in the same sub-grid
                 }
+
             }
             if (hash_col[j][in] || hash_row[i][in])
             {
-                return false;
+                return false; // Found a duplicate number in the same row or column
             }
             else
             {
@@ -210,5 +211,5 @@ bool is_duplicate(const matrix &b)
             }
         }
     }
-    return true;
+    return true; // No duplicates found
 }
