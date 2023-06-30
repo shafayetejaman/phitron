@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Node        // elements for the hashmap
+class Node // elements for the hashmap
 {
 public:
     string first;
@@ -36,9 +36,11 @@ class List
 public:
     ListNode *head = nullptr;
     ListNode *tail = nullptr;
+    int size = 0;
     List(const string &first, const string &second)
     {
         ListNode *newNode = new ListNode(first, second);
+
         this->head = newNode;
         this->tail = newNode;
     }
@@ -57,19 +59,9 @@ public:
             this->tail->next = newNode;
             this->tail = this->tail->next;
         }
+        this->size++;
     }
 
-    int size()
-    {
-        int count = 0;
-        ListNode *ptr = this->head;
-        while (ptr != nullptr)
-        {
-            count++;
-            ptr = ptr->next;
-        }
-        return count;
-    }
     void delete_node(int index)
     {
         if (this->head == nullptr)
@@ -83,14 +75,15 @@ public:
         {
             this->head = ptr->next;
             delete ptr;
+            this->size--;
             return;
         }
-        else if (index >= this->size() || index < 0)
+        else if (index >= this->size || index < 0)
         {
             cout << "Invalid Index!\n";
             return;
         }
-        else if (index == this->size() - 1)
+        else if (index == this->size - 1)
         {
             while (ptr->next != nullptr)
             {
@@ -100,6 +93,7 @@ public:
             prev->next = nullptr;
             this->tail = prev;
             delete ptr;
+            this->size--;
             return;
         }
 
@@ -110,6 +104,7 @@ public:
             index--;
         }
         prev->next = ptr->next;
+        this->size--;
         delete ptr;
     }
     int find(const string &key)
@@ -134,7 +129,7 @@ class Map
 public:
     int size;
     Node *arr;
-    
+
     Map() // making the map
     {
         this->size = 100000;
