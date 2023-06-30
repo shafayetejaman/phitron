@@ -38,7 +38,7 @@ public:
     }
 };
 
-class List // for duplicate password key
+class List // for handling colesens
 {
 public:
     ListNode *head = nullptr;
