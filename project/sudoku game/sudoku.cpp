@@ -43,11 +43,11 @@ bool set_board(int i, int j)
 {
     if (i == ROW)
     {
-        return true;
+        return true; // Reached the end of the board
     }
     if (j == COL)
     {
-        return set_board(i + 1, 0);
+        return set_board(i + 1, 0); // Move to the next row
     }
 
     if (board[i][j] == 0)
@@ -56,20 +56,21 @@ bool set_board(int i, int j)
         {
             if (check(board, i, j, k))
             {
-                board[i][j] = k;
+                board[i][j] = k; // Try placing number k at position (i, j)
                 if (set_board(i, j + 1))
                 {
-                    return true;
+                    return true; // Move to the next column
                 }
-                board[i][j] = 0;
+
+                board[i][j] = 0; // backtrack and try the next number
             }
         }
     }
     else
     {
-        return set_board(i, j + 1);
+        return set_board(i, j + 1); // move to the next column
     }
-
+    
     return false;
 }
 
