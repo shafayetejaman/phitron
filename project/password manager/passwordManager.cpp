@@ -2,6 +2,8 @@
 
 using namespace std;
 
+const int MAX = 1000000; 
+
 class Node // elements for the hashmap
 {
 public:
