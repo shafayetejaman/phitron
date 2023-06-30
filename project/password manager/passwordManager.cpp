@@ -234,9 +234,8 @@ public:
         }
         return arr[index].second;
     }
-    bool find(const string&key)
+    bool find(const string &key)
     {
-
     }
 
     bool empty()
@@ -259,7 +258,6 @@ public:
     void add(const string &key, const string &pass)
     {
         arr[key] = pass;
-
     }
     void print()
     {
