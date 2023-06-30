@@ -2,8 +2,6 @@
 
 using namespace std;
 
-const int MAX = 1000000; 
-
 class Node // elements for the hashmap
 {
 public:
@@ -142,7 +140,7 @@ public:
 
     Map() // making the map
     {
-        this->size = 100000;
+        this->size = 1000000;
         arr = new Node[this->size];
     }
 
