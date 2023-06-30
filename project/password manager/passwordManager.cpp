@@ -5,8 +5,8 @@ using namespace std;
 class Node // elements for the hashmap
 {
 public:
-    string first;
-    string second;
+    string first, second;
+
     Node(const string &first, const string &second)
     {
         this->first = first;
@@ -24,6 +24,7 @@ class ListNode
 public:
     Node map;
     ListNode *next;
+
     ListNode(const string &first, const string &second)
     {
         this->map.first = first;
@@ -43,6 +44,7 @@ public:
     ListNode *head = nullptr;
     ListNode *tail = nullptr;
     int size = 0;
+
     List(const string &first, const string &second)
     {
         ListNode *newNode = new ListNode(first, second);
@@ -52,7 +54,7 @@ public:
     }
     List() {}
 
-    string& append(const string &first)
+    string &append(const string &first)
     {
         ListNode *newNode = new ListNode(first);
         if (this->head == nullptr)
@@ -160,7 +162,16 @@ public:
         this->arr = newNode;
         this->size = newSize;
     }
-
+    void print()
+    {
+        for (auto i = 0; i < this->size; i++)
+        {
+            if (!this->arr[i].empty())
+            {
+                cout << this->arr[i].first << " : " << this->arr[i].second << endl;
+            }
+        }
+    }
     int hash(const string &key) // generating hash index
     {
         int index = 0;
@@ -230,12 +241,19 @@ int main()
     string loginPass;
     cout << "Type the password to login to the Password Manager.\n-> ";
     cin >> loginPass;
-    PassWord pass(loginPass);
-
-    while (true)
+    PassWord passWord(loginPass);
+    int t = 5;
+    while (t--)
     {
+        string key, pass;
+        cout << "Name : ";
+        cin >> key;
+        cout << "Password : ";
+        cin >> pass;
 
+        passWord.add(key, pass);
     }
+    passWord.print();
 
     return 0;
 }
