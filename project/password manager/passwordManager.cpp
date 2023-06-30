@@ -157,7 +157,7 @@ private:
 public:
     int size;
     Node *arr;
-    List backup;
+    List list;
 
     Map() // making the map
     {
@@ -213,11 +213,11 @@ public:
             arr[index].first = key;
             this->isempty = false;
         }
-        else // inserting new password in the backup list
+        else // inserting new password in the list list
         {
-            int pos = this->backup.find(key);
+            int pos = this->list.find(key);
 
-            return this->backup.append(key);
+            return this->list.append(key);
         }
         return arr[index].second;
     }
@@ -225,7 +225,7 @@ public:
     bool find(const string &key)
     {
         int index = hash(key);
-        int pos = this->backup.find(key);
+        int pos = this->list.find(key);
         if (pos != -1 || this->arr[index].first == key)
         {
             cout << "The Password already exits!" << endl;
@@ -260,10 +260,10 @@ public:
     }
     void print()
     {
-        if (!arr.empty() && !arr.backup.empty())
+        if (!arr.empty() && !arr.list.empty())
         {
             arr.print();
-            arr.backup.print();
+            arr.list.print();
         }
         else
         {
