@@ -210,7 +210,6 @@ public:
         {
             arr[index].first = key;
             this->isempty = false;
-            return arr[index].second;
         }
         else // if duplicate exits
         {
@@ -231,6 +230,7 @@ public:
                 }
             }
         }
+        return arr[index].second;
     }
 
     bool empty()
