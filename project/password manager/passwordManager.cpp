@@ -87,8 +87,10 @@ public:
             cout << "List is empty!\n";
             return;
         }
+
         ListNode *ptr = this->head;
         ListNode *prev = nullptr;
+
         if (index == 0)
         {
             this->head = ptr->next;
@@ -108,8 +110,10 @@ public:
                 prev = ptr;
                 ptr = ptr->next;
             }
+
             prev->next = nullptr;
             this->tail = prev;
+
             delete ptr;
             this->size--;
             return;
@@ -212,16 +216,21 @@ public:
         {
             arr[index].first = key;
             this->isempty = false;
+            cout << "operator ran index" << endl;
         }
         else // inserting new password in the list
         {
+            cout << "operator ran list" << endl;
             return this->list.append(key);
         }
+        cout << "operator ran end" << endl;
         return arr[index].second;
     }
 
     bool find(const string &key)
     {
+        cout << "find ran index" << endl;
+
         int index = hash(key);
         int pos = this->list.find(key);
         if (pos != -1 || this->arr[index].first == key)
@@ -278,8 +287,10 @@ int main()
     string loginPass;
     cout << "\nType the password to login to the Password Manager.\n-> ";
     cin >> loginPass;
+
     PassWord passWord(loginPass);
     int t = 2;
+
     while (t--)
     {
         string key, pass;
