@@ -287,19 +287,20 @@ public:
     }
     void print()
     {
-        if (!arr.list.empty())
-            {
-                arr.list.print();
-            }
+        bool flag = true;
+        
         if (!arr.empty())
         {
             arr.print();
-            if (!arr.list.empty())
-            {
-                arr.list.print();
-            }
+            flag = false;
         }
-        else
+        if (!arr.list.empty())
+        {
+            arr.list.print();
+            flag = false;
+        }
+
+        if (flag)
         {
             cout << "No password has been saved!";
         }
