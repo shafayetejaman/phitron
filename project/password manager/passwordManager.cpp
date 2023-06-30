@@ -215,8 +215,6 @@ public:
         }
         else // inserting new password in the list
         {
-            int pos = this->list.find(key);
-
             return this->list.append(key);
         }
         return arr[index].second;
