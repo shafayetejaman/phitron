@@ -62,9 +62,8 @@ public:
     bool empty()
     {
         if (this->size == 0)
-        {
             return true;
-        }
+
         return false;
     }
 
@@ -146,9 +145,8 @@ public:
         while (ptr != nullptr)
         {
             if (ptr->map.first == key)
-            {
                 return index;
-            }
+
             index++;
             ptr = ptr->next;
         }
@@ -221,13 +219,10 @@ public:
         {
             char c;
             if (isdigit(i))
-            {
                 c = '0';
-            }
             else
-            {
                 c = 'a';
-            }
+
             index = (index + ((i - c + 1) * power) % this->size) % this->size; // decreasing the index by using mod
 
             power = (power * hashVal) % this->size;

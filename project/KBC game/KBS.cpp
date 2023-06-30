@@ -83,6 +83,7 @@ int main(void)
         }
         else if (quarry == 1)
         {
+            // Adding a new question
             cout << "Example : ";
             cout << questions[0][QUESTION] << endl;
             cout << questions[0][OPTION] << endl;
@@ -91,6 +92,7 @@ int main(void)
         }
         else
         {
+            // Playing the game
             int score = 0;
             for (int i = 0; i < questions.size(); i++)
             {
@@ -114,7 +116,7 @@ int main(void)
                 cin.clear();
                 cin.ignore();
             }
-
+            // Calculating the score and money earned
             int money = 0;
             if (score <= 2 && score > 0)
                 money = 1000;
