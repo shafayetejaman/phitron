@@ -38,7 +38,7 @@ public:
     }
 };
 
-class List // for handling colesens
+class List // for handling duplicate hash of keys
 {
 public:
     ListNode *head = nullptr;
