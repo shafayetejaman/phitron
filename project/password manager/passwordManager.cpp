@@ -131,6 +131,13 @@ public:
         }
         return -1;
     }
+    void print()
+    {
+        for (auto i = this->head; i != nullptr; i = i->next)
+        {
+            cout << i->map.first << " : " << i->map.second << endl;
+        }
+    }
 };
 
 class Map
