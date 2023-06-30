@@ -48,6 +48,11 @@ public:
     List(const string &first, const string &second)
     {
         ListNode *newNode = new ListNode(first, second);
+        if (newNode == nullptr)
+        {
+            cout << "Failed to resize the array!" << endl;
+            return;
+        }
 
         this->head = newNode;
         this->tail = newNode;
@@ -66,6 +71,11 @@ public:
     string &append(const string &first)
     {
         ListNode *newNode = new ListNode(first);
+        if (newNode == nullptr)
+        {
+            cout << "Failed to resize the array!" << endl;
+            return;
+        }
         if (this->head == nullptr)
         {
             this->head = newNode;
@@ -167,6 +177,12 @@ public:
     {
         this->size = 1000000;
         arr = new Node[this->size];
+        
+        if (arr == nullptr)
+        {
+            cout << "Failed to resize the array!" << endl;
+            return;
+        }
     }
 
     void resize(const int &newSize) // increasing or decreasing the map size
