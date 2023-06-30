@@ -147,6 +147,11 @@ public:
     void resize(const int &newSize) // increasing or decreasing the map size
     {
         Node *newNode = new Node[newSize];
+        if (newNode == nullptr)
+        {
+            cout << "Failed to resize the array!" << endl;
+            return;
+        }
         for (auto i = 0; i < this->size; i++)
         {
             newNode[i] = arr[i];
