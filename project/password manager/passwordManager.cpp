@@ -204,14 +204,16 @@ class PassWord
 {
 private:
     string loginPass;
+    Map arr;
 
 public:
     PassWord(const string &loginPass)
     {
         this->loginPass = loginPass;
     }
-    void add(string &key, string &val)
+    void add(const string &key, const string &pass)
     {
+        arr[key] = pass;
     }
     void print()
     {
@@ -227,7 +229,7 @@ int main()
 
     while (true)
     {
-        
+
     }
 
     return 0;
