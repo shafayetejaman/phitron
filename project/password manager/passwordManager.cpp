@@ -213,29 +213,25 @@ public:
             arr[index].first = key;
             this->isempty = false;
         }
-        else // if duplicate exits
+        else // inserting new password in the backup list
         {
-            if (this->arr[index].first == key)
-            {
-                cout << "The Password already exits!" << endl;
-            }
-            else
-            {
-                int pos = this->backup.find(key);
-                if (pos != -1)
-                {
-                    cout << "The Password already exits!" << endl;
-                }
-                else // inserting new password in the backup list
-                {
-                    return this->backup.append(key);
-                }
-            }
+            int pos = this->backup.find(key);
+
+            return this->backup.append(key);
         }
         return arr[index].second;
     }
+
     bool find(const string &key)
     {
+        int index = hash(key);
+        int pos = this->backup.find(key);
+        if (pos != -1 || this->arr[index].first == key)
+        {
+            cout << "The Password already exits!" << endl;
+            return true;
+        }
+        return false;
     }
 
     bool empty()
@@ -257,7 +253,10 @@ public:
     }
     void add(const string &key, const string &pass)
     {
-        arr[key] = pass;
+        if (!arr.find(key))
+        {
+            arr[key] = pass;
+        }
     }
     void print()
     {
