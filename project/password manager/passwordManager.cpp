@@ -133,8 +133,8 @@ class Map
 {
 public:
     int size;
-
     Node *arr;
+    
     Map() // making the map
     {
         this->size = 100000;
