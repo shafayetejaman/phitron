@@ -213,7 +213,7 @@ public:
             arr[index].first = key;
             this->isempty = false;
         }
-        else // inserting new password in the list list
+        else // inserting new password in the list
         {
             int pos = this->list.find(key);
 
