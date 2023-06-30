@@ -31,7 +31,8 @@ public:
         this->next = nullptr;
     }
 };
-class List
+
+class List // for duplicate password key
 {
 public:
     ListNode *head = nullptr;
@@ -129,6 +130,7 @@ class Map
 public:
     int size;
     Node *arr;
+    List backup;
 
     Map() // making the map
     {
@@ -165,7 +167,7 @@ public:
     string &operator[](const string &key)
     {
         int index = hash(key);
-        if (this->arr[index].empty()) // if there are no pass-word was saved by the key
+        if (this->arr[index].empty()) // if there are no password was saved by the key
         {
             arr[index].first = key;
             return arr[index].second;
@@ -178,6 +180,15 @@ public:
             }
             else
             {
+                int pos = this->backup.find(key);
+                if (pos != -1)
+                {
+                    cout << "The Password already exits!" << endl;
+                }
+                else
+                {
+                    
+                }
             }
         }
     }
