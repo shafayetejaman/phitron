@@ -232,6 +232,7 @@ public:
             }
         }
     }
+
     bool empty()
     {
         return this->isempty;
