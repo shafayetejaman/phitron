@@ -177,7 +177,7 @@ public:
     {
         this->size = 1000000;
         arr = new Node[this->size];
-        
+
         if (arr == nullptr)
         {
             cout << "Failed to resize the array!" << endl;
@@ -287,13 +287,17 @@ public:
     }
     void print()
     {
+        if (!arr.list.empty())
+            {
+                arr.list.print();
+            }
         if (!arr.empty())
         {
             arr.print();
-        }
-        if (!arr.list.empty())
-        {
-            arr.list.print();
+            if (!arr.list.empty())
+            {
+                arr.list.print();
+            }
         }
         else
         {
