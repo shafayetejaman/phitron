@@ -99,7 +99,7 @@ int main()
         }
     }
 }
-
+// Function to print the Tic-Tac-Toe board
 void print()
 {
     cout << "\nComputer: (O) Player: (X)\n";
@@ -145,7 +145,7 @@ int assign(matrix &b, int num, int p)
     }
 }
 
-// checking for a draw
+// Function to check if there is a spot available on the board
 bool check(const matrix &b)
 {
     for (int r = 0; r < 3; r++)
@@ -160,7 +160,7 @@ bool check(const matrix &b)
     }
     return false;
 }
-// checking if anyone own or its a draw
+// Function to check if someone has won or if it's a draw
 char win(const matrix &b)
 {
     // check rows
@@ -191,7 +191,7 @@ char win(const matrix &b)
     }
     return 'T';
 }
-// the computers chance
+// Function to make the computer's move
 int computer(matrix &b, int st)
 {
     if (st == 0)
@@ -218,7 +218,7 @@ int random()
     return (rand() % MAX) + MIN;
 }
 
-// using backtracing to find wining chance
+// Function to determine the winning chance using backtracking
 int wining_chance(matrix &temp)
 {
     int count = 0;
@@ -263,5 +263,5 @@ int wining_chance(matrix &temp)
             }
         }
     }
-    return random();
+    return random(); // if no winner is possible 
 }
