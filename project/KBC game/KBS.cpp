@@ -30,6 +30,7 @@ vector<string> get_question()
 
 int main(void)
 {
+    // Predefined questions and answers
     vector<vector<string>> questions = {
         {"What is the full form of CPU?",
          "A : Central Processing Unit\nB : Central Processing System\nC : Central Processor System\nD : Central Processor Unit\n",
