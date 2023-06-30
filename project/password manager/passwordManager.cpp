@@ -260,11 +260,13 @@ public:
     bool find_index(const string &key)
     {
         int index = hash(key);
+        
         if (this->arr[index].first == key)
         {
             return index;
         }
-        int pos = this->list.find(key);
+
+        return this->list.find(key);
     }
 
     bool empty()
