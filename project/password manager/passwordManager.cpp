@@ -9,7 +9,7 @@
 using namespace std;
 
 const int MAX = 20; // maximum length of the password
-const int MIN = 8;  // minimum length of the password
+const int MIN = 10;  // minimum length of the password
 
 class Node // elements for the hashmap
 {
@@ -347,6 +347,15 @@ private:
     string loginPass;
     Map arr;
 
+    // generating more precise random number between MAX and MIN
+    int random_range()
+    {
+        static unsigned long long n = 1;
+        srand(time(NULL) * n * getpid());
+        n++;
+        return (rand() % MAX) + MIN;
+    }
+
 public:
     PassWord(const string &loginPass)
     {
@@ -427,14 +436,6 @@ public:
 
         return password;
     }
-    // generating more precise random number between MAX and MIN
-    int random_range()
-    {
-        static unsigned long long n = 1;
-        srand(time(NULL) * n * getpid());
-        n++;
-        return (rand() % MAX) + MIN;
-    }
 };
 
 int main()
@@ -445,8 +446,8 @@ int main()
 
     PassWord passWord(loginPass);
 
-    string name = "name";
-    string pass = "22222";
+    string name = "akash";
+    string pass = passWord.generate_random_pass();
     passWord.add(name, pass);
     passWord.print();
     passWord.delete_pass(name);
