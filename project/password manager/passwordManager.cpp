@@ -50,7 +50,7 @@ public:
         ListNode *newNode = new ListNode(first, second);
         if (newNode == nullptr)
         {
-            cout << "Failed to resize the array!" << endl;
+            cout << "Failed to add password!" << endl;
             return;
         }
 
@@ -72,7 +72,7 @@ public:
         ListNode *newNode = new ListNode(first);
         if (newNode == nullptr)
         {
-            cout << "Failed to resize the array!" << endl;
+            cout << "Failed to add password!" << endl;
         }
         else
         {
@@ -181,7 +181,7 @@ public:
 
         if (arr == nullptr)
         {
-            cout << "Failed to resize the array!" << endl;
+            cout << "Failed to add password!" << endl;
             return;
         }
     }
