@@ -8,8 +8,8 @@
 
 using namespace std;
 
-const int MAX = 20; // maximum length of the password
-const int MIN = 10;  // minimum length of the password
+const int MAX = 30; // maximum length of the password
+const int MIN = 20;  // minimum length of the password
 
 class Node // elements for the hashmap
 {
