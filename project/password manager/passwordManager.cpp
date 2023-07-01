@@ -252,7 +252,6 @@ public:
         int pos = this->list.find(key);
         if (pos != -1 || this->arr[index].first == key)
         {
-            cout << "The Password already exits!" << endl;
             return true;
         }
         return false;
@@ -278,7 +277,7 @@ public:
             pos = this->find_index_arr(key);
             if (pos == -1)
             {
-                cout << "The element was not found in the array!" << endl;
+                return false;
             }
             else
             {
@@ -290,6 +289,7 @@ public:
         {
             this->list.delete_node(pos);
         }
+        return true;
     }
 
     bool empty()
@@ -315,11 +315,20 @@ public:
         {
             arr[key] = pass;
         }
+        else // asking to overwrite the password
+        {
+            cout << "The Password already exits!" << endl
+                 << "Do you want to overwrite the password?(y,n) : ";
+        }
     }
 
     void delete_pass(const string &key)
     {
-        this->arr.delete_node(key);
+        if (!this->arr.delete_node(key))
+        {
+            cout << "The password was not found!" << endl;
+        }
+
     }
 
     void print()
