@@ -7,27 +7,16 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int n = 1000;
 
     int time = std::time(nullptr);
 
-    for (auto i = 3; i <= n; i += 2)
+    for (auto i = 1; i <= n; i ++)
     {
         cout << "the loop is running" << endl;
-        Sleep(1);
-        for (auto i = 1; i <= n; i++)
-        {
-            cout << "the loop is running" << endl;
-            Sleep(1);
-        }
     }
 
-    for (auto i = 1; i * i <= n; i++)
-    {
-        cout << "the loop is running" << endl;
-        Sleep(1);
-    }
+
     time = std::time(nullptr) - time;
     cout << "Time : " << time << endl;
 
