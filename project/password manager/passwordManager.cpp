@@ -403,6 +403,23 @@ public:
             cout << "No password has been saved!" << endl;
         }
     }
+    string generate_random_pass()
+    {
+        string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
+        string password;
+        int len = 5;
+
+        // Seed the random number generator
+        srand(int(time(nullptr)));
+
+        for (int i = 0; i < len; ++i)
+        {
+            int randomIndex = rand() % characters.size();
+            password += characters[randomIndex];
+        }
+
+        return password;
+    }
 };
 
 int main()
