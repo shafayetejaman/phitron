@@ -168,13 +168,10 @@ public:
 
 class Map
 {
-private:
-    bool isempty = true;
-
 public:
-    int size;
     Node *arr;
     List list;
+    int size;
 
     Map() // making the map
     {
@@ -241,7 +238,6 @@ public:
         if (this->arr[index].empty()) // if there are no password was saved by the key
         {
             arr[index].first = key;
-            this->isempty = false;
         }
         else // inserting new password in the list
         {
@@ -299,7 +295,14 @@ public:
 
     bool empty()
     {
-        return this->isempty;
+        for (auto i = 0; i < this->size; i++)
+        {
+            if (!this->arr[i].empty())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 };
 
@@ -388,7 +391,6 @@ public:
         {
             arr.print();
             flag = false;
-            cout << "the function has been called arr" << endl;
         }
         if (!arr.list.empty())
         {
@@ -398,7 +400,7 @@ public:
 
         if (flag)
         {
-            cout << "No password has been saved!";
+            cout << "No password has been saved!" << endl;
         }
     }
 };
