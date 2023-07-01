@@ -90,6 +90,8 @@ public:
             this->size++;
             return newNode->map.second;
         }
+        static string s;
+        return s;
     }
 
     void delete_node(int index)
@@ -386,6 +388,7 @@ public:
         {
             arr.print();
             flag = false;
+            cout << "the function has been called arr" << endl;
         }
         if (!arr.list.empty())
         {
@@ -402,9 +405,9 @@ public:
 
 int main()
 {
-    string loginPass;
-    cout << "\nType the password to login to the Password Manager.\n-> ";
-    cin >> loginPass;
+    string loginPass = "24234";
+    // cout << "\nType the password to login to the Password Manager.\n-> ";
+    // cin >> loginPass;
 
     PassWord passWord(loginPass);
 
