@@ -1,6 +1,15 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <unistd.h>
+#include <random>
+#include <climits>
+#include <limits>
 
 using namespace std;
+
+const int MAX = 20; // maximum length of the password
+const int MIN = 8;  // minimum length of the password
 
 class Node // elements for the hashmap
 {
@@ -407,18 +416,25 @@ public:
     {
         string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
         string password;
-        int len = 5;
+        int len = random();
 
         // Seed the random number generator
-        srand(int(time(nullptr)));
+
 
         for (int i = 0; i < len; ++i)
         {
-            int randomIndex = rand() % characters.size();
+            int randomIndex = random() % characters.size();
             password += characters[randomIndex];
         }
 
         return password;
+    }
+    int random()
+    {
+        static unsigned long long n = 1;
+        srand(time(NULL) * n * getpid());
+        n++;
+        return (rand() % MAX) + MIN;
     }
 };
 
