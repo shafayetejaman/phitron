@@ -73,20 +73,23 @@ public:
         if (newNode == nullptr)
         {
             cout << "Failed to resize the array!" << endl;
-            return;
-        }
-        if (this->head == nullptr)
-        {
-            this->head = newNode;
-            this->tail = newNode;
         }
         else
         {
-            this->tail->next = newNode;
-            this->tail = this->tail->next;
+
+            if (this->head == nullptr)
+            {
+                this->head = newNode;
+                this->tail = newNode;
+            }
+            else
+            {
+                this->tail->next = newNode;
+                this->tail = this->tail->next;
+            }
+            this->size++;
+            return newNode->map.second;
         }
-        this->size++;
-        return newNode->map.second;
     }
 
     void delete_node(int index)
@@ -351,7 +354,7 @@ public:
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
                 getline(cin, choice);
-                if (choice.size() == 1 &&(tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
+                if (choice.size() == 1 && (tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
                 {
                     break;
                 }
