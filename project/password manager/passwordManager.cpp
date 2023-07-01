@@ -349,7 +349,7 @@ public:
             while (true)
             {
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                
+
                 getline(cin, choice);
                 if (choice.size() == 1 &&(tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
                 {
@@ -404,18 +404,12 @@ int main()
     cin >> loginPass;
 
     PassWord passWord(loginPass);
-    int t = 2;
 
-    while (t--)
-    {
-        string key, pass;
-        cout << "Name : ";
-        cin >> key;
-        cout << "Password : ";
-        cin >> pass;
-
-        passWord.add(key, pass);
-    }
+    string name = "name";
+    string pass = "22222";
+    passWord.add(name, pass);
+    passWord.print();
+    passWord.delete_pass(name);
     passWord.print();
 
     return 0;
