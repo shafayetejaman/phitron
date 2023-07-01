@@ -398,4 +398,15 @@ public:
     ListNode *reverseKGroup(ListNode *head, int k)
     {
     }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
+    {
+        if (curr == nullptr)
+        {
+            tail = head;
+            head = prev;
+            return;
+        }
+        reverse(head, curr, curr->next, tail);
+        curr->next = prev;
+    }
 };
