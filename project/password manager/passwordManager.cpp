@@ -348,6 +348,8 @@ public:
             string choice;
             while (true)
             {
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                
                 getline(cin, choice);
                 if (choice.size() == 1 &&(tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
                 {
