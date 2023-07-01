@@ -419,7 +419,7 @@ public:
         string password;
         int len = random_range();
 
-        for (int i = 0; i < len; ++i)
+        for (auto i = 0; i < len; i++)
         {
             int randIndex = rand() % characters.size();
             password += characters[randIndex];
