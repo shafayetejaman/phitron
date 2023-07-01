@@ -397,6 +397,18 @@ class Solution
 public:
     ListNode *reverseKGroup(ListNode *head, int k)
     {
+        if (k == 1)
+        {
+            return head;
+        }
+        int index = k;
+        ListNode *curr = head;
+        ListNode *prev = nullptr;
+        while (--index)
+        {
+            prev = curr;
+            
+        }
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
