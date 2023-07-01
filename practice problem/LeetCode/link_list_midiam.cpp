@@ -378,7 +378,7 @@ public:
         if (head == nullptr || head->next == nullptr)
             return;
 
-       
+
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
     {
@@ -389,5 +389,13 @@ public:
         }
         reverse(head, curr, curr->next);
         curr->next = prev;
+    }
+};
+
+class Solution
+{
+public:
+    ListNode *reverseKGroup(ListNode *head, int k)
+    {
     }
 };
