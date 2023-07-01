@@ -403,11 +403,13 @@ public:
         }
         int index = k;
         ListNode *curr = head;
+        ListNode *r_head = head;
+        
         ListNode *prev = nullptr;
         while (--index)
         {
             prev = curr;
-            
+            curr = curr->next;
         }
     }
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
