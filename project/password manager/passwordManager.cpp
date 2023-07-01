@@ -417,7 +417,7 @@ public:
         // all the possible characters for inserting in the password
         string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
         string password;
-        int len = random();
+        int len = random_range();
 
         for (int i = 0; i < len; ++i)
         {
@@ -425,10 +425,10 @@ public:
             password += characters[randIndex];
         }
 
-        return password; 
+        return password;
     }
-    // generating precise random number between MAX and MIN
-    int random()
+    // generating more precise random number between MAX and MIN
+    int random_range()
     {
         static unsigned long long n = 1;
         srand(time(NULL) * n * getpid());
