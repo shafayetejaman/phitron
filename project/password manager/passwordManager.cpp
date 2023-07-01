@@ -418,17 +418,15 @@ public:
         string password;
         int len = random();
 
-        // Seed the random number generator
-
-
         for (int i = 0; i < len; ++i)
         {
-            int randomIndex = random() % characters.size();
-            password += characters[randomIndex];
+            int randIndex = rand() % characters.size();
+            password += characters[randIndex];
         }
 
         return password;
     }
+    // generating precise random number between MAX and MIN
     int random()
     {
         static unsigned long long n = 1;
