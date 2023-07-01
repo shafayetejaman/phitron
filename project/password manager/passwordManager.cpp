@@ -316,6 +316,12 @@ public:
             arr[key] = pass;
         }
     }
+
+    void delete_pass(const string &key)
+    {
+        
+    }
+
     void print()
     {
         bool flag = true;
@@ -324,7 +330,7 @@ public:
         {
             arr.print();
             flag = false;
-        }   
+        }
         if (!arr.list.empty())
         {
             arr.list.print();
