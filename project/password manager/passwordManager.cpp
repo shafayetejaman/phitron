@@ -298,6 +298,32 @@ public:
     }
 };
 
+// input validation
+long long int input(int min, long long int max)
+{
+    string n;
+
+    while (true)
+    {
+        cin >> n;
+
+        for (int i = 0; isdigit(n[i]); i++)
+        {
+            if (i == n.size() - 1)
+            {
+                long long int num = stoll(n);
+                if (num >= min && num <= max)
+                    return num;
+            }
+        }
+
+        cout << "Invalid Input!" << endl;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Type Again : ";
+    }
+}
+
 class PassWord
 {
 private:
@@ -319,6 +345,23 @@ public:
         {
             cout << "The Password already exits!" << endl
                  << "Do you want to overwrite the password?(y,n) : ";
+            string choice;
+            while (true)
+            {
+                cin >> choice;
+                if (choice.size() == 1 &&(tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
+                {
+                    break;
+                }
+                cout << "Invalid Input!" << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Type Again : ";
+            }
+            if (tolower(choice[0]) == 'y')
+            {
+                arr[key] = pass; // overwriting the password
+            }
         }
     }
 
@@ -328,7 +371,6 @@ public:
         {
             cout << "The password was not found!" << endl;
         }
-
     }
 
     void print()
