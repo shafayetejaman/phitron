@@ -414,6 +414,7 @@ public:
     }
     string generate_random_pass()
     {
+        // all the possible characters for inserting in the password
         string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
         string password;
         int len = random();
@@ -424,7 +425,7 @@ public:
             password += characters[randIndex];
         }
 
-        return password;
+        return password; 
     }
     // generating precise random number between MAX and MIN
     int random()
