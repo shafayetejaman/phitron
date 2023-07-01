@@ -269,7 +269,7 @@ public:
         return -1;
     }
 
-    void delete_node(const string &key)
+    bool delete_node(const string &key)
     {
         int pos = this->list.find(key);
 
@@ -319,7 +319,7 @@ public:
 
     void delete_pass(const string &key)
     {
-        
+        this->arr.delete_node(key);
     }
 
     void print()
