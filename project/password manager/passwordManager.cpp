@@ -348,7 +348,7 @@ public:
             string choice;
             while (true)
             {
-                cin >> choice;
+                getline(cin, choice);
                 if (choice.size() == 1 &&(tolower(choice[0]) == 'y' || tolower(choice[0]) == 'n'))
                 {
                     break;
