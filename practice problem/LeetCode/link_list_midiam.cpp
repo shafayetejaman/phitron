@@ -448,7 +448,6 @@ public:
 
             while (--index)
             {
-                prev = curr;
                 curr = curr->next;
                 if (curr == nullptr)
                 {
@@ -460,7 +459,7 @@ public:
             curr->next = nullptr;
             reverse(r_head, nullptr, r_head, curr);
             curr->next = r_next;
-            
+
             if (prev != nullptr)
             {
                 prev->next = r_head;
@@ -470,8 +469,8 @@ public:
                 flag = false;
                 ans = r_head;
             }
-            r_head = curr->next;
             prev = curr;
+            r_head = curr->next;
         }
         return head;
     }
