@@ -83,7 +83,7 @@ int main()
     }
     while (!queue.empty())
     {
-        cout << queue.pop() << " ";
+        cout << queue.pop() << " " << queue.size() << endl;
     }
 
     return 0;
