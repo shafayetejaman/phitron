@@ -401,24 +401,31 @@ public:
         {
             return head;
         }
-        int index = k;
         ListNode *curr = head;
         ListNode *r_head = head;
-
-        ListNode *prev = nullptr;
-        while (--index)
+            ListNode *prev = nullptr;
+        while (true)
         {
-            prev = curr;
-            curr = curr->next;
-        }
-        ListNode *r_next = curr->next;
+            int index = k;
 
-        curr->next = nullptr;
-        reverse(r_head, nullptr, r_head, curr);
-        curr->next = r_next;
-        if (prev != nullptr)
-        {
-            prev->next = r_head;
+            while (--index)
+            {
+                prev = curr;
+                curr = curr->next;
+                if (curr == nullptr)
+                {
+
+                }
+            }
+            ListNode *r_next = curr->next;
+
+            curr->next = nullptr;
+            reverse(r_head, nullptr, r_head, curr);
+            curr->next = r_next;
+            if (prev != nullptr)
+            {
+                prev->next = r_head;
+            }
         }
     }
 
