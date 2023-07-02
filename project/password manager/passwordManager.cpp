@@ -346,12 +346,12 @@ private:
     Map arr;
 
     // generating more precise random number between MAX and MIN
-    int random_range()
+    int random_range(int max,int min)
     {
         static unsigned long long n = 1;
         srand(time(NULL) * n * getpid());
         n++;
-        return (rand() % MAX) + MIN;
+        return (rand() % max) + min;
     }
 
 public:
@@ -424,7 +424,7 @@ public:
         // all the possible characters for inserting in the password
         string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
         string password;
-        int len = random_range();
+        int len = random_range(MAX, MIN);
 
         for (auto i = 0; i < len; i++)
         {
