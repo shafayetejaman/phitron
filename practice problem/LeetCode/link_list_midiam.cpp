@@ -494,6 +494,28 @@ class Solution
 public:
     ListNode *rotateRight(ListNode *head, int k)
     {
-        
+        if (k == 0)
+        {
+            return head;
+        }
+        ListNode *prev = head;
+        ListNode *prevPrev = nullptr;
+        ListNode *next = head;
+        int count = size(head) - k;
+        while (count > k)
+        {
+            prevPrev = prev;
+            prev = prev->next;
+        }
+    }
+    int size(ListNode *head)
+    {
+        int count = 0;
+        while (head != nullptr)
+        {
+            head = head->next;
+            count++;
+        }
+        return count;
     }
 };
