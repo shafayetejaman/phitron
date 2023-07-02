@@ -370,27 +370,7 @@ public:
     }
 };
 
-class Solution
-{
-public:
-    void reorderList(ListNode *head)
-    {
-        if (head == nullptr || head->next == nullptr)
-            return;
 
-
-    }
-    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
-    {
-        if (curr == nullptr)
-        {
-            head = prev;
-            return;
-        }
-        reverse(head, curr, curr->next);
-        curr->next = prev;
-    }
-};
 
 class Solution
 {
