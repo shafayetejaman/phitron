@@ -14,19 +14,21 @@ public:
     }
 };
 
-class queue
+class Queue
 {
 private:
     Node *frontNode = nullptr;
     Node *backNode = nullptr;
+    int elementSize = 0;
 
 public:
 
-    queue(int data)
+    Queue(int data)
     {
         Node *newNode = new Node(data);
         this->frontNode = newNode;
         this->backNode = newNode;
+        this->elementSize++;
     }
 
     void push(int data)
@@ -34,14 +36,21 @@ public:
         Node *newNode = new Node(data);
         this->backNode->next = newNode;
         this->backNode = newNode;
+        this->elementSize++;
     }
 
     int pop()
     {
+        if (this->frontNode == nullptr)
+        {
+            cout << "the queue is empty";
+            return -1;
+        }
         Node *temp = this->frontNode;
         this->frontNode = this->frontNode->next;
         int data = temp->data;
         delete temp;
+        this->elementSize--;
         return data;
     }
     int front()
@@ -60,11 +69,23 @@ public:
         }
         return false;
     }
+    int size()
+    {
+        return elementSize;
+    }
 };
 
 int main()
 {
-
+    Queue queue(1);
+    for (auto i = 2; i <= 5; i++)
+    {
+        queue.push(i); // 1 2 3  4 5 
+    }
+    for (auto i = 0; i < 5; i++)
+    {
+        cout << queue.pop() << " ";
+    }
 
     return 0;
 }
