@@ -471,6 +471,7 @@ public:
             }
             prev = curr;
             r_head = curr->next;
+            curr = r_head;
         }
         return head;
     }
