@@ -433,6 +433,7 @@ public:
                 flag = false;
                 ans = r_head;
             }
+            r_head = curr->next;
         }
         return head;
     }
