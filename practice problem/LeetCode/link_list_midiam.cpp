@@ -499,14 +499,14 @@ public:
             return head;
         }
         ListNode *lastPrev = head;
-        if (lastPrev == nullptr)
+        if (lastPrev->next == nullptr)
         {
             return head;
         }
 
         while (k--)
         {
-            while (lastPrev->next != nullptr)
+            while (lastPrev->next->next != nullptr)
             {
                 lastPrev = lastPrev->next;
             }
