@@ -370,7 +370,63 @@ public:
     }
 };
 
+class Solution
+{
+public:
+    void reorderList(ListNode *head)
+    {
+        if (head == nullptr || head->next == nullptr)
+            return;
 
+        ListNode *mid = this->mid(head);
+        this->reverse(mid, nullptr, mid);
+
+        ListNode *h1 = head;
+        ListNode *h2 = mid;
+
+        while (h1 != nullptr && h2 != nullptr)
+        {
+            ListNode *temp = h1->next;
+            h1->next = h2;
+            h1 = temp;
+
+            ListNode *temp2 = h2->next;
+            h2->next = h1;
+            h2 = temp2;
+        }
+
+        if (h1 != nullptr)
+            h1->next = nullptr;
+    }
+    ListNode *mid(ListNode *slow)
+    {
+        bool flag = true;
+        ListNode *fast = slow;
+        while (fast != nullptr && fast->next != nullptr)
+        {
+            fast = fast->next->next;
+            if (flag)
+            {
+                flag = false;
+                continue;
+            }
+            slow = slow->next;
+        }
+        ListNode *mid = slow->next;
+
+        return mid;
+    }
+    void reverse(ListNode *&head, ListNode *prev, ListNode *curr)
+    {
+        if (curr == nullptr)
+        {
+            head = prev;
+            return;
+        }
+        reverse(head, curr, curr->next);
+        curr->next = prev;
+    }
+};
 
 class Solution
 {
