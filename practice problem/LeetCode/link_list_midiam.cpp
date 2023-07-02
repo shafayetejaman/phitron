@@ -401,9 +401,11 @@ public:
         {
             return head;
         }
+        bool flag = true;
         ListNode *curr = head;
         ListNode *r_head = head;
         ListNode *prev = nullptr;
+        ListNode *ans = nullptr;
         while (true)
         {
             int index = k;
@@ -414,7 +416,7 @@ public:
                 curr = curr->next;
                 if (curr == nullptr)
                 {
-
+                    return ans;
                 }
             }
             ListNode *r_next = curr->next;
@@ -426,7 +428,13 @@ public:
             {
                 prev->next = r_head;
             }
+            if (flag)
+            {
+                flag = false;
+                ans = r_head;
+            }
         }
+        return head;
     }
 
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
