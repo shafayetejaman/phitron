@@ -51,6 +51,7 @@ public:
         }
         Node *temp = this->frontNode;
         this->frontNode = this->frontNode->next;
+        this->frontNode->prev = nullptr;
         int data = temp->data;
         delete temp;
         this->elementSize--;
