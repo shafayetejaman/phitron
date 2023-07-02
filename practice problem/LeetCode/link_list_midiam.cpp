@@ -494,10 +494,11 @@ class Solution
 public:
     ListNode *rotateRight(ListNode *head, int k)
     {
-        if (k == 0)
+        if (k == 0 || head == nullptr)
         {
             return head;
         }
+        k = k % size(head);
         ListNode *lastPrev = head;
         if (lastPrev->next == nullptr)
         {
@@ -517,5 +518,15 @@ public:
             lastPrev = head;
         }
         return head;
+    }
+    int size(ListNode *head)
+    {
+        int count = 0;
+        while (head != nullptr)
+        {
+            head = head->next;
+            count++;
+        }
+        return count;
     }
 };
