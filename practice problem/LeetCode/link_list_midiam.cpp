@@ -403,7 +403,7 @@ public:
         }
         ListNode *curr = head;
         ListNode *r_head = head;
-            ListNode *prev = nullptr;
+        ListNode *prev = nullptr;
         while (true)
         {
             int index = k;
