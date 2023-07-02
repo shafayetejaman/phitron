@@ -405,7 +405,7 @@ public:
         ListNode *curr = head;
         ListNode *r_head = head;
 
-        ListNode *prev = head;
+        ListNode *prev = nullptr;
         while (--index)
         {
             prev = curr;
@@ -416,7 +416,7 @@ public:
         curr->next = nullptr;
         reverse(r_head, nullptr, r_head, curr);
         curr->next = r_next;
-        if (prev != r_head)
+        if (prev != nullptr)
         {
             prev->next = r_head;
         }
