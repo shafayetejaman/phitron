@@ -22,7 +22,6 @@ private:
     int elementSize = 0;
 
 public:
-
     Queue(int data)
     {
         Node *newNode = new Node(data);
@@ -63,7 +62,7 @@ public:
     }
     bool empty()
     {
-        if (this->frontNode = nullptr)
+        if (this->frontNode == nullptr)
         {
             return true;
         }
@@ -80,9 +79,9 @@ int main()
     Queue queue(1);
     for (auto i = 2; i <= 5; i++)
     {
-        queue.push(i); // 1 2 3  4 5 
+        queue.push(i); // 1 2 3  4 5
     }
-    for (auto i = 0; i < 5; i++)
+    while (!queue.empty())
     {
         cout << queue.pop() << " ";
     }
