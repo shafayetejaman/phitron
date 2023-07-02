@@ -11,11 +11,10 @@ int main()
 
     int time = std::time(nullptr);
 
-    for (auto i = 1; i <= n; i ++)
+    for (auto i = 1; i <= n; i++)
     {
         cout << "the loop is running" << endl;
     }
-
 
     time = std::time(nullptr) - time;
     cout << "Time : " << time << endl;
