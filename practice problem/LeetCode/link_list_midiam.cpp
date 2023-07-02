@@ -512,8 +512,8 @@ public:
             }
             ListNode *last = lastPrev->next;
             lastPrev->next = nullptr;
-            lastPrev->next = head;
-            head = lastPrev;
+            last->next = head;
+            head = last;
             lastPrev = head;
         }
         return head;
