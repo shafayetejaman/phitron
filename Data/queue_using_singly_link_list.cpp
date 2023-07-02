@@ -17,27 +17,27 @@ public:
 class queue
 {
 public:
-    node *front = nullptr;
-    node *back = nullptr;
+    node *frontNode = nullptr;
+    node *backNode = nullptr;
 
     queue(int data)
     {
         node *newNode = new node(data);
-        this->front = newNode;
-        this->back = newNode;
+        this->frontNode = newNode;
+        this->backNode = newNode;
     }
 
     void push(int data)
     {
         node *newNode = new node(data);
-        this->back->next = newNode;
-        this->back = newNode;
+        this->backNode->next = newNode;
+        this->backNode = newNode;
     }
 
     int pop()
     {
-        node *temp = this->front;
-        this->front = this->front->next;
+        node *temp = this->frontNode;
+        this->frontNode = this->frontNode->next;
         int data = temp->data;
         delete temp;
         return data;
