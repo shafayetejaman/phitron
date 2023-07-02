@@ -33,9 +33,14 @@ public:
         this->back->next = newNode;
         this->back = newNode;
     }
+
     int pop()
     {
-        
+        node *temp = this->front;
+        this->front = this->front->next;
+        int data = temp->data;
+        delete temp;
+        return data;
     }
 };
 
