@@ -50,8 +50,16 @@ public:
             return -1;
         }
         Node *temp = this->frontNode;
-        this->frontNode = this->frontNode->next;
-        this->frontNode->prev = nullptr;
+        if (this->frontNode == this->backNode)
+        {
+            this->frontNode = nullptr;
+            this->backNode = nullptr;
+        }
+        else
+        {
+            this->frontNode = this->frontNode->next;
+            this->frontNode->prev = nullptr;
+        }
         int data = temp->data;
         delete temp;
         this->elementSize--;
