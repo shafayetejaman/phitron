@@ -498,19 +498,23 @@ public:
         {
             return head;
         }
-        ListNode *temp = head;
-        if (temp == nullptr)
+        ListNode *lastPrev = head;
+        if (lastPrev == nullptr)
         {
             return head;
         }
 
         while (k--)
         {
-            while (temp->next != nullptr)
+            while (lastPrev->next != nullptr)
             {
-                temp = temp->next;
+                lastPrev = lastPrev->next;
             }
-            
+            ListNode *last = lastPrev->next;
+            lastPrev->next = nullptr;
+            lastPrev->next = head;
+            head = lastPrev;
         }
+        return head;
     }
 };
