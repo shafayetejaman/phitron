@@ -435,7 +435,7 @@ public:
     {
         if (k == 1)
         {
-            return head;
+            return head; 
         }
         bool flag = true;
         ListNode *curr = head;
