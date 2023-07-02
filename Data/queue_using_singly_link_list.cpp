@@ -16,9 +16,11 @@ public:
 
 class queue
 {
-public:
+private:
     Node *frontNode = nullptr;
     Node *backNode = nullptr;
+
+public:
 
     queue(int data)
     {
@@ -41,6 +43,22 @@ public:
         int data = temp->data;
         delete temp;
         return data;
+    }
+    int front()
+    {
+        return this->frontNode->data;
+    }
+    int back()
+    {
+        return this->backNode->data;
+    }
+    bool empty()
+    {
+        if (this->frontNode = nullptr)
+        {
+            return true;
+        }
+        return false;
     }
 };
 
