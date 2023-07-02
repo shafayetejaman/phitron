@@ -514,6 +514,7 @@ public:
             lastPrev->next = nullptr;
             lastPrev->next = head;
             head = lastPrev;
+            lastPrev = head;
         }
         return head;
     }
