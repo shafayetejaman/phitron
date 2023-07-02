@@ -405,14 +405,23 @@ public:
         ListNode *curr = head;
         ListNode *r_head = head;
 
-        ListNode *prev = nullptr;
+        ListNode *prev = head;
         while (--index)
         {
             prev = curr;
             curr = curr->next;
         }
+        ListNode *r_next = curr->next;
+
+        curr->next = nullptr;
+        reverse(r_head, nullptr, r_head, curr);
+        curr->next = r_next;
+        if (prev != r_head)
+        {
+            prev->next = r_head;
+        }
     }
-    
+
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
     {
         if (curr == nullptr)
