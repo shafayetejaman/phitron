@@ -435,7 +435,7 @@ public:
     {
         if (k == 1)
         {
-            return head; 
+            return head;
         }
         bool flag = true;
         ListNode *curr = head;
@@ -460,6 +460,7 @@ public:
             curr->next = nullptr;
             reverse(r_head, nullptr, r_head, curr);
             curr->next = r_next;
+            
             if (prev != nullptr)
             {
                 prev->next = r_head;
