@@ -30,12 +30,24 @@ public:
         this->elementSize++;
     }
 
+    Queue() {}
+
     void push(int data)
     {
         Node *newNode = new Node(data);
-        this->backNode->next = newNode;
-        this->backNode = newNode;
-        this->elementSize++;
+        if (this->frontNode == nullptr)
+        {
+            this->frontNode = newNode;
+            this->backNode = newNode;
+            this->elementSize++;
+        }
+        else
+        {
+
+            this->backNode->next = newNode;
+            this->backNode = newNode;
+            this->elementSize++;
+        }
     }
 
     int pop()

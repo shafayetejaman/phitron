@@ -32,14 +32,25 @@ public:
         this->backNode = newNode;
         this->elementSize++;
     }
+    Queue() {}
 
     void push(int data)
     {
         Node *newNode = new Node(data);
-        this->backNode->next = newNode;
-        newNode->prev = this->backNode;
-        this->backNode = newNode;
-        this->elementSize++;
+        if (this->frontNode == nullptr)
+        {
+            this->frontNode = newNode;
+            this->backNode = newNode;
+            this->elementSize++;
+        }
+        else
+        {
+
+            this->backNode->next = newNode;
+            newNode->prev = this->backNode;
+            this->backNode = newNode;
+            this->elementSize++;
+        }
     }
 
     int pop()
@@ -90,6 +101,14 @@ public:
 int main()
 {
     Queue queue(1);
+    for (auto i = 2; i <= 5; i++)
+    {
+        queue.push(i); // 1 2 3  4 5
+    }
+    while (!queue.empty())
+    {
+        cout << queue.pop() << " " << queue.size() << endl;
+    }
     for (auto i = 2; i <= 5; i++)
     {
         queue.push(i); // 1 2 3  4 5
