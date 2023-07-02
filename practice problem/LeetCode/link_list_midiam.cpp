@@ -434,6 +434,7 @@ public:
                 ans = r_head;
             }
             r_head = curr->next;
+            prev = curr;
         }
         return head;
     }
