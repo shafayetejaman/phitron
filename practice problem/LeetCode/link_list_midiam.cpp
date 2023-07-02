@@ -442,7 +442,7 @@ public:
         ListNode *r_head = head;
         ListNode *prev = nullptr;
         ListNode *ans = nullptr;
-        while (true)
+        while (curr != nullptr)
         {
             int index = k;
 
@@ -473,7 +473,7 @@ public:
             r_head = curr->next;
             curr = r_head;
         }
-        return head;
+        return ans;
     }
 
     void reverse(ListNode *&head, ListNode *prev, ListNode *curr, ListNode *&tail)
