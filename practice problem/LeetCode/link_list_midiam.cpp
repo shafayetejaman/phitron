@@ -498,24 +498,19 @@ public:
         {
             return head;
         }
-        ListNode *prev = head;
-        ListNode *prevPrev = nullptr;
-        ListNode *next = head;
-        int count = size(head) - k;
-        while (count > k)
+        ListNode *temp = head;
+        if (temp == nullptr)
         {
-            prevPrev = prev;
-            prev = prev->next;
+            return head;
         }
-    }
-    int size(ListNode *head)
-    {
-        int count = 0;
-        while (head != nullptr)
+
+        while (k--)
         {
-            head = head->next;
-            count++;
+            while (temp->next != nullptr)
+            {
+                temp = temp->next;
+            }
+            
         }
-        return count;
     }
 };
