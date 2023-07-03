@@ -98,7 +98,7 @@ int main()
     }
     queue.pop();
     queue.pop();
-    for (auto i = 0; i < 2; i++)
+    for (auto i = 0; i < 3; i++)
     {
         queue.push(i);
     }
