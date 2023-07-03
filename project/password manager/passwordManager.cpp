@@ -419,6 +419,7 @@ public:
             cout << "No password has been saved!" << endl;
         }
     }
+    
     string generate_random_pass()
     {
         // all the possible characters for inserting in the password
