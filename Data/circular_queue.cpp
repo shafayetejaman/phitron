@@ -50,7 +50,7 @@ public:
     }
     void print()
     {
-        for (auto i = this->frontIndex; i <= this->backIndex; i++)
+        for (auto i = this->frontIndex; i < this->backIndex; i++)
         {
             if (i >= this->sizeOfArr)
             {
@@ -72,7 +72,7 @@ public:
 int main()
 {
     Queue queue(10);
-    for (auto i = 0; i <= queue.size(); i++)
+    for (auto i = 0; i < queue.size(); i++)
     {
         queue.push(i);
     }
