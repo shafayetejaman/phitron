@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 
-
     return 0;
 }
 
@@ -27,8 +26,15 @@ public:
         int topVal;
         while (!q1.empty())
         {
-            q2.push(q1.front());
-            topVal = q1.front();
+            if (q1.size() != 1)
+            {
+                q2.push(q1.front());
+            }
+            else
+            {
+                topVal = q1.front();
+            }
+
             q1.pop();
         }
         q1 = q2;
@@ -37,11 +43,11 @@ public:
 
     int top()
     {
-       return q1.back();
+        return q1.back();
     }
 
     bool empty()
     {
-       return q1.empty();
+        return q1.empty();
     }
 };
