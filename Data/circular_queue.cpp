@@ -77,7 +77,7 @@ public:
     }
     void pop()
     {
-        this->frontIndex--;
+        this->frontIndex++;
     }
 };
 
