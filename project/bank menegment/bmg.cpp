@@ -52,7 +52,7 @@ public:
         for (auto i = 0; i < 4; i++)
             bal.pop_back();
 
-        string s = "No : " + to_string(number) + "\n" + "Name : " + name + "\n" + "ID : " + to_string(id) + "\n" + "Email : " + email + "\n" + "Balance : " + bal + "\n\n";
+        string s = "No : " + to_string(number) + "\n" + "Name : " + name + "\n" + "ID : " + to_string(id) + "\n" + "Email : " + email + "\n" + "Balance : " + bal + "\n";
         return s;
     }
 
@@ -85,7 +85,7 @@ int main(void)
              << "2) Add a new account" << endl
              << "3) Delete an account" << endl
              << "4) withdrawal from an account" << endl
-             << "5) Deposit to an account" << endl
+             << "5) Deposit to an account" << endl << endl
              << "Type your choses : ";
 
         n = input(0, 5);
