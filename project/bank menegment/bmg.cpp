@@ -52,7 +52,7 @@ public:
         for (auto i = 0; i < 4; i++)
             bal.pop_back();
 
-        string s = "No : " + to_string(number) + "\n" + "Name : " + name + "\n" + "ID : " + to_string(id) + "\n" + "Email : " + email + "\n" + "Balance : " + bal + "\n";
+        string s = "No : " + to_string(number) + "\n" + "Name : " + name + "\n" + "ID : " + to_string(id) + "\n" + "Email : " + email + "\n" + "Balance : " + bal + "\n\n";
         return s;
     }
 
