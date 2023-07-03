@@ -25,7 +25,7 @@ public:
         if (this->backIndex >= this->sizeOfArr)
         {
             int back = backIndex % this->sizeOfArr;
-            if (this->backIndex >= this->frontIndex)
+            if (this->backIndex < this->frontIndex)
             {
                 this->arr[back] = data;
                 this->backIndex++;
@@ -72,7 +72,7 @@ public:
 int main()
 {
     Queue queue(10);
-    for (auto i = 0; i < queue.size(); i++)
+    for (auto i = 0; i < queue.size()-1; i++)
     {
         queue.push(i);
     }
