@@ -346,12 +346,19 @@ private:
     Map arr;
 
     // generating more precise random number between MAX and MIN
-    int random_range(int max,int min)
+    int random(int max,int min)
     {
         static unsigned long long n = 1;
         srand(time(NULL) * n * getpid());
         n++;
         return (rand() % max) + min;
+    }
+    int random()
+    {
+        static unsigned long long n = 1;
+        srand(time(NULL) * n * getpid());
+        n++;
+        return rand();
     }
 
 public:
@@ -425,11 +432,11 @@ public:
         // all the possible characters for inserting in the password
         string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=";
         string password;
-        int len = random_range(MAX, MIN);
+        int len = random(MAX, MIN);
 
         for (auto i = 0; i < len; i++)
         {
-            int randIndex = rand() % characters.size();
+            int randIndex = random() % characters.size();
             password += characters[randIndex];
         }
 
@@ -447,7 +454,7 @@ int main()
 
     string name = "akash";
     string pass = passWord.generate_random_pass();
-    
+
     passWord.add(name, pass);
     passWord.print();
     passWord.delete_pass(name);
