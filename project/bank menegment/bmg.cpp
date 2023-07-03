@@ -80,7 +80,7 @@ int main(void)
     while (true)
     {
         int n = -1;
-        cout << "0) Exit" << endl
+        cout << "\n0) Exit" << endl
              << "1) View all accounts" << endl
              << "2) Add a new account" << endl
              << "3) Delete an account" << endl
