@@ -38,11 +38,11 @@ public:
     }
     int front()
     {
-        return this->arr[this->frontIndex];
+        return this->arr[this->frontIndex % this->sizeOfArr];
     }
     int back()
     {
-        return this->arr[this->backIndex];
+        return this->arr[this->backIndex % this->sizeOfArr];
     }
     void print()
     {
