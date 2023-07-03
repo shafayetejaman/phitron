@@ -49,6 +49,7 @@ Node *visit(Node *head, string value, Node *lastVisited)
         if (temp->val == value)
         {
             cout << temp->val << endl;
+            lastVisited = temp;
             return temp;
         }
         temp = temp->next;
