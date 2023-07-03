@@ -48,6 +48,14 @@ public:
             }
         }
     }
+    int front()
+    {
+        return this->arr[this->frontIndex];
+    }
+    int back()
+    {
+        return this->arr[this->backIndex];
+    }
     void print()
     {
         for (auto i = this->frontIndex; i < this->backIndex; i++)
@@ -67,16 +75,21 @@ public:
     {
         return this->sizeOfArr;
     }
+    void pop()
+    {
+        this->frontIndex--;
+    }
 };
 
 int main()
 {
     Queue queue(10);
 
-    for (auto i = 0; i < queue.size()-1; i++)
+    for (auto i = 0; i < queue.size(); i++)
     {
         queue.push(i);
     }
+    queue.pop();
     queue.print();
 
     return 0;
