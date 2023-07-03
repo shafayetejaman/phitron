@@ -61,7 +61,7 @@ public:
     }
     int size()
     {
-        return this->sizeOfArr;
+        return (backIndex - frontIndex);
     }
     void pop()
     {
