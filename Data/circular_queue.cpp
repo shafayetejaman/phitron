@@ -73,10 +73,9 @@ int main()
 {
     Queue queue(10);
 
-    for (auto i = 0, j = 0; i < queue.size()-1; i++)
+    for (auto i = 0; i < queue.size()-1; i++)
     {
-        cin >> j;
-        queue.push(j);
+        queue.push(i);
     }
     queue.print();
 
