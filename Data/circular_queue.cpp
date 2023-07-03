@@ -88,16 +88,16 @@ int main()
 {
     Queue queue(10);
 
-    // for (auto i = 0; i < queue.size(); i++)
-    // {
-    //     queue.push(i);
-    // }
+    for (auto i = 0; i < queue.size(); i++)
+    {
+        queue.push(i);
+    }
     queue.pop();
     queue.pop();
-    // for (auto i = 0; i < 2; i++)
-    // {
-    //     queue.push(i);
-    // }
+    for (auto i = 0; i < 2; i++)
+    {
+        queue.push(i);
+    }
     queue.print();
     cout << queue.empty();
 
