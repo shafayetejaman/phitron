@@ -63,6 +63,10 @@ public:
     {
         return (backIndex - frontIndex);
     }
+    int capacity()
+    {
+        return this->sizeOfArr;
+    }
     void pop()
     {
         if (!this->empty())
@@ -88,7 +92,7 @@ int main()
 {
     Queue queue(10);
 
-    for (auto i = 0; i < queue.size(); i++)
+    for (auto i = 0; i < queue.capacity(); i++)
     {
         queue.push(i);
     }
