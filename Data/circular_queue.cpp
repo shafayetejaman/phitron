@@ -27,7 +27,7 @@ public:
 
         if (this->backIndex >= this->frontIndex)
         {
-            this->arr[this->backIndex] = data;
+            this->arr[back] = data;
             this->backIndex++;
         }
         else
@@ -77,6 +77,11 @@ int main()
         queue.push(i);
     }
     queue.pop();
+    queue.pop();
+    for (auto i = 0; i < 4; i++)
+    {
+        queue.push(i);
+    }
     queue.print();
 
     return 0;
