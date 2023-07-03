@@ -25,8 +25,9 @@ public:
         int front = frontIndex % this->sizeOfArr;
         int back = backIndex % this->sizeOfArr;
 
-        if (this->backIndex >= this->frontIndex)
+        if ((backIndex - frontIndex) < this->sizeOfArr)
         {
+
             this->arr[back] = data;
             this->backIndex++;
         }
@@ -78,7 +79,7 @@ int main()
     }
     queue.pop();
     queue.pop();
-    for (auto i = 0; i < 4; i++)
+    for (auto i = 0; i < 2; i++)
     {
         queue.push(i);
     }
