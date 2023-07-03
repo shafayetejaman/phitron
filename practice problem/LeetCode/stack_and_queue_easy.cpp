@@ -11,7 +11,7 @@ int main()
 class MyStack
 {
 public:
-    queue<int> q1, q2;
+    queue<int> q1;
     MyStack()
     {
     }
@@ -23,6 +23,7 @@ public:
 
     int pop()
     {
+        queue<int> q2;
         int topVal;
         while (!q1.empty())
         {
