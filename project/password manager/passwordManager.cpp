@@ -419,7 +419,7 @@ public:
             cout << "No password has been saved!" << endl;
         }
     }
-    
+
     string generate_random_pass()
     {
         // all the possible characters for inserting in the password
@@ -447,6 +447,7 @@ int main()
 
     string name = "akash";
     string pass = passWord.generate_random_pass();
+    
     passWord.add(name, pass);
     passWord.print();
     passWord.delete_pass(name);
