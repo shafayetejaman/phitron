@@ -24,7 +24,7 @@ public:
     {
         if (this->backIndex == this->size)
         {
-            this->backIndex = 0;
+            
         }
         else
         {
