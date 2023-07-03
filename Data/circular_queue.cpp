@@ -22,7 +22,10 @@ public:
 
     void push(int data)
     {
-        if (this->backIndex )
+        if (this->backIndex == this->size-1)
+        {
+            this->backIndex = 0;
+        }
         if (this->backIndex >= this->frontIndex)
         {
             this->arr[this->backIndex] = data;
