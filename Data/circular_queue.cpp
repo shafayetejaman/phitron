@@ -22,9 +22,9 @@ public:
 
     void push(int data)
     {
-        if (this->backIndex == this->size)
+        if (this->backIndex >= this->size)
         {
-            
+
         }
         else
         {
