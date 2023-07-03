@@ -65,7 +65,22 @@ public:
     }
     void pop()
     {
-        this->frontIndex++;
+        if (!this->empty())
+        {
+            this->frontIndex++;
+        }
+        else
+        {
+            cout << "the queue is empty!" << endl;
+        }
+    }
+    bool empty()
+    {
+        if (this->frontIndex < this->backIndex)
+        {
+            return false;
+        }
+        return true;
     }
 };
 
@@ -73,17 +88,18 @@ int main()
 {
     Queue queue(10);
 
-    for (auto i = 0; i < queue.size(); i++)
-    {
-        queue.push(i);
-    }
+    // for (auto i = 0; i < queue.size(); i++)
+    // {
+    //     queue.push(i);
+    // }
     queue.pop();
     queue.pop();
-    for (auto i = 0; i < 2; i++)
-    {
-        queue.push(i);
-    }
+    // for (auto i = 0; i < 2; i++)
+    // {
+    //     queue.push(i);
+    // }
     queue.print();
+    cout << queue.empty();
 
     return 0;
 }
