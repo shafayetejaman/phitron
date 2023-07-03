@@ -48,14 +48,7 @@ public:
     {
         for (auto i = this->frontIndex; i < this->backIndex; i++)
         {
-            if (i >= this->sizeOfArr)
-            {
-                cout << this->arr[i % this->sizeOfArr] << " ";
-            }
-            else
-            {
-                cout << this->arr[i] << " ";
-            }
+            cout << this->arr[i % this->sizeOfArr] << " ";
         }
         cout << endl;
     }
