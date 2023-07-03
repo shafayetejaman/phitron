@@ -22,29 +22,36 @@ public:
 
     void push(int data)
     {
-        if (this->backIndex >= this->sizeOfArr)
+        if (this->frontIndex >= this->sizeOfArr)
         {
-            int back = backIndex % this->sizeOfArr;
-            if (this->backIndex < this->frontIndex)
-            {
-                this->arr[back] = data;
-                this->backIndex++;
-            }
-            else
-            {
-                cout << "the queue is full!" << endl;
-            }
+            
         }
         else
         {
-            if (this->backIndex >= this->frontIndex)
+            if (this->backIndex >= this->sizeOfArr)
             {
-                this->arr[this->backIndex] = data;
-                this->backIndex++;
+                int back = backIndex % this->sizeOfArr;
+                if (this->backIndex < this->frontIndex)
+                {
+                    this->arr[back] = data;
+                    this->backIndex++;
+                }
+                else
+                {
+                    cout << "the queue is full!" << endl;
+                }
             }
             else
             {
-                cout << "the queue is full!" << endl;
+                if (this->backIndex >= this->frontIndex)
+                {
+                    this->arr[this->backIndex] = data;
+                    this->backIndex++;
+                }
+                else
+                {
+                    cout << "the queue is full!" << endl;
+                }
             }
         }
     }
