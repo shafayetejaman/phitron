@@ -24,7 +24,16 @@ public:
     {
         if (this->backIndex >= this->size)
         {
-
+            int back = backIndex % this->size;
+            if (this->backIndex >= this->frontIndex)
+            {
+                this->arr[back] = data;
+                this->backIndex++;
+            }
+            else
+            {
+                cout << "the queue is full!" << endl;
+            }
         }
         else
         {
