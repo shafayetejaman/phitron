@@ -55,7 +55,7 @@ Node *visit(Node *head, string value, Node *lastVisited)
         temp = temp->next;
     }
     cout << "Not Available" << endl;
-    return lastVisited;
+    return nullptr;
 }
 
 void moveToPrevious(Node *&current)
