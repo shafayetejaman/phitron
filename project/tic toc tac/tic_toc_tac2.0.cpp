@@ -215,7 +215,7 @@ int random()
     static unsigned long long n = 1;
     srand(time(nullptr) * n * getpid());
     n++;
-    int val = (rand() % (MAX - MIN)) + MIN;
+    int val = (rand() % (MAX - MIN+1)) + MIN;
 
     return val;
 }

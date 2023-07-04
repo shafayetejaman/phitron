@@ -351,7 +351,7 @@ private:
         static unsigned long long n = 1;
         srand(time(nullptr) * n * getpid());
         n++;
-        int val = (rand() % (max - min)) + min;
+        int val = (rand() % (max - min + 1)) + min;
 
         return val;
     }
