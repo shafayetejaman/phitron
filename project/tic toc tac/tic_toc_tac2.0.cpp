@@ -213,9 +213,11 @@ int computer(matrix &b, int st)
 int random()
 {
     static unsigned long long n = 1;
-    srand(time(NULL) * n * getpid());
+    srand(time(nullptr) * n * getpid());
     n++;
-    return (rand() % MAX) + MIN;
+    int val = (rand() % (MAX - MIN)) + MIN;
+
+    return val;
 }
 
 // Function to determine the winning chance using backtracking
@@ -263,5 +265,5 @@ int wining_chance(matrix &temp)
             }
         }
     }
-    return random(); // if no winner is possible 
+    return random(); // if no winner is possible
 }

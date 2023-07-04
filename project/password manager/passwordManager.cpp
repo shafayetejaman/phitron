@@ -349,7 +349,7 @@ private:
     int random(int max, int min)
     {
         static unsigned long long n = 1;
-        srand(time(NULL) * n * getpid());
+        srand(time(nullptr) * n * getpid());
         n++;
         int val = (rand() % (max - min)) + min;
 
@@ -358,7 +358,7 @@ private:
     int random()
     {
         static unsigned long long n = 1;
-        srand(time(NULL) * n * getpid());
+        srand(time(nullptr) * n * getpid());
         n++;
         return rand();
     }
