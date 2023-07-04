@@ -351,6 +351,12 @@ private:
         static unsigned long long n = 1;
         srand(time(NULL) * n * getpid());
         n++;
+        int val = rand();
+        if ((val % max) < min)
+        {
+            
+        }
+
         return (rand() % max) + min;
     }
     int random()
