@@ -162,16 +162,26 @@ public:
         for (auto i = 0; i < s.size(); i++)
         {
             if (s[i] != '#')
+            {
                 st.push(s[i]);
+            }
             else
-                st.pop();
+            {
+                if (!st.empty())
+                    st.pop();
+            }
         }
         for (auto i = 0; i < t.size(); i++)
         {
             if (t[i] != '#')
+            {
                 tt.push(t[i]);
+            }
             else
+            {
+                if (!tt.empty())
                 tt.pop();
+            }
         }
         if (st.size() != tt.size())
         {
@@ -179,7 +189,7 @@ public:
         }
         while (!st.empty())
         {
-            if (st.top() != st.top())
+            if (st.top() != tt.top())
             {
                 return false;
             }
