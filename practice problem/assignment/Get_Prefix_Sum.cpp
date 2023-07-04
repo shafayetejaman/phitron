@@ -6,7 +6,7 @@ int main()
 {
     int n;
     cin >> n;
-    vector<long long> v(n), sum(n);
+    vector<long long> v(n), sum(n);  
 
     for (auto i = 0; i < n; i++)
     {
@@ -27,3 +27,4 @@ int main()
 
     return 0;
 }
+
