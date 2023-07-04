@@ -231,7 +231,7 @@ public:
         }
         return index;
     }
-
+    // impementing the eng
     string &operator[](const string &key)
     {
         int index = hash(key);
@@ -246,7 +246,7 @@ public:
 
         return arr[index].second;
     }
-
+    // finding the index of the list
     bool find(const string &key)
     {
         int index = hash(key);
