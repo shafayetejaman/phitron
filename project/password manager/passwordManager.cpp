@@ -355,7 +355,9 @@ private:
         if ((val % max) < min)
         {
             val += (min - (val % max));
+            val += (rand() % (max - min));
         }
+
         return val;
     }
     int random()
