@@ -101,7 +101,7 @@ public:
             cout << "The password was not found!" << endl;
         }
     }
-
+    // printing the saved password
     void print()
     {
         bool flag = true;
@@ -122,7 +122,7 @@ public:
             cout << "No password has been saved!" << endl;
         }
     }
-
+    // generating random password
     string generate_random_pass()
     {
         // all the possible characters for inserting in the password
