@@ -153,3 +153,39 @@ public:
         return q1.empty();
     }
 };
+class Solution
+{
+public:
+    bool backspaceCompare(string s, string t)
+    {
+        stack<char> st, tt;
+        for (auto i = 0; i < s.size(); i++)
+        {
+            if (s[i] != '#')
+                st.push(s[i]);
+            else
+                st.pop();
+        }
+        for (auto i = 0; i < t.size(); i++)
+        {
+            if (t[i] != '#')
+                tt.push(t[i]);
+            else
+                tt.pop();
+        }
+        if (st.size() != tt.size())
+        {
+            return false;
+        }
+        while (!st.empty())
+        {
+            if (st.top() != st.top())
+            {
+                return false;
+            }
+            st.pop();
+            tt.pop();
+        }
+        return true;
+    }
+};
