@@ -66,7 +66,7 @@ public:
 
         return false;
     }
-
+    // inserting in the end of the link list
     string &append(const string &first)
     {
         ListNode *newNode = new ListNode(first);
@@ -93,7 +93,7 @@ public:
         static string s;
         return s;
     }
-
+    // deleting the node of the link list
     void delete_node(int index)
     {
         if (this->head == nullptr)
@@ -184,8 +184,8 @@ public:
             return;
         }
     }
-
-    void resize(const int &newSize) // increasing or decreasing the map size
+    // increasing or decreasing the map size
+    void resize(const int &newSize)
     {
         Node *newNode = new Node[newSize];
         if (newNode == nullptr)
@@ -201,6 +201,7 @@ public:
         this->arr = newNode;
         this->size = newSize;
     }
+    // printing the nodes of array
     void print()
     {
         for (auto i = 0; i < this->size; i++)
@@ -211,7 +212,8 @@ public:
             }
         }
     }
-    int hash(const string &key) // generating hash index
+    // generating hash index
+    int hash(const string &key)
     {
         int index = 0;
         int hashVal = 31; // prime number for better distribution
@@ -231,7 +233,7 @@ public:
         }
         return index;
     }
-    // impementing the eng
+    // implementing operator overloading of hash map
     string &operator[](const string &key)
     {
         int index = hash(key);
@@ -268,7 +270,7 @@ public:
         }
         return -1;
     }
-    // deleteing node from the link list
+    // deleting node from the link list
     bool delete_node(const string &key)
     {
         int pos = this->list.find(key);

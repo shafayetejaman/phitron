@@ -36,7 +36,7 @@ long long int input(int min, long long int max)
 class PassWord
 {
 private:
-    string loginPass;
+    string loginPass;  // password for login to the software
     Map arr;
 
     // generating more precise random number between MAX and MIN
@@ -62,6 +62,7 @@ public:
     {
         this->loginPass = loginPass;
     }
+    // adding the password to the hash map
     void add(const string &key, const string &pass)
     {
         if (!arr.find(key))
@@ -93,7 +94,7 @@ public:
             }
         }
     }
-
+    // deleting the saved password
     void delete_pass(const string &key)
     {
         if (!this->arr.delete_node(key))
