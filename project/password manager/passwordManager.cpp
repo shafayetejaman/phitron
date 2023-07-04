@@ -37,7 +37,7 @@ class PassWord
 {
 private:
     string loginPass;  // password for login to the software
-    Map arr;
+    Map arr;  // data structure for saving the passwords
 
     // generating more precise random number between MAX and MIN
     int random(int max, int min)
@@ -136,6 +136,7 @@ public:
             int randIndex = random() % characters.size();
             password += characters[randIndex];
         }
+        cout << password.length() << endl;
 
         return password;
     }
