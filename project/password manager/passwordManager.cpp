@@ -354,10 +354,9 @@ private:
         int val = rand();
         if ((val % max) < min)
         {
-            
+            val += (min - (val % max));
         }
-
-        return (rand() % max) + min;
+        return val;
     }
     int random()
     {
