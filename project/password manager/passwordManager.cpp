@@ -7,7 +7,7 @@
 using namespace std;
 
 const int MAX = 30; // maximum length of the password
-const int MIN = 20;  // minimum length of the password
+const int MIN = 20; // minimum length of the password
 
 class Node // elements for the hashmap
 {
@@ -346,17 +346,12 @@ private:
     Map arr;
 
     // generating more precise random number between MAX and MIN
-    int random(int max,int min)
+    int random(int max, int min)
     {
         static unsigned long long n = 1;
         srand(time(NULL) * n * getpid());
         n++;
-        int val = rand();
-        if ((val % max) < min)
-        {
-            val += (min - (val % max));
-            val += (rand() % (max - min));
-        }
+        int val = (rand() % (max - min)) + min;
 
         return val;
     }
