@@ -1,4 +1,4 @@
-#include "Map.h" // suctome hederfile for class Map, also std and iostream incuded
+#include "Map.h"   // suctome hederfile for class Map, also std and iostream incuded
 #include <cstdlib>
 #include <ctime>
 #include <unistd.h>
