@@ -1,4 +1,4 @@
-#include "Map.h"   // suctome hederfile for class Map, also std and iostream incuded
+#include "Map.h" // suctome hederfile for class Map, also std and iostream incuded
 #include <cstdlib>
 #include <ctime>
 #include <unistd.h>
@@ -36,8 +36,8 @@ long long int input(int min, long long int max)
 class PassWord
 {
 private:
-    string loginPass;  // password for login to the software
-    Map arr;  // data structure for saving the passwords
+    string loginPass; // password for login to the software
+    Map arr;          // data structure for saving the passwords
 
     // generating more precise random number between MAX and MIN
     int random(int max, int min)
@@ -94,6 +94,7 @@ public:
             }
         }
     }
+
     // deleting the saved password
     void delete_pass(const string &key)
     {
@@ -140,17 +141,25 @@ public:
 
         return password;
     }
-    // encrypting all the data of the map
-    string encrypt(const string &data)
+    // string to map converter
+    Map string_to_map()
     {
-        
+
     }
-    // decrypting all the data from the file
-    string decrypt(const string &data)
+    // string to map converter
+    string map_to_string()
     {
 
     }
 };
+// encrypting all the data of the map
+string encrypt(const string &data)
+{
+}
+// decrypting all the data from the file
+string decrypt(const string &data)
+{
+}
 
 int main()
 {
