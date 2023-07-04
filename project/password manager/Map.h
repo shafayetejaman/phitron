@@ -257,7 +257,7 @@ public:
         }
         return false;
     }
-
+    // finding the index of the array
     int find_index_arr(const string &key)
     {
         int index = hash(key);
@@ -268,7 +268,7 @@ public:
         }
         return -1;
     }
-
+    // deleteing node from the link list
     bool delete_node(const string &key)
     {
         int pos = this->list.find(key);
