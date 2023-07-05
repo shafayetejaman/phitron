@@ -213,7 +213,7 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
     while (!temp.empty())
     {
         temp.push(stk1.top());
-    
+
         stk1.pop();
     }
 }
