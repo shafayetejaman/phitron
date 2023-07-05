@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
-using namespace std;
-//                                   \   /
-//                                    \ /
-//                                     X
-//                                    / \
-//                                   /   \                */
+using namespace std;                 01234
+//                                 0 \   /
+//                                 1  \ /
+//                                 2   X
+//                                 3  / \
+//                                 4 /   \                */
 int main()
 {
     int n;
