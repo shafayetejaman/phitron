@@ -248,16 +248,29 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
         sum_temp += stk1.top();
         stk1.pop();
     }
+    sum1 -= sum_temp;
     sum_temp = 0;
-    while (sum2 - sum_temp != sum)
+    while (sum2 - sum_temp > sum)
     {
         sum_temp += stk2.top();
         stk2.pop();
     }
+    sum2 -= sum_temp;
     sum_temp = 0;
-    while (sum3 - sum_temp != sum)
+    while (sum3 - sum_temp > sum)
     {
         sum_temp += stk3.top();
         stk3.pop();
     }
+    sum3 -= sum_temp;
+    while (sum1 != sum2 && sum1 != sum3)
+    {
+        sum1 -= stk1.top();
+        stk1.pop();
+        sum2 -= stk2.top();
+        stk2.pop();
+        sum3 -= stk3.top();
+        stk3.pop();
+    }
+    return sum1;
 }
