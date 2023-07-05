@@ -242,8 +242,12 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
     }
 
 
-    while (sum1 != sum2 && sum1 != sum3 && !stk1.empty() && !stk2.empty() && !stk3.empty())
+    while (!stk1.empty() && !stk2.empty() && !stk3.empty())
     {
+        if (sum1 == sum2 && sum1 == sum3)
+        {
+            break;
+        }
         sum1 -= stk1.top();
         stk1.pop();
         sum2 -= stk2.top();
