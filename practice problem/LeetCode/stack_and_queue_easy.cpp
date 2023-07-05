@@ -199,3 +199,21 @@ public:
         return true;
     }
 };
+int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
+{
+    // Write your code here
+    stack<int> temp;
+    int sum1 = 0, sum2 = 0, sum3 = 0;
+    while (!stk1.empty())
+    {
+        temp.push(stk1.top());
+        sum1 += temp.top();
+        stk1.pop();
+    }
+    while (!stk1.empty())
+    {
+        temp.push(stk1.top());
+        sum1 += temp.top();
+        stk1.pop();
+    }
+}
