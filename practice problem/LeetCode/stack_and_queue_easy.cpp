@@ -180,7 +180,7 @@ public:
             else
             {
                 if (!tt.empty())
-                tt.pop();
+                    tt.pop();
             }
         }
         if (st.size() != tt.size())
@@ -216,6 +216,48 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
         stk1.push(temp.top());
         temp.pop();
     }
+    while (!stk2.empty())
+    {
+        temp.push(stk2.top());
+        sum2 += temp.top();
+        stk2.pop();
+    }
 
-    
+    while (!temp.empty())
+    {
+        stk2.push(temp.top());
+        temp.pop();
+    }
+    while (!stk3.empty())
+    {
+        temp.push(stk3.top());
+        sum3 += temp.top();
+        stk3.pop();
+    }
+
+    while (!temp.empty())
+    {
+        stk3.push(temp.top());
+        temp.pop();
+    }
+
+    int sum = max(sum1, max(sum2, sum3));
+    int sum_temp = 0;
+    while (sum1 - sum_temp != sum)
+    {
+        sum_temp += stk1.top();
+        stk1.pop();
+    }
+    sum_temp = 0;
+    while (sum2 - sum_temp != sum)
+    {
+        sum_temp += stk2.top();
+        stk2.pop();
+    }
+    sum_temp = 0;
+    while (sum3 - sum_temp != sum)
+    {
+        sum_temp += stk3.top();
+        stk3.pop();
+    }
 }
