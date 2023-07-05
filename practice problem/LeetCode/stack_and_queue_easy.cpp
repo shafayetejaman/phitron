@@ -210,10 +210,10 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
         sum1 += temp.top();
         stk1.pop();
     }
-    while (!stk1.empty())
+    while (!temp.empty())
     {
         temp.push(stk1.top());
-        sum1 += temp.top();
+    
         stk1.pop();
     }
 }
