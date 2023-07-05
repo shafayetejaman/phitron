@@ -241,7 +241,23 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
         temp.pop();
     }
 
-    int sum = min(sum1, min(sum2, sum3));
-
-
+    int sum = max(sum1, max(sum2, sum3));
+    int sum_temp = 0;
+    while (sum1 - sum_temp > sum)
+    {
+        sum_temp += stk1.top();
+        stk1.pop();
+    }
+    sum_temp = 0;
+    while (sum2 - sum_temp != sum)
+    {
+        sum_temp += stk2.top();
+        stk2.pop();
+    }
+    sum_temp = 0;
+    while (sum3 - sum_temp != sum)
+    {
+        sum_temp += stk3.top();
+        stk3.pop();
+    }
 }
