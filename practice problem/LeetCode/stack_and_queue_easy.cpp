@@ -206,9 +206,9 @@ int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2
     {
         return sum1;
     }
-    int returnAns1 = INT_MAX;
-    int returnAns2 = INT_MAX;
-    int returnAns3 = INT_MAX;
+    int returnAns1 = INT_MIN;
+    int returnAns2 = INT_MIN;
+    int returnAns3 = INT_MIN;
 
     if (!stk1.empty())
     {
