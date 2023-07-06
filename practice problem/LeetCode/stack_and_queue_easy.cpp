@@ -199,6 +199,11 @@ public:
         return true;
     }
 };
+
+int sum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2,int  sum3)
+{
+    
+}
 int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
 {
     // Write your code here
@@ -240,20 +245,5 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
         stk3.push(temp.top());
         temp.pop();
     }
-
-
-    while (!stk1.empty() && !stk2.empty() && !stk3.empty())
-    {
-        if (sum1 == sum2 && sum1 == sum3)
-        {
-            break;
-        }
-        sum1 -= stk1.top();
-        stk1.pop();
-        sum2 -= stk2.top();
-        stk2.pop();
-        sum3 -= stk3.top();
-        stk3.pop();
-    }
-    return sum1;
 }
+
