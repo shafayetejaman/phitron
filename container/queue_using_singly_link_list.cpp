@@ -100,3 +100,31 @@ int main()
 
     return 0;
 }
+queue<int> reverseElements(queue<int> q, int k)
+{
+    // Write your code here.
+    stack<int> st;
+    queue<int> rest;
+    while (k--)
+    {
+        st.push(q.front());
+        q.pop();
+    }
+    while (!q.empty())
+    {
+        rest.push(q.front());
+        q.pop();
+    }
+    while (!st.empty())
+    {
+        q.push(st.top());
+        st.pop();
+    }
+
+    while (!rest.empty())
+    {
+        q.push(rest.front());
+        rest.pop();
+    }
+    return q;
+}
