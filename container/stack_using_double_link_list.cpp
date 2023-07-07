@@ -18,10 +18,10 @@ public:
 
 class Stack
 {
-public:
     node *head;
     node *tail;
     int size;
+public:
     Stack()
     {
         this->head = nullptr;
@@ -106,6 +106,10 @@ public:
             return tail->data;
         }
         return -1;
+    }
+    int size()
+    {
+        return this->size;
     }
 };
 

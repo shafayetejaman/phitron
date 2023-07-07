@@ -289,6 +289,42 @@ queue<int> reverseQueue(queue<int> q)
     stack<int> st;
     while(!q.empty())
     {
-        
+        st.push(q.top());
+        q.pop();
     }
+    while(!st.empty())
+    {
+        q.push(st.top());
+        st.pop();
+    }
+    return q;
+}
+
+stack<int> &add_to_bottom(stack<int> &st, int val)
+{
+    stack<int> temp;
+    while (!st.empty())
+    {
+        temp.push(st.top());
+        st.pop();
+    }
+    st.push(val);
+    while (!temp.empty())
+    {
+        st.push(temp.top());
+        temp.pop();
+    }
+    return st;
+}
+void reverseStack(stack<int> &st)
+{
+    // Write your code here
+    if (st.empty())
+    {
+        return;
+    }
+    int val = st.top();
+    st.pop();
+    reverseStack(st);
+    add_to_bottom(st, val);
 }
