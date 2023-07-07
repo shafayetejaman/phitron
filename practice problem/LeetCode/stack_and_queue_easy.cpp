@@ -282,3 +282,13 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
 
     return ans(stk1, stk2, stk3, sum1, sum2, sum3);
 }
+
+queue<int> reverseQueue(queue<int> q)
+{
+    // Write your code here.
+    stack<int> st;
+    while(!q.empty())
+    {
+        
+    }
+}
