@@ -202,7 +202,7 @@ public:
 
 int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2,int  sum3)
 {
-    if (sum1 == sum2 == sum3)
+    if (sum1 == sum2 && sum2 == sum3)
     {
         return sum1;
     }
