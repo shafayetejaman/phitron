@@ -249,8 +249,9 @@ int get_sum(stack<int> st)
 int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
 {
     // Write your code here
-    stack<int> temp;
-    int sum1 = get_sum(stk1), sum2 = get_sum(stk2), sum3 = get_sum(stk3);
+    int sum1 = get_sum(stk1);
+    int sum2 = get_sum(stk2);
+    int sum3 = get_sum(stk3);
 
     return ans(stk1, stk2, stk3, sum1, sum2, sum3);
 }
