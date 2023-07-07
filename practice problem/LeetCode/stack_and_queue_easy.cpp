@@ -200,7 +200,7 @@ public:
     }
 };
 
-int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2,int  sum3)
+int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2, int sum3)
 {
     if (sum1 == sum2 && sum2 == sum3)
     {
@@ -240,43 +240,52 @@ int maxSum(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3)
 {
     // Write your code here
     stack<int> temp;
-    int sum1 = 0, sum2 = 0, sum3 = 0;
-    while (!stk1.empty())
-    {
-        temp.push(stk1.top());
-        sum1 += temp.top();
-        stk1.pop();
-    }
+    int sum1 = get_sum(stk1), sum2 = get_sum(stk2), sum3 = get_sum(stk3);
+    // while (!stk1.empty())
+    // {
+    //     temp.push(stk1.top());
+    //     sum1 += temp.top();
+    //     stk1.pop();
+    // }
 
-    while (!temp.empty())
-    {
-        stk1.push(temp.top());
-        temp.pop();
-    }
-    while (!stk2.empty())
-    {
-        temp.push(stk2.top());
-        sum2 += temp.top();
-        stk2.pop();
-    }
+    // while (!temp.empty())
+    // {
+    //     stk1.push(temp.top());
+    //     temp.pop();
+    // }
+    // while (!stk2.empty())
+    // {
+    //     temp.push(stk2.top());
+    //     sum2 += temp.top();
+    //     stk2.pop();
+    // }
 
-    while (!temp.empty())
-    {
-        stk2.push(temp.top());
-        temp.pop();
-    }
-    while (!stk3.empty())
-    {
-        temp.push(stk3.top());
-        sum3 += temp.top();
-        stk3.pop();
-    }
+    // while (!temp.empty())
+    // {
+    //     stk2.push(temp.top());
+    //     temp.pop();
+    // }
+    // while (!stk3.empty())
+    // {
+    //     temp.push(stk3.top());
+    //     sum3 += temp.top();
+    //     stk3.pop();
+    // }
 
-    while (!temp.empty())
-    {
-        stk3.push(temp.top());
-        temp.pop();
-    }
+    // while (!temp.empty())
+    // {
+    //     stk3.push(temp.top());
+    //     temp.pop();
+    // }
     return ans(stk1, stk2, stk3, sum1, sum2, sum3);
 }
-
+int get_sum(stack<int> st)
+{
+    int sum = 0;
+    while (!st.empty())
+    {
+        sum += st.top();
+        st.pop();
+    }
+    return sum;
+}
