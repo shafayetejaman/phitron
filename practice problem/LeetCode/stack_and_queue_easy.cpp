@@ -236,6 +236,33 @@ int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2
 
     return max(returnAns1, max(returnAns2, returnAns3));
 }
+int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2, int sum3)
+{
+    while (true)
+    {
+        if (sum1 == sum2 && sum2 == sum3)
+        {
+            return sum1;
+        }
+        if (sum1 >= sum2 && sum1 >= sum3)
+        {
+            sum1 -= stk1.top();
+            stk1.pop();
+        }
+        else if (sum2 >= sum1 && sum2 >= sum3)
+        {
+            sum2 -= stk2.top();
+            stk2.pop();
+        }
+        else
+        {
+            sum3 -= stk3.top();
+            stk3.pop();
+        }
+    }
+
+    return sum1;
+}
 int get_sum(stack<int> st)
 {
     int sum = 0;
