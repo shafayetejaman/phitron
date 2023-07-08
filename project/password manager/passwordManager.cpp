@@ -52,7 +52,7 @@ private:
     int random()
     {
         static unsigned long long n = 1;
-        srand(time(nullptr) * n * getpid());
+        srand(time(nullptr));
         n++;
         return rand();
     }
