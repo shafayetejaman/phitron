@@ -134,8 +134,8 @@ int main()
                 }
             }
         }
-        while (remove_duplicate(st))
-            ;
+        while (remove_duplicate(st));
+
         reverse(st);
         while (!st.empty())
         {
