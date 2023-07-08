@@ -144,12 +144,10 @@ public:
     // string to map converter
     Map string_to_map()
     {
-
     }
     // string to map converter
     string map_to_string()
     {
-
     }
 };
 // encrypting all the data of the map
