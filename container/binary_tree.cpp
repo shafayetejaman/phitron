@@ -47,6 +47,7 @@ public:
             {
                 ptr->left = newNode;
             }
+            return;
         }
         helper_add(data, ptr->left);
         helper_add(data, ptr->right);
@@ -63,6 +64,7 @@ public:
         }
         helper_print(ptr->left);
         helper_print(ptr->right);
+        cout << ptr->data << " ";
     }
 };
 
