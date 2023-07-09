@@ -13,18 +13,33 @@ class Solution
 public:
     int findTheWinner(int n, int k)
     {
-        queue<int> qu;
+        queue<int> que;
         queue<int> temp;
         for (auto i = 1; i <= n; i++)
         {
-            qu.push(i);
+            que.push(i);
         }
-        int count = k-1;
-        
-        while(count--)
+        while (que.size() != 1)
         {
-            temp.push(qu.front());
-            qu.pop();
+            int count = k - 1;
+
+            while (count--)
+            {
+                temp.push(que.front());
+                que.pop();
+            }
+            que.pop();
+            add_to_front(que, temp);
         }
+        return que.front();
+    }
+    void add_to_front(queue<int> &que, queue<int> &temp)
+    {
+        while (!que.empty())
+        {
+            temp.push(que.front());
+            que.pop();
+        }
+        que = temp;
     }
 };
