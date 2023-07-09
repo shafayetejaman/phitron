@@ -213,18 +213,25 @@ public:
             }
             else
             {
-
-                if (prev)
+                if (!st.empty())
                 {
-                    st.pop();
-                    prev = false;
+                    if (prev)
+                    {
+                        st.pop();
+                        prev = false;
+                    }
+                    else
+                    {
+                        prev = true;
+                    }
                 }
                 else
                 {
-                    prev = true;
+                    count++;
                 }
+
             }
         }
-        return st.size();
+        return st.size() + count;
     }
 };
