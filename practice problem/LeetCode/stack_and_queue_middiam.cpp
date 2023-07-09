@@ -15,7 +15,6 @@ public:
         queue<int> que;
         for (auto i = 1; i <= n; i++)
         {
-
             que.push(i);
         }
 
