@@ -202,18 +202,27 @@ class Solution
 public:
     int minInsertions(string s)
     {
+        stack<char> st;
         int count = 0;
         for (const auto &i : s)
         {
             if (i == '(')
             {
-                count += 2;
+                st.push(i);
             }
             else
             {
-                count--;
+                if (!st.empty())
+                {
+                    st.pop();
+                }
+                else
+                {
+                    count++;
+                }
             }
         }
-        return abs(count);
+        return count + st.size();
     }
+ 
 };
