@@ -41,14 +41,11 @@ public:
 
             if (ptr->left != nullptr)
             {
-                if (ptr->left->data > data)
-                {
-                    ptr->right = newNode;
-                }
-                else
-                {
-                    ptr->left = newNode;
-                }
+                ptr->right = newNode;
+            }
+            else
+            {
+                ptr->left = newNode;
             }
         }
         helper_add(data, ptr->left);
