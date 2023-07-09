@@ -197,3 +197,35 @@ public:
         return count + st.size();
     }
 };
+class Solution
+{
+public:
+    int minInsertions(string s)
+    {
+        stack<char> st;
+        int count = 0;
+        for (const auto &i : s)
+        {
+            if (i == '(')
+            {
+                st.push(i);
+            }
+            else
+            {
+                int t = 2;
+                while (t--)
+                if (!st.empty())
+                {
+                    st.pop();
+                    t--;
+                }
+                else
+                {
+                    count++;
+                    t--;
+                }
+            }
+        }
+        return count + st.size();
+    }
+};
