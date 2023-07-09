@@ -5,7 +5,6 @@ using namespace std;
 int main()
 {
 
-
     return 0;
 }
 class Solution
@@ -19,14 +18,22 @@ public:
         {
             que.push(i);
         }
-        while (que.size() != 1)
+        while (que.size() > 1)
         {
             int count = k - 1;
 
             while (count--)
             {
                 temp.push(que.front());
+                if (que.size() == 1)
+                {
+                    break;
+                }
                 que.pop();
+            }
+            if (que.size() == 1)
+            {
+                break;
             }
             que.pop();
             add_to_front(que, temp);
