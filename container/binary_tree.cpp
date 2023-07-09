@@ -29,7 +29,17 @@ public:
         Node *newNode = new Node(data);
         this->root = newNode;
     }
-    
+    void add(int data)
+    {
+
+    }
+    void insert(int data, Node *ptr)
+    {
+        if (ptr == nullptr)
+        {
+            
+        }
+    }
 
 };
 
