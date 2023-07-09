@@ -209,6 +209,7 @@ public:
             if (i == '(')
             {
                 st.push(i);
+                st.push(i);
             }
             else
             {
@@ -224,5 +225,5 @@ public:
         }
         return count + st.size();
     }
- 
+
 };
