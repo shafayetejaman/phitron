@@ -112,8 +112,7 @@ public:
         }
         if (close > 0 && open > close)
         {
-            pre(open, close-1, s + ')');
-
+            pre(open, close - 1, s + ')');
         }
     }
 };
@@ -184,7 +183,7 @@ public:
             }
             else
             {
-                if(!st.empty())
+                if (!st.empty())
                 {
                     st.pop();
                 }
@@ -202,7 +201,8 @@ class Solution
 public:
     int minInsertions(string s)
     {
-        stack<char> st, st2;
+        stack<char> st;
+        int count = 0;
         for (const auto &i : s)
         {
             if (i == '(')
@@ -212,17 +212,25 @@ public:
             }
             else
             {
-                if (!st.empty())
+                if (st.empty() > 1)
                 {
+                    st.pop();
                     st.pop();
                 }
                 else
                 {
-                    st2.push(i);
+                    if (!st.empty())
+                    {
+                        st.pop();
+                        count++;
+                    }
+                    else
+                    {
+                        count += 2;
+                    }
                 }
             }
         }
-        return + st.size();
+        return count +st.size();
     }
-
 };
