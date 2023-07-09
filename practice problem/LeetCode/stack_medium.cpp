@@ -202,35 +202,26 @@ public:
     int minInsertions(string s)
     {
         stack<char> st;
-        int count = 0;
+        int cRight = 0;
+        int cLeft = 0;
         for (const auto &i : s)
         {
             if (i == '(')
             {
                 st.push(i);
-                st.push(i);
+                cRight += 2;
             }
             else
             {
-                if (st.empty() > 1)
+
+                if (!st.empty())
                 {
                     st.pop();
-                    st.pop();
+                    cRight--;
                 }
-                else
-                {
-                    if (!st.empty())
-                    {
-                        st.pop();
-                        count++;
-                    }
-                    else
-                    {
-                        count += 2;
-                    }
-                }
+
             }
         }
-        return count +st.size();
+        return cRight +st.size();
     }
 };
