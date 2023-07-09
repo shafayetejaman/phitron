@@ -35,11 +35,10 @@ public:
     }
     void add_to_front(queue<int> &que, queue<int> &temp)
     {
-        while (!que.empty())
+        while (!temp.empty())
         {
-            temp.push(que.front());
-            que.pop();
+            que.push(temp.front());
+            temp.pop();
         }
-        que = temp;
     }
 };
