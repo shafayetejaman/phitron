@@ -203,6 +203,7 @@ public:
     {
         stack<char> st;
         bool prev = false;
+        bool prevF = false;
         int count = 0;
 
         for (const auto &i : s)
@@ -227,9 +228,16 @@ public:
                 }
                 else
                 {
-                    count++;
-                }
+                    if (prevF)
+                    {
 
+                        count++;
+                    }
+                    else
+                    {
+                        prevF = true;
+                    }
+                }
             }
         }
         return st.size() + count;
