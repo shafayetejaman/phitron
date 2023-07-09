@@ -26,12 +26,16 @@ public:
     }
     Tree(int data)
     {
-        this->root = nullptr;
+        Node *newNode = new Node(data);
+        this->root = newNode;
     }
+    
+
 };
 
 int main()
 {
+    Tree tree(1);
 
 
     return 0;
