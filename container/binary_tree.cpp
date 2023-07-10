@@ -19,6 +19,17 @@ public:
 class Tree
 {
 private:
+    int helper_size(Node *ptr)
+    {
+        int count = 0;
+        if (ptr == nullptr)
+        {
+            return count;
+        }
+        count++;
+        helper_size(ptr->left);
+        helper_size(ptr->right);
+    }
     void helper_print(Node *ptr)
     {
         if (ptr == nullptr)
@@ -29,6 +40,7 @@ private:
         helper_print(ptr->left);
         helper_print(ptr->right);
     }
+
 public:
     Node *root;
     Tree()
@@ -40,24 +52,37 @@ public:
         Node *newNode = new Node(data);
         this->root = newNode;
     }
-    // binary insertion
-
 
     void print()
     {
         helper_print(this->root);
+    }
+    int size()
+    {
+        return helper_size(this->root);
     }
 };
 
 int main()
 {
     Tree tree(10);
-        Node *b = new Node(20);
-        Node *c = new Node(20);
-        Node *d = new Node(20);
-        Node *e = new Node(20);
-        Node *f = new Node(20);
+    Node *b = new Node(20);
+    Node *c = new Node(30);
+    Node *d = new Node(40);
+    Node *e = new Node(90);
+    Node *f = new Node(50);
+    Node *h = new Node(80);
+    Node *g = new Node(60);
 
+    tree.root->left = b;
+    tree.root->right = c;
+    b->left = d;
+    b->right = e;
+
+    e->left = g;
+
+    c->right = f;
+    f->right = h;
 
     tree.print();
 
