@@ -30,78 +30,7 @@ public:
         this->root = newNode;
     }
     // binary insertion
-    void insert(int data)
-    {
-        helper_insert(data, nullptr, this->root);
-    }
-    void helper_insert(int data, Node *prev, Node *curr)
-    {
-        if (curr == nullptr)
-        {
-            Node *newNode = new Node(data);
 
-            if (prev == nullptr)
-            {
-                this->root = newNode;
-                return;
-            }
-
-            if (data > prev->data)
-            {
-                prev->right = newNode;
-            }
-            else
-            {
-                prev->left = newNode;
-            }
-            return;
-        }
-
-        if (data >= curr->data)
-        {
-            helper_insert(data, curr, curr->right);
-        }
-        else
-        {
-            helper_insert(data, curr, curr->left);
-        }
-    }
-    void insert(int data)
-    {
-        helper_insert(data, nullptr, this->root);
-    }
-    void helper_insert(int data, Node *prev, Node *curr)
-    {
-        if (curr == nullptr)
-        {
-            Node *newNode = new Node(data);
-
-            if (prev == nullptr)
-            {
-                this->root = newNode;
-                return;
-            }
-
-            if (data > prev->data)
-            {
-                prev->right = newNode;
-            }
-            else
-            {
-                prev->left = newNode;
-            }
-            return;
-        }
-
-        if (data >= curr->data)
-        {
-            helper_insert(data, curr, curr->right);
-        }
-        else
-        {
-            helper_insert(data, curr, curr->left);
-        }
-    }
 
     void print()
     {
@@ -122,10 +51,7 @@ public:
 int main()
 {
     Tree tree(10);
-    tree.insert(20);
-    tree.insert(30);
-    tree.insert(30);
-    tree.insert(40);
+  
     tree.print();
 
     return 0;
