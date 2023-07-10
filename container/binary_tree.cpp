@@ -30,6 +30,21 @@ private:
         int countRight = helper_size(ptr->right);
         return countLeft + countRight + 1;
     }
+    int helper_size_leaf(Node *ptr)
+    {
+        if (ptr == nullptr)
+        {
+            return 0;
+        }
+        if (ptr->left == nullptr && ptr->right == nullptr)
+        {
+            return 1;
+        }
+
+        int countLeft = helper_size_leaf(ptr->left);
+        int countRight = helper_size_leaf(ptr->right);
+        return countLeft + countRight;
+    }
     void helper_print(Node *ptr)
     {
         if (ptr == nullptr)
@@ -60,6 +75,10 @@ public:
     int size()
     {
         return helper_size(this->root);
+    }
+    int size_leaf()
+    {
+        return helper_size_leaf(this->root);
     }
     void level_print()
     {
@@ -108,6 +127,7 @@ int main()
 
     tree.level_print();
     // print(tree.size());
+    print(tree.size_leaf());
 
     return 0;
 }
