@@ -55,6 +55,16 @@ private:
         helper_print(ptr->left);
         helper_print(ptr->right);
     }
+    int helper_max_hight(Node *curr, int count)
+    {
+        if (curr == nullptr)
+        {
+            return count - 1;
+        }
+        int left = helper_max_hight(curr->left, count + 1);
+        int right = helper_max_hight(curr->right, count + 1);
+        return max(left, right);
+    }
 
 public:
     Node *root;
@@ -102,6 +112,10 @@ public:
         }
         cout << endl;
     }
+    int max_hight()
+    {
+        return helper_max_hight(this->root, 0);
+    }
 };
 
 int main()
@@ -114,6 +128,7 @@ int main()
     Node *f = new Node(50);
     Node *g = new Node(80);
     Node *h = new Node(60);
+    Node *i = new Node(60);
 
     tree.root->left = b;
     tree.root->right = c;
@@ -124,10 +139,11 @@ int main()
 
     c->right = f;
     f->right = h;
+    h->left = i;
 
     tree.level_print();
     // print(tree.size());
-    print(tree.size_leaf());
+    print(tree.max_hight());
 
     return 0;
 }
