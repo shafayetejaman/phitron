@@ -63,13 +63,18 @@ public:
         {
             Node *newNode = new Node(data);
 
-            if (prev->left == nullptr)
+            if (prev == nullptr)
             {
-                prev->left = newNode;
+                // The tree is empty, so make the new node the root
+                root = newNode;
+            }
+            else if (data > prev->data)
+            {
+                prev->right = newNode;
             }
             else
             {
-                prev->right = newNode;
+                prev->left = newNode;
             }
             return;
         }
@@ -82,6 +87,7 @@ public:
             helper_insert(data, curr, curr->left);
         }
     }
+
     void print()
     {
         helper_print(this->root);
