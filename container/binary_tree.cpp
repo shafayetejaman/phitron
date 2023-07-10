@@ -55,13 +55,12 @@ public:
     // binary insertion
     void insert(int data)
     {
-
+        helper_insert( data, nullptr, this->root);
     }
     void helper_insert(int data, Node *prev, Node *curr)
     {
         if (curr == nullptr)
         {
-            Node *newNode = new Node(data);
             Node *newNode = new Node(data);
 
             if (prev->left == nullptr)
@@ -74,11 +73,14 @@ public:
             }
             return;
         }
-        if (data  > curr->data)
+        if (data > curr->data)
         {
-            
+            helper_insert(data, curr, curr->right);
         }
-
+        else
+        {
+            helper_insert(data, curr, curr->left);
+        }
     }
     void print()
     {
@@ -99,10 +101,10 @@ public:
 int main()
 {
     Tree tree(10);
-    tree.add(20);
-    tree.add(25);
-    tree.add(30);
-    tree.add(35);
+    tree.insert(20);
+    tree.insert(25);
+    tree.insert(30);
+    tree.insert(35);
     tree.print();
 
     return 0;
