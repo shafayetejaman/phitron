@@ -106,15 +106,15 @@ public:
         {
             return;
         }
+        cout << ptr->data << " ";
         helper_print(ptr->left);
         helper_print(ptr->right);
-        cout << ptr->data << " ";
     }
 };
 
 int main()
 {
-    Tree tree;
+    Tree tree(1);
     tree.add(20);
     tree.add(25);
     tree.add(30);
