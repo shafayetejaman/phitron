@@ -63,12 +63,25 @@ public:
     }
     void level_print()
     {
-        queue<Node*> que;
+        queue<Node *> que;
         que.push(this->root);
         while (!que.empty())
         {
+            Node *curr = que.front();
+            que.pop();
 
+            cout << curr->data << " ";
+
+            if (curr->left != nullptr)
+            {
+                que.push(curr->left);
+            }
+            if (curr->right != nullptr)
+            {
+                que.push(curr->right);
+            }
         }
+        cout << endl;
     }
 };
 
@@ -93,8 +106,8 @@ int main()
     c->right = f;
     f->right = h;
 
-    tree.print();
-    print(tree.size());
+    tree.level_print();
+    // print(tree.size());
 
     return 0;
 }
