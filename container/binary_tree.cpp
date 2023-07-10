@@ -93,8 +93,8 @@ int main()
     Node *d = new Node(40);
     Node *e = new Node(90);
     Node *f = new Node(50);
-    Node *h = new Node(80);
-    Node *g = new Node(60);
+    Node *g = new Node(80);
+    Node *h = new Node(60);
 
     tree.root->left = b;
     tree.root->right = c;
