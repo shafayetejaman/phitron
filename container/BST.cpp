@@ -18,6 +18,70 @@ public:
 
 class Tree
 {
+private:
+    void helper_print(Node *ptr)
+    {
+        if (ptr == nullptr)
+        {
+            return;
+        }
+        cout << ptr->data << " ";
+        helper_print(ptr->left);
+        helper_print(ptr->right);
+    }
+    void helper_insert(int data, Node *prev, Node *curr)
+    {
+        if (curr == nullptr)
+        {
+            Node *newNode = new Node(data);
+
+            if (prev == nullptr)
+            {
+                this->root = newNode;
+                return;
+            }
+
+            if (data > prev->data)
+            {
+                prev->right = newNode;
+            }
+            else
+            {
+                prev->left = newNode;
+            }
+            return;
+        }
+
+        if (data > curr->data)
+        {
+            helper_insert(data, curr, curr->right);
+        }
+        else
+        {
+            helper_insert(data, curr, curr->left);
+        }
+    }
+    bool helper_find(int data, Node *curr)
+    {
+        if (curr == nullptr)
+        {
+            return false;
+        }
+        if (curr->data == data)
+        {
+            return true;
+        }
+
+        if (data > curr->data)
+        {
+            helper_find(data, curr->right);
+        }
+        else
+        {
+            helper_find(data, curr->left);
+        }
+    }
+
 public:
     Node *root;
     Tree()
@@ -34,88 +98,14 @@ public:
     {
         helper_insert(data, nullptr, this->root);
     }
-    void helper_insert(int data, Node *prev, Node *curr)
+    bool find(int data)
     {
-        if (curr == nullptr)
-        {
-            Node *newNode = new Node(data);
-
-            if (prev == nullptr)
-            {
-                this->root = newNode;
-                return;
-            }
-
-            if (data > prev->data)
-            {
-                prev->right = newNode;
-            }
-            else
-            {
-                prev->left = newNode;
-            }
-            return;
-        }
-
-        if (data >= curr->data)
-        {
-            helper_insert(data, curr, curr->right);
-        }
-        else
-        {
-            helper_insert(data, curr, curr->left);
-        }
-    }
-    void insert(int data)
-    {
-        helper_insert(data, nullptr, this->root);
-    }
-    void helper_insert(int data, Node *prev, Node *curr)
-    {
-        if (curr == nullptr)
-        {
-            Node *newNode = new Node(data);
-
-            if (prev == nullptr)
-            {
-                this->root = newNode;
-                return;
-            }
-
-            if (data > prev->data)
-            {
-                prev->right = newNode;
-            }
-            else
-            {
-                prev->left = newNode;
-            }
-            return;
-        }
-
-        if (data >= curr->data)
-        {
-            helper_insert(data, curr, curr->right);
-        }
-        else
-        {
-            helper_insert(data, curr, curr->left);
-        }
+        return helper_find(data, this->root);
     }
 
     void print()
     {
         helper_print(this->root);
-    }
-    void helper_print(Node *ptr)
-    {
-        if (ptr == nullptr)
-        {
-            return;
-        }
-        cout << ptr->data << " ";
-        helper_print(ptr->left);
-        helper_print(ptr->right);
     }
 };
 
@@ -127,6 +117,7 @@ int main()
     tree.insert(30);
     tree.insert(40);
     tree.print();
+    print(tree.find(30));
 
     return 0;
 }
