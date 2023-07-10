@@ -231,7 +231,6 @@ int ans(stack<int> &stk1, stack<int> &stk2, stack<int> &stk3, int sum1, int sum2
         int temp = stk3.top();
         stk3.pop();
         returnAns3 = ans(stk1, stk2, stk3, sum1, sum2, sum3 - temp);
-        stk3.push(temp);
     }
 
     return max(returnAns1, max(returnAns2, returnAns3));
