@@ -74,11 +74,11 @@ private:
 
         if (data > curr->data)
         {
-            helper_find(data, curr->right);
+            return helper_find(data, curr->right);
         }
         else
         {
-            helper_find(data, curr->left);
+            return helper_find(data, curr->left);
         }
     }
 
@@ -117,7 +117,7 @@ int main()
     tree.insert(30);
     tree.insert(40);
     tree.print();
-    print(tree.find(30));
+    print(tree.find(20));
 
     return 0;
 }
