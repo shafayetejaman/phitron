@@ -72,8 +72,7 @@ public:
 
             if (prev == nullptr)
             {
-                // The tree is empty, so make the new node the root
-                root = newNode;
+                this->root = newNode;
                 return;
             }
 
