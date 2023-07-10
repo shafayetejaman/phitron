@@ -66,33 +66,6 @@ public:
             helper_insert(data, curr, curr->left);
         }
     }
-    // recursive insertion
-    void add(int data)
-    {
-        helper_add(data, this->root);
-    }
-    void helper_add(int data, Node *ptr)
-    {
-        Node *newNode = new Node(data);
-        if (ptr == nullptr)
-        {
-            this->root = newNode;
-            return;
-        }
-        if (ptr->left == nullptr)
-        {
-            ptr->left = newNode;
-            return;
-        }
-        if (ptr->right == nullptr)
-        {
-            ptr->right = newNode;
-            return;
-        }
-        delete newNode;
-        helper_add(data, ptr->left);
-        helper_add(data, ptr->right);
-    }
 
     void print()
     {
@@ -113,10 +86,10 @@ public:
 int main()
 {
     Tree tree(1);
-    tree.add(20);
-    tree.add(25);
-    tree.add(30);
-    tree.add(35);
+    tree.insert(20);
+    tree.insert(25);
+    tree.insert(30);
+    tree.insert(35);
     tree.print();
 
     return 0;
