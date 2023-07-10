@@ -35,6 +35,13 @@ public:
     }
     void helper_add(int data, Node *ptr)
     {
+        if (ptr == nullptr)
+        {
+            Node *newNode = new Node(data);
+            // The tree is empty, so make the new node the root
+            root = newNode;
+            return;
+        }
         if (ptr->left == nullptr || ptr->right == nullptr)
         {
             Node *newNode = new Node(data);
@@ -55,7 +62,7 @@ public:
     // binary insertion
     void insert(int data)
     {
-        helper_insert( data, nullptr, this->root);
+        helper_insert(data, nullptr, this->root);
     }
     void helper_insert(int data, Node *prev, Node *curr)
     {
@@ -67,8 +74,10 @@ public:
             {
                 // The tree is empty, so make the new node the root
                 root = newNode;
+                return;
             }
-            else if (data > prev->data)
+
+            if (data > prev->data)
             {
                 prev->right = newNode;
             }
@@ -106,11 +115,11 @@ public:
 
 int main()
 {
-    Tree tree(10);
-    tree.insert(20);
-    tree.insert(25);
-    tree.insert(30);
-    tree.insert(35);
+    Tree tree;
+    tree.add(20);
+    tree.add(25);
+    tree.add(30);
+    tree.add(35);
     tree.print();
 
     return 0;
