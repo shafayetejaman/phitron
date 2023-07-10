@@ -29,6 +29,7 @@ public:
         Node *newNode = new Node(data);
         this->root = newNode;
     }
+    // recursive insertion
     void add(int data)
     {
         helper_add(data, this->root);
@@ -38,8 +39,7 @@ public:
         if (ptr == nullptr)
         {
             Node *newNode = new Node(data);
-            // The tree is empty, so make the new node the root
-            root = newNode;
+            this->root = newNode;
             return;
         }
         if (ptr->left == nullptr || ptr->right == nullptr)
