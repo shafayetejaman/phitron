@@ -29,33 +29,6 @@ public:
         Node *newNode = new Node(data);
         this->root = newNode;
     }
-    // recursive insertion
-    void add(int data)
-    {
-        helper_add(data, this->root);
-    }
-    void helper_add(int data, Node *ptr)
-    {
-        Node *newNode = new Node(data);
-        if (ptr == nullptr)
-        {
-            this->root = newNode;
-            return;
-        }
-        if (ptr->left == nullptr)
-        {
-            ptr->left = newNode;
-            return;
-        }
-        if (ptr->right == nullptr)
-        {
-            ptr->right = newNode;
-            return;
-        }
-        delete newNode;
-        helper_add(data, ptr->left);
-        helper_add(data, ptr->right);
-    }
     // binary insertion
     void insert(int data)
     {
@@ -92,6 +65,33 @@ public:
         {
             helper_insert(data, curr, curr->left);
         }
+    }
+    // recursive insertion
+    void add(int data)
+    {
+        helper_add(data, this->root);
+    }
+    void helper_add(int data, Node *ptr)
+    {
+        Node *newNode = new Node(data);
+        if (ptr == nullptr)
+        {
+            this->root = newNode;
+            return;
+        }
+        if (ptr->left == nullptr)
+        {
+            ptr->left = newNode;
+            return;
+        }
+        if (ptr->right == nullptr)
+        {
+            ptr->right = newNode;
+            return;
+        }
+        delete newNode;
+        helper_add(data, ptr->left);
+        helper_add(data, ptr->right);
     }
 
     void print()
