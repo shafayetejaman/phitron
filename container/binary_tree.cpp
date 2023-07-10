@@ -23,12 +23,12 @@ private:
     {
         if (ptr == nullptr)
         {
-            return 1;
+            return 0;
         }
 
         int countLeft = helper_size(ptr->left);
         int countRight = helper_size(ptr->right);
-        return countLeft + countRight;
+        return countLeft + countRight + 1;
     }
     void helper_print(Node *ptr)
     {
