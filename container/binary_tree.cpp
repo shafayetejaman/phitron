@@ -18,6 +18,17 @@ public:
 
 class Tree
 {
+private:
+    void helper_print(Node *ptr)
+    {
+        if (ptr == nullptr)
+        {
+            return;
+        }
+        cout << ptr->data << " ";
+        helper_print(ptr->left);
+        helper_print(ptr->right);
+    }
 public:
     Node *root;
     Tree()
@@ -36,22 +47,18 @@ public:
     {
         helper_print(this->root);
     }
-    void helper_print(Node *ptr)
-    {
-        if (ptr == nullptr)
-        {
-            return;
-        }
-        cout << ptr->data << " ";
-        helper_print(ptr->left);
-        helper_print(ptr->right);
-    }
 };
 
 int main()
 {
     Tree tree(10);
-  
+        Node *b = new Node(20);
+        Node *c = new Node(20);
+        Node *d = new Node(20);
+        Node *e = new Node(20);
+        Node *f = new Node(20);
+
+
     tree.print();
 
     return 0;
