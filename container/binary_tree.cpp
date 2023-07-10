@@ -39,22 +39,46 @@ public:
         {
             Node *newNode = new Node(data);
 
-            if (ptr->left != nullptr)
+            if (ptr->left == nullptr)
             {
-                ptr->right = newNode;
+                ptr->left = newNode;
             }
             else
             {
-                ptr->left = newNode;
+                ptr->right = newNode;
             }
             return;
         }
         helper_add(data, ptr->left);
         helper_add(data, ptr->right);
     }
+    // binary insertion
     void insert(int data)
     {
-        
+
+    }
+    void helper_insert(int data, Node *prev, Node *curr)
+    {
+        if (curr == nullptr)
+        {
+            Node *newNode = new Node(data);
+            Node *newNode = new Node(data);
+
+            if (prev->left == nullptr)
+            {
+                prev->left = newNode;
+            }
+            else
+            {
+                prev->right = newNode;
+            }
+            return;
+        }
+        if (data  > curr->data)
+        {
+            
+        }
+
     }
     void print()
     {
