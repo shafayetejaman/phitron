@@ -57,7 +57,7 @@ public:
             return;
         }
 
-        if (data > curr->data)
+        if (data >= curr->data)
         {
             helper_insert(data, curr, curr->right);
         }
