@@ -36,26 +36,23 @@ public:
     }
     void helper_add(int data, Node *ptr)
     {
+        Node *newNode = new Node(data);
         if (ptr == nullptr)
         {
-            Node *newNode = new Node(data);
             this->root = newNode;
             return;
         }
-        if (ptr->left == nullptr || ptr->right == nullptr)
+        if (ptr->left == nullptr)
         {
-            Node *newNode = new Node(data);
-
-            if (ptr->left == nullptr)
-            {
-                ptr->left = newNode;
-            }
-            else
-            {
-                ptr->right = newNode;
-            }
+            ptr->left = newNode;
             return;
         }
+        if (ptr->right == nullptr)
+        {
+            ptr->right = newNode;
+            return;
+        }
+        delete newNode;
         helper_add(data, ptr->left);
         helper_add(data, ptr->right);
     }
@@ -86,6 +83,7 @@ public:
             }
             return;
         }
+
         if (data > curr->data)
         {
             helper_insert(data, curr, curr->right);
