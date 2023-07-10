@@ -52,6 +52,10 @@ public:
         helper_add(data, ptr->left);
         helper_add(data, ptr->right);
     }
+    void insert(int data)
+    {
+        
+    }
     void print()
     {
         helper_print(this->root);
