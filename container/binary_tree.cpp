@@ -19,16 +19,16 @@ public:
 class Tree
 {
 private:
-    int helper_size(Node *ptr)
+    int helper_size(Node *ptr, int count)
     {
-        int count = 0;
         if (ptr == nullptr)
         {
             return count;
         }
-        count++;
-        helper_size(ptr->left);
-        helper_size(ptr->right);
+
+        int countLeft = helper_size(ptr->left, count + 1);
+        int countRight = helper_size(ptr->right, count + 1);
+        return countLeft + countRight;
     }
     void helper_print(Node *ptr)
     {
@@ -59,7 +59,7 @@ public:
     }
     int size()
     {
-        return helper_size(this->root);
+        return helper_size(this->root, 0);
     }
 };
 
@@ -85,6 +85,7 @@ int main()
     f->right = h;
 
     tree.print();
+    print(tree.size());
 
     return 0;
 }
