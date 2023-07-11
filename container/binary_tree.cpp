@@ -157,26 +157,9 @@ public:
 
 int main()
 {
-    Tree tree(10);
-    Node *b = new Node(20);
-    Node *c = new Node(30);
-    Node *d = new Node(40);
-    Node *e = new Node(90);
-    Node *f = new Node(50);
-    Node *g = new Node(80);
-    Node *h = new Node(60);
-    Node *i = new Node(60);
+    Tree tree;
 
-    tree.root->left = b;
-    tree.root->right = c;
-    b->left = d;
-    b->right = e;
-
-    e->left = g;
-
-    c->right = f;
-    f->right = h;
-    h->left = i;
+    tree.input();
 
     tree.print_levels();
     // print(tree.size());
