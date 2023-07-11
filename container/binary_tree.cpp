@@ -139,6 +139,7 @@ public:
             }
             curr->left = leftNode;
             curr->right = rightNode;
+            
             if (curr->left != nullptr)
             {
                 que.push(curr->left);
