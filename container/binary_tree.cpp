@@ -74,7 +74,7 @@ public:
         this->root = newNode;
     }
 
-    void print()
+    void print_preorder()
     {
         helper_print(this->root);
     }
@@ -86,7 +86,7 @@ public:
     {
         return helper_size_leaf(this->root);
     }
-    void level_print()
+    void print_levels()
     {
         queue<Node *> que;
         que.push(this->root);
@@ -137,7 +137,7 @@ int main()
     f->right = h;
     h->left = i;
 
-    tree.level_print();
+    tree.print_levels();
     // print(tree.size());
     print(tree.max_hight());
 
