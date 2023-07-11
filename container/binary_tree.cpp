@@ -121,7 +121,32 @@ public:
         while (!que.empty())
         {
             Node *curr = que.front();
-            
+            que.pop();
+
+            int left, right;
+            cin >> left >> right;
+
+            Node *leftNode = nullptr;
+            Node *rightNode = nullptr;
+
+            if (left != -1)
+            {
+                leftNode = new Node(left);
+            }
+            if (right != -1)
+            {
+                rightNode = new Node(right);
+            }
+            curr->left = leftNode;
+            curr->right = rightNode;
+            if (curr->left != nullptr)
+            {
+                que.push(curr->left);
+            }
+            if (curr->right != nullptr)
+            {
+                que.push(curr->right);
+            }
         }
     }
     int max_hight()
