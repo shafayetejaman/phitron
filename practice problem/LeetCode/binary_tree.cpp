@@ -62,4 +62,28 @@ public:
 vector<int> getLevelOrder(BinaryTreeNode<int> *root)
 {
     //  Write your code here.
+    if (root == nullptr)
+    {
+        return {};
+    }
+    vector<int> ans;
+    queue<BinaryTreeNode<int> *> que;
+    que.push(root);
+    while (!que.empty())
+    {
+        BinaryTreeNode<int> *curr = que.front();
+        que.pop();
+
+        ans.push_back(curr->val);
+
+        if (curr->left)
+        {
+            que.push(curr->left);
+        }
+        if (curr->right)
+        {
+            que.push(curr->right);
+        }
+    }
+    return ans;
 }
