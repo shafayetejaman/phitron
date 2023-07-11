@@ -22,9 +22,8 @@ private:
     int helper_size(Node *ptr)
     {
         if (ptr == nullptr)
-        {
             return 0;
-        }
+
 
         int countLeft = helper_size(ptr->left);
         int countRight = helper_size(ptr->right);
@@ -33,13 +32,11 @@ private:
     int helper_size_leaf(Node *ptr)
     {
         if (ptr == nullptr)
-        {
             return 0;
-        }
+
         if (ptr->left == nullptr && ptr->right == nullptr)
-        {
             return 1;
-        }
+
 
         int countLeft = helper_size_leaf(ptr->left);
         int countRight = helper_size_leaf(ptr->right);
@@ -48,9 +45,8 @@ private:
     void helper_print(Node *ptr)
     {
         if (ptr == nullptr)
-        {
             return;
-        }
+
         cout << ptr->data << " ";
         helper_print(ptr->left);
         helper_print(ptr->right);
