@@ -139,7 +139,7 @@ public:
             }
             curr->left = leftNode;
             curr->right = rightNode;
-            
+
             if (curr->left != nullptr)
             {
                 que.push(curr->left);
@@ -165,6 +165,7 @@ int main()
     tree.print_levels();
     // print(tree.size());
     print(tree.max_hight());
+    
 
-    return 0;
+        return 0;
 }
