@@ -44,4 +44,22 @@ vector<int> postorderTraversal(TreeNode *root)
     print(root, ans);
     return ans;
 }
+template <typename T>
+class BinaryTreeNode
+{
+public:
+    T val;
+    BinaryTreeNode<T> *left;
+    BinaryTreeNode<T> *right;
 
+    BinaryTreeNode(T val)
+    {
+        this->val = val;
+        left = NULL;
+        right = NULL;
+    }
+};
+vector<int> getLevelOrder(BinaryTreeNode<int> *root)
+{
+    //  Write your code here.
+}
