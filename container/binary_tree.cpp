@@ -24,7 +24,6 @@ private:
         if (ptr == nullptr)
             return 0;
 
-
         int countLeft = helper_size(ptr->left);
         int countRight = helper_size(ptr->right);
         return countLeft + countRight + 1;
@@ -36,7 +35,6 @@ private:
 
         if (ptr->left == nullptr && ptr->right == nullptr)
             return 1;
-
 
         int countLeft = helper_size_leaf(ptr->left);
         int countRight = helper_size_leaf(ptr->right);
@@ -107,6 +105,24 @@ public:
             }
         }
         cout << endl;
+    }
+    void input()
+    {
+        int data;
+        cin >> data;
+
+        if (data == -1)
+            return;
+
+        queue<Node *> que;
+        this->root = new Node(data);
+        que.push(this->root);
+
+        while (!que.empty())
+        {
+            Node *curr = que.front();
+            
+        }
     }
     int max_hight()
     {
