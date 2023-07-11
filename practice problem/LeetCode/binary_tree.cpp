@@ -23,6 +23,25 @@ class Solution
 public:
     vector<vector<int>> levelOrder(TreeNode *root)
     {
-        
+
     }
 };
+
+void print(TreeNode *ptr, vector<int> &ans)
+{
+    if (ptr == nullptr)
+    {
+        return;
+    }
+    print(ptr->left, ans);
+    print(ptr->right, ans);
+    ans.push_back(ptr->val);
+}
+vector<int> postorderTraversal(TreeNode *root)
+{
+    // Write your code here
+    vector<int> ans;
+    print(root, ans);
+    return ans;
+}
+
