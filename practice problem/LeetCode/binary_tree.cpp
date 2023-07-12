@@ -87,3 +87,20 @@ vector<int> getLevelOrder(BinaryTreeNode<int> *root)
     }
     return ans;
 }
+long long left_sum(BinaryTreeNode<int> *ptr)
+{
+    if (ptr == nullptr)
+        return 0;
+    long long sum = 0;
+    if (ptr->left)
+        sum = ptr->left->data;
+
+    sum += left_sum(ptr->left);
+    sum += left_sum(ptr->right);
+    return sum;
+}
+
+long long leftSum(BinaryTreeNode<int> *root)
+{
+    return left_sum(root);
+}
