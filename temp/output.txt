@@ -1,0 +1,1 @@
+hello, i am greeting from the input folder!--this is the output

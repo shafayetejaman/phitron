@@ -1,0 +1,1 @@
+cd "F:\my_programs\phitron\python"
